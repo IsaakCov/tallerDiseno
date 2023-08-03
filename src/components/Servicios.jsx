@@ -1,17 +1,17 @@
-import React from 'react'
+// import React from 'react'
 import './componentsCSS/CompromisoySer.css'
 import './componentsCSS/botones.css'
 import './componentsCSS/hero-section.css'
 import './componentsCSS/servicios.css'
 import './componentsCSS/style.css'
 import './componentsCSS/timeline.css'
-import sillacafe from './img/sillacafe.webp'
-import sillanegra from './img/sillanegra.webp'
-import sillonblanco from './img/sillonblanco.webp'
+import sillacafe from './img/sillacafe.png'
+import sillanegra from './img/sillonrojo.png'
+import sillonblanco from './img/sillonblanco.png'
 const Servicios = () => {
   return (
     <section id="servicios">
-    <h1 className="text-center m-5">Nuestros Servicios</h1>
+    <h2 className="text-center m-5">Nuestros Servicios</h2>
     <div className="container">
       <div className="row g-3">
         <div className="col-12 col-md-6 col-lg-4 col-container">

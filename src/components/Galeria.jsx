@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import './componentsCSS/CompromisoySer.css'
 import './componentsCSS/botones.css'
 import './componentsCSS/hero-section.css'
@@ -26,10 +26,10 @@ const Galeria = () => {
                <img src={Gallery_3} className="gallery-item" alt="gallery"/>
             </div>
             <div className="col">
-               <img src={Gallery_4} className="gallery-item" alt="gallery"/>
+               <img src={Gallery_3} className="gallery-item" alt="gallery"/>
             </div>
             <div className="col">
-               <img src={Gallery_1} className="gallery-item" alt="gallery"/>
+               <img src={Gallery_4} className="gallery-item" alt="gallery"/>
             </div>
             <div className="col">
                <img src={Gallery_2} className="gallery-item" alt="gallery"/>

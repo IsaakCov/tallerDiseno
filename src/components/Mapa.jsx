@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import './componentsCSS/CompromisoySer.css'
 import './componentsCSS/botones.css'
 import './componentsCSS/hero-section.css'
@@ -18,7 +18,7 @@ const Mapa = () => {
             <a href="https://timenowin.net/"></a>
             <a href="https://www.embedmaps.co">google maps api</a>
             <link rel="stylesheet" type="text/css" href="style.css"/>
-          </div>
+            </div>
         </div>
     </div>
   </section>
