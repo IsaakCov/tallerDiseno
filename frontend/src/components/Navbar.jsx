@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react'
 import './componentsCSS/CompromisoySer.css'
 import './componentsCSS/botones.css'
 import './componentsCSS/hero-section.css'
@@ -6,7 +6,12 @@ import './componentsCSS/servicios.css'
 import './componentsCSS/style.css'
 import './componentsCSS/timeline.css'
 import isotipo from './img/isotipo.jpg'
+import Login from './formularioinicioyregistro/Login';
+
+
 const Navbar = () => {
+  const [openLogin, setOpenLogin] = useState(false);
+
   return (
     <div id="menu">
       <nav id="nav-principal" className="navbar navbar-expand-lg navbar-light">
@@ -44,8 +49,8 @@ const Navbar = () => {
               </ul>
               {/* Ingresar - Registrarse */}
               <div className="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-                <a href="#" className="text-black">Ingresar</a>
-                <a href="#" className="text-white text-decoration-none px-3 py-1 bg-primary rounded-4">Registrarse</a>
+                <button className="button" id="form-open" onClick={() => setOpenLogin(true)}>Login</button>
+                <Login open={openLogin} onClose={() => setOpenLogin(false)} />
               </div>
             </div>
           </div>

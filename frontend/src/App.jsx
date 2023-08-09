@@ -8,6 +8,7 @@ import Mapa from './components/Mapa'
 import Testimonios from './components/Testimonios'
 import Timeline from './components/Timeline'
 import Footer from './components/Footer'
+import SocialMediaButtons from './components/socialmediabuttons/SocialMediaButtons'
 
 function App() {
   
@@ -22,6 +23,7 @@ function App() {
       <Testimonios/>
       <Mapa/>
       <Timeline/>
+      <SocialMediaButtons />
       <Footer/>
     </div>
 
