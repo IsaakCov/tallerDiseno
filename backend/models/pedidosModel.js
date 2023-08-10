@@ -14,6 +14,15 @@ const Pedidos = database.define(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        DireccionEnvio: {
+            type: DataTypes.JSON,
+            allowNull: false,
+            validate: {
+                notNull: {
+                    msg: 'La direccion de envio es obligatoria.'
+                }
+            }
+        },
         TotalPedido: {
             type: DataTypes.FLOAT,
             allowNull: false,
