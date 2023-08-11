@@ -1,31 +1,21 @@
-import './App.css'
-import Compromiso from './components/Compromiso'
-import Encabezado from './components/Encabezado'
-import Navbar from './components/Navbar'
-import Servicios from './components/Servicios'
-import Galeria from './components/Galeria'
-import Mapa from './components/Mapa'
-import Testimonios from './components/Testimonios'
-import Timeline from './components/Timeline'
-import Footer from './components/Footer'
-import SocialMediaButtons from './components/socialmediabuttons/SocialMediaButtons'
+import Index from './components/Home/Index'
+import MarketPlace from './components/MarketPlace/MarketPlace'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import DataProvider from './components/MarketPlace/Context/DataContext';
 
 function App() {
   
 
   return (
-    <div>
-      <Navbar/>
-      <Encabezado/>
-      <Compromiso/>
-      <Servicios/>
-      <Galeria/>
-      <Testimonios/>
-      <Mapa/>
-      <Timeline/>
-      <SocialMediaButtons />
-      <Footer/>
-    </div>
+    <DataProvider>
+    <BrowserRouter>
+        <Routes>
+        <Route path="/" element={<Index />}/>
+        <Route path="/Marketplace" element={<MarketPlace/>}/>
+
+        </Routes>
+    </BrowserRouter>
+    </DataProvider>
 
   )
 }

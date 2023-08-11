@@ -1,0 +1,17 @@
+.banner {
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./assets/portada-8789436_02.jpg);
+}
+
+.banner-container {
+    text-align: center;
+    padding: 15% 0;
+}
+
+.banner p {
+    font-size: 40px;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
