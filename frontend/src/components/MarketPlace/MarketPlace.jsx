@@ -1,4 +1,4 @@
-import React from 'react'
+/* import React from 'react'
 import Home from './Home/Home';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import DataProvider from './Context/DataContext';
@@ -13,7 +13,7 @@ return (
         <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/order" element={<Order />} />
-        <Route path="/shipping-info" element={<ShippingInfo />} />
+        <Route path="/shipping-info" element={<ShippingInfo />}/>
         <Route path="/payment-info" element={<PaymentInfo />} />
         </Routes>
     </BrowserRouter>
@@ -21,4 +21,4 @@ return (
     )
 }
 
-export default MarketPlace
+export default MarketPlace */
