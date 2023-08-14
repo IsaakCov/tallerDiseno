@@ -3,6 +3,12 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 
+//Traemos las rutas para manipular la base de datos
+//const userRouter = require('../routes/user.router');
+//const router = require('./routes/user.router');
+
+
+
 // Importa la base de datos y modelos
 const conn = require('./services/database');
 const Usuarios = require('./models/usuariosModel.js');
@@ -21,6 +27,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 // Solucionamos el intercambio de recursos cruzado de origen cruzado (CORS) con el front
 app.use(cors());
+// Introducimos el middleware para el uso de la API
+//app.use('api/v1', router);
 
 
 // Asociaciones entre modelos
@@ -33,7 +41,9 @@ Pedidos.belongsTo(Usuarios, { foreignKey: 'CorreoUsuario' });
 Pedidos.belongsToMany(Productos, { through: 'PedidoProductos' });
 Productos.belongsToMany(Pedidos, { through: 'PedidoProductos' });
 
-const port = process.env.port || 3001; // Anadir variables de entorno
+
+
+const port = process.env.port || 3001;
 
 // Conexión a la base de datos y sincronización de modelos
 const database = async () => {
@@ -55,7 +65,4 @@ app.listen(port, () => {
     database();
     console.log(`Servidor ejecutándose en el puerto ${port}`);
 });
-
-//Traemos las rutas para manipular la base de datos
-const userRouter = require('../routes/user.router')
 

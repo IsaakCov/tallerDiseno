@@ -15,6 +15,17 @@ const Productos = database.define(
             unique: true,
             
         },
+        Motivo:
+        {
+            type: DataTypes.TEXT,
+            allowNull: false,
+            validate:
+            {
+                notNull: {
+                    msg: 'La descripcion es obligatoria.'
+                }
+            }
+        },
         Descripcion:
         {
             type: DataTypes.TEXT,
