@@ -6,6 +6,9 @@ import Home from './components/MarketPlace/Home/Home';
 import Order from "./components/MarketPlace/Order/Order";
 import ShippingInfo from "./components/MarketPlace/Order/ShippingInfo"; 
 import PaymentInfo from "./components/MarketPlace/Order/PaymentInfo"; 
+import DashboardUsers from './components/Admin/DashboardUsers';
+import EditUser from './components/Admin/Pages/User/EditUser';
+import DashboardProducts from './components/Admin/DashboardProducts';
 
 function App() {
   
@@ -19,6 +22,9 @@ function App() {
         <Route path="/order" element={<Order />} />
         <Route path="/shipping-info" element={<ShippingInfo />}/>
         <Route path="/payment-info" element={<PaymentInfo />} />
+        <Route path="/AdminDashboard/Users" element={<DashboardUsers/>}/>
+        <Route path="/AdminDashboard/Products" element={<DashboardProducts/>}/>
+        <Route path="/AdminDashboard/EditUser" element={<EditUser/>}/>
         </Routes>
     </BrowserRouter>
     </DataProvider>

@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import { dataContext } from "../Context/DataContext";
 import axios from "axios";
-import './Products.css'
+//import './Products.css'
 
 const Products = () => {
     const [data, setData] = useState([]);
@@ -13,7 +13,7 @@ const Products = () => {
 
 return data.map((product)=>{
     return( 
-    <div className="card container" key={product.id}>
+    <div className="card tarjeta container" key={product.id}>
                     <div className="row align-items-center px-3">
                     <div className="col-md-4">
                         <img src={product.img} alt="img-product-card"/>
