@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { dataContext } from "../Context/DataContext";
 import { Link } from "react-router-dom";
+import '../Order/ordersummary.css'
 
 const Order = () => {
   const { cart } = useContext(dataContext);
@@ -35,7 +36,7 @@ const Order = () => {
       
       
       <div className="d-flex justify-content-between mb-5">
-        <Link to="/shipping-info" className="btn btn-secondary">
+        <Link to="/shipping-info" className="btn btnOrder">
           Continuar
         </Link>
       </div>
