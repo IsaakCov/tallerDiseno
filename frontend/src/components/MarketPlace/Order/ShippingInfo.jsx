@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { dataContext } from "../Context/DataContext";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form"; // Asegúrate de importar el useForm adecuadamente
@@ -93,7 +93,7 @@ const ShippingInfo = () => {
                   <option value="atacama">Atacama</option>
                   <option value="coquimbo">Coquimbo</option>
                   <option value="valparaiso">Valparaíso</option>
-                  <option value="libertador">Libertador B. O'higgins</option>
+                  <option value="libertador">Libertador B. Ohiggins</option>
                   <option value="biobio">Biobío</option>
                   <option value="araucania">La Araucanía</option>
                   <option value="lagos">Los Lagos</option>

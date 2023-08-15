@@ -2,9 +2,13 @@
 import '../componentsCSS/CompromisoySer.css'
 import '../componentsCSS/botones.css'
 import silla from '../img/silla.webp'
+import { useRef } from 'react';
+
 const Compromiso = () => {
+  const compromisoSectionRef = useRef(null);
+
   return (
-    <section id="compromiso">
+    <section id="compromiso" ref={compromisoSectionRef}>
     <h2 className="text-center m-5">Nuestro Compromiso</h2>
     <div className="container">
       <div className="row">

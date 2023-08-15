@@ -28,16 +28,18 @@
     font-size: 15px;
     margin-top: 10px;
     border-radius: 10px;
+    color:white
 }
 
-#product-market .card .container button:hover {
-    opacity: 0.7;
+#product-market button:hover {
+    opacity: 0.9;
 }
 
 #product-market #areaButton
 {
 align-items: center;
 justify-content: center;}
+
 
 @media screen and (max-width: 767px) {
     #product-market .card .container {

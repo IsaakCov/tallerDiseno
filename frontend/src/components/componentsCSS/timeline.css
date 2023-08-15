@@ -92,16 +92,21 @@
     left: -10px;
   }
   
-  .container-timeline h2
-  {font-size: 1.2em;}
-
   .timeline
   {
     color:white
   }
 
   .container-timeline p{
-      font-size: 16px;
+      font-size: 18px;
       line-height: 25px;
       font-weight: 400;
   }
+
+  #timeline small{
+    font-size: 17px;
+  }
+
+  .container-timeline h3
+  {font-size: 20px;
+  font-weight: bold;}

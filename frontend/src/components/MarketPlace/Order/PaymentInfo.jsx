@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { dataContext } from "../Context/DataContext";
@@ -41,7 +41,7 @@ const PaymentInfo = () => {
           <Link to="/shipping-info" className="btn btn-secondary">
             Back
           </Link>
-          <button className="btn btn-success">Confirm and Pay</button>
+          <button className="btn btn-success">Confirmar y pagar</button>
         </div>
       </div>
     </div>

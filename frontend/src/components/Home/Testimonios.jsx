@@ -1,16 +1,15 @@
 // import React from 'react'
-import '../componentsCSS/style.css'
 const Testimonios = () => {
   return (
     <section>
       <div className="row d-flex justify-content-center mt-5">
         <div className="col-md-10 col-xl-8 text-center">
-          <h3 className="mb-4">Testimonios</h3>
-          <p className="mb-4 pb-2 mb-md-5 pb-md-0">
+          <h2 className="text-center m-5">Testimonios</h2>
+          <h5 className="mb-4 pb-2 mb-md-5 pb-md-0">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet
             numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum
             quisquam eum porro a pariatur veniam.
-          </p>
+          </h5>
         </div>
       </div>
     

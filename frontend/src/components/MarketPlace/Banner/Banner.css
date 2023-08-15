@@ -2,7 +2,10 @@
     background-size: cover;
     background-position: center;
     height: 50vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./assets/portada-8789436_02.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.587), rgba(0, 0, 0, 0.4)), url(./assets/portada-8789436_02.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center; 
 }
 
 .banner-container {
@@ -10,8 +13,8 @@
     padding: 15% 0;
 }
 
-.banner p {
-    font-size: 40px;
+.banner h2 {
+    font-size: 50px;
     color: white;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }

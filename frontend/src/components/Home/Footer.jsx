@@ -1,17 +1,12 @@
-import React from 'react'
-import '../componentsCSS/CompromisoySer.css'
-import '../componentsCSS/botones.css'
-import '../componentsCSS/hero-section.css'
-import '../componentsCSS/servicios.css'
-import '../componentsCSS/style.css'
-import '../componentsCSS/timeline.css'
+// import React from 'react'
+import '../componentsCSS/footer.css'
 
 const Footer = () => {
   return (
     <footer>
         <div className="container">
-          <div className="row">
-              <div className="col-6">
+          <div className="footer-content">
+              <div className="left-column">
                   <ul>
                       <li><h3>Terminos y Condiciones</h3></li>
                       <li> <button type="button" className="btn btn-primary btnfooter" data-bs-toggle="modal" data-bs-target="#reembolso">
@@ -150,7 +145,7 @@ const Footer = () => {
                         </div></li>
                   </ul>
               </div>
-              <div className="col-6">
+              <div className="right-column">
                   <ul>
                       <li>Dirección:</li>
                       <li>Las Turquesas 934, Talagante</li>

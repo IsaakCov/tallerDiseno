@@ -3,10 +3,12 @@ import Gallery_1 from '../img/Gallery_1.jpg'
 import Gallery_2 from '../img/Gallery_2.jpg'
 import Gallery_3 from '../img/Gallery_3.jpg'
 import Gallery_4 from '../img/Gallery_4.jpg'
+import '../componentsCSS/gallery.css'
+
 const Galeria = () => {
   return (
     <section className="gallery min-vh-100">
-      <div><h1>Nuestros proyectos</h1></div>
+      <h2 className="text-center m-5">Nuestros proyectos</h2>
       <br/>
       <div className="container-lg">
          <div className="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { dataContext } from "../Context/DataContext";
 import { Link } from "react-router-dom";
 
@@ -9,6 +9,8 @@ const Order = () => {
 
   return (
     <div className="container mt-5">
+
+
       <h2>Orden de Compra</h2>
       <ul className="list-group">
         {cart.map((product) => (
@@ -30,19 +32,14 @@ const Order = () => {
         ))}
       </ul>
       <p className="mt-3">Total a Pagar: ${total}</p>
-
-      <div className="d-flex justify-content-between">
-        <Link to="/order" className="btn btn-secondary">
-          1. Order Summary
-        </Link>
+      
+      
+      <div className="d-flex justify-content-between mb-5">
         <Link to="/shipping-info" className="btn btn-secondary">
-          2. Shipping Information
-        </Link>
-        <Link to="/payment-info" className="btn btn-secondary">
-          3. Payment Information
+          Continuar
         </Link>
       </div>
-      
+
     </div>
   );
 };

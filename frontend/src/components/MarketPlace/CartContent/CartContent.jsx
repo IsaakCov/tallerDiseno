@@ -19,7 +19,7 @@ return(
     <CartElements />
     <CartTotal />
     <div className="d-flex justify-content-center align-items-center">
-          <Link to="/order" className="btn btn-primary">Pagar</Link>
+          <Link to="/order" className="btn btn-primary btn-pagar-mkp">Pagar</Link>
           </div>
 
     </>
