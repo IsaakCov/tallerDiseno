@@ -1,14 +1,8 @@
-import React from 'react'
-import './componentsCSS/CompromisoySer.css'
-import './componentsCSS/botones.css'
-import './componentsCSS/hero-section.css'
-import './componentsCSS/servicios.css'
-import './componentsCSS/style.css'
-import './componentsCSS/timeline.css'
-import Gallery_1 from './img/Gallery_1.jpg'
-import Gallery_2 from './img/Gallery_2.jpg'
-import Gallery_3 from './img/Gallery_3.jpg'
-import Gallery_4 from './img/Gallery_4.jpg'
+// import React from 'react'
+import Gallery_1 from '../img/Gallery_1.jpg'
+import Gallery_2 from '../img/Gallery_2.jpg'
+import Gallery_3 from '../img/Gallery_3.jpg'
+import Gallery_4 from '../img/Gallery_4.jpg'
 const Galeria = () => {
   return (
     <section className="gallery min-vh-100">

@@ -1,22 +1,27 @@
-#product-market .card .container .products img {
+#product-market img {
     margin: 20px;
     width: 200px;
     height: 200px;
     margin-left: 20%;
 }
 
-#product-market .card .container .products {
+#product-market
+{
+    margin-top:30px;
+    padding:20px
+}
+
+#product-market .card .container {
     flex: 1;
     display: flex;
     flex-direction: column; 
     align-items: center; 
 }
 
-#product-market #areaButton button {
+#areaButton button {
     border: none;
     outline: 0;
     padding: 10px;
-    color: white;
     background-color: #456884;
     text-align: center;
     cursor: pointer;
@@ -25,7 +30,7 @@
     border-radius: 10px;
 }
 
-#product-market .card .container .products button:hover {
+#product-market .card .container button:hover {
     opacity: 0.7;
 }
 
@@ -35,11 +40,11 @@ align-items: center;
 justify-content: center;}
 
 @media screen and (max-width: 767px) {
-    #product-market .card .container .products {
+    #product-market .card .container {
     flex-direction: column;
     }
 
-    #product-market .card .container .products img {
+    #product-market .card .container img {
     margin-bottom: 20px;
     }
 }

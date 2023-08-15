@@ -1,13 +1,8 @@
-import React from 'react'
-import './componentsCSS/CompromisoySer.css'
-import './componentsCSS/botones.css'
-import './componentsCSS/hero-section.css'
-import './componentsCSS/servicios.css'
-import './componentsCSS/style.css'
-import './componentsCSS/timeline.css'
-import sillacafe from './img/sillacafe.webp'
-import sillanegra from './img/sillanegra.webp'
-import sillonblanco from './img/sillonblanco.webp'
+// import React from 'react'
+import '../componentsCSS/servicios.css'
+import sillacafe from '../img/sillacafe.webp'
+import sillanegra from '../img/sillanegra.webp'
+import sillonblanco from '../img/sillonblanco.webp'
 const Servicios = () => {
   return (
     <section id="servicios">

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import '../componentsCSS/CompromisoySer.css'
 import '../componentsCSS/botones.css'
 import '../componentsCSS/hero-section.css'
@@ -7,7 +7,6 @@ import '../componentsCSS/style.css'
 import '../componentsCSS/timeline.css'
 import isotipo from '../img/isotipo.jpg'
 import Login from '../formularioinicioyregistro/Login';
-
 
 const Navbar = () => {
   const [openLogin, setOpenLogin] = useState(false);
@@ -41,7 +40,7 @@ const Navbar = () => {
                   <a className="nav-link" href="about">Nosotros</a>
                 </li>
                 <li className="nav-item mx-2">
-                  <a className="nav-link" href="services">Servicios</a>
+                  <a className="nav-link" href="#servicios">Servicios</a>
                 </li>
                 <li className="nav-item mx-2">
                   <a className="nav-link" href="contact">Contacto</a>
