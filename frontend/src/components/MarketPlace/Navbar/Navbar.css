@@ -1,10 +1,10 @@
-.nav-container {
+.nav-container-market {
     position: sticky;
     z-index: 3;
     top: 0;
 }
 
-.navbar {
+.navbar-market {
     position: sticky;
     display: flex;
     justify-content: space-between;
@@ -19,7 +19,7 @@
     cursor: pointer;
 }
 
-.navbar a{
+.navbar-market a{
     text-decoration: none;
 }
 
@@ -31,7 +31,7 @@
     text-decoration: none;
 }
 
-.modalBtn{
+.modalBtn-market{
     position: absolute;
     left:90%;
     transform: translate(-40%, -105%);

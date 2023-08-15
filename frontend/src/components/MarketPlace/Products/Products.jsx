@@ -13,7 +13,7 @@ const Products = () => {
 
 return data.map((product)=>{
     return( 
-    <div className="card tarjeta container" key={product.id}>
+    <div id="product-market" className="card container products" key={product.id}>
                     <div className="row align-items-center px-3">
                     <div className="col-md-4">
                         <img src={product.img} alt="img-product-card"/>

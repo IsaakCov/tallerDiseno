@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import '../componentsCSS/servicios.css'
 import sillacafe from '../img/sillacafe.webp'
 import sillanegra from '../img/sillanegra.webp'
