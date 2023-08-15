@@ -1,0 +1,45 @@
+#product-market .card .container .products img {
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    margin-left: 20%;
+}
+
+#product-market .card .container .products {
+    flex: 1;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+}
+
+#product-market #areaButton button {
+    border: none;
+    outline: 0;
+    padding: 10px;
+    color: white;
+    background-color: #456884;
+    text-align: center;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+#product-market .card .container .products button:hover {
+    opacity: 0.7;
+}
+
+#product-market #areaButton
+{
+align-items: center;
+justify-content: center;}
+
+@media screen and (max-width: 767px) {
+    #product-market .card .container .products {
+    flex-direction: column;
+    }
+
+    #product-market .card .container .products img {
+    margin-bottom: 20px;
+    }
+}
