@@ -1,13 +1,6 @@
 // Habilitamos las funciones de express
+const app = require('./app/app');
 const express = require('express');
-const app = express();
-const cors = require('cors');
-
-//Traemos las rutas para manipular la base de datos
-//const userRouter = require('../routes/user.router');
-//const router = require('./routes/user.router');
-
-
 
 // Importa la base de datos y modelos
 const conn = require('./services/database');
@@ -18,18 +11,6 @@ const Productos = require('./models/productosModel.js');
 
 // Importa los controladores de rutas
 const createUsuario = require('./controllers/usuarioControllers');
-const morgan = require('morgan');
-
-// Middleware para analizar el cuerpo de las solicitudes
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-// Ocupamos morgan, especificando que es para desarrollo, con el fin de llevar registro de las requests.
-app.use(morgan('dev'));
-// Solucionamos el intercambio de recursos cruzado de origen cruzado (CORS) con el front
-app.use(cors());
-// Introducimos el middleware para el uso de la API
-//app.use('api/v1', router);
-
 
 // Asociaciones entre modelos
 Usuarios.hasMany(FormularioDeConsultas, { foreignKey: 'CorreoUsuario' });
@@ -40,7 +21,6 @@ Pedidos.belongsTo(Usuarios, { foreignKey: 'CorreoUsuario' });
 
 Pedidos.belongsToMany(Productos, { through: 'PedidoProductos' });
 Productos.belongsToMany(Pedidos, { through: 'PedidoProductos' });
-
 
 
 const port = process.env.port || 3001;
