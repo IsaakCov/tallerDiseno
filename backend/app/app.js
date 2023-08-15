@@ -12,7 +12,7 @@ app.use(morgan('dev'));
 // Solucionamos el intercambio de recursos cruzado de origen cruzado (CORS) con el front
 app.use(cors());
 // Introducimos el middleware para el uso de la API
-app.use('api/v1', router);
+//app.use('api/v1', router);
 
 
 module.exports = app;
