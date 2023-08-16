@@ -1,0 +1,15 @@
+###
+# Crear un nuevo usuario
+###
+
+POST http://localhost:3001/api/v1/usuarios/createUsuario
+Content-Type: application/json
+
+{
+    "Correo": "nuevo_usuario@example.com",
+    "Nombre": "Nuevo",
+    "Apellido": "Usuario",
+    "Telefono": "1234567890",
+    "Contrasena": "nuevacontrasena",
+    "Role": "USUARIO"
+}

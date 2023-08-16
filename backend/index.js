@@ -1,5 +1,6 @@
+// Habilitamos las funciones de express
+const app = require('./app/app');
 const express = require('express');
-const app = express();
 
 // Importa la base de datos y modelos
 const conn = require('./services/database');
@@ -7,13 +8,6 @@ const Usuarios = require('./models/usuariosModel.js');
 const FormularioDeConsultas = require('./models/formularioModel.js');
 const Pedidos = require('./models/pedidosModel.js');
 const Productos = require('./models/productosModel.js');
-
-// Importa los controladores de rutas
-const createUsuario = require('./controllers/createUsuario');
-
-// Middleware para analizar el cuerpo de las solicitudes
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 // Asociaciones entre modelos
 Usuarios.hasMany(FormularioDeConsultas, { foreignKey: 'CorreoUsuario' });
@@ -25,7 +19,8 @@ Pedidos.belongsTo(Usuarios, { foreignKey: 'CorreoUsuario' });
 Pedidos.belongsToMany(Productos, { through: 'PedidoProductos' });
 Productos.belongsToMany(Pedidos, { through: 'PedidoProductos' });
 
-const port = 3001;
+
+const port = process.env.port || 3001;
 
 // Conexión a la base de datos y sincronización de modelos
 const database = async () => {
@@ -47,7 +42,4 @@ app.listen(port, () => {
     database();
     console.log(`Servidor ejecutándose en el puerto ${port}`);
 });
-
-// Rutas
-app.post("/createUsuario", createUsuario);
 
