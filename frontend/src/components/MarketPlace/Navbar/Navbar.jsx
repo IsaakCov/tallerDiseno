@@ -9,15 +9,15 @@ const Navbar = () => {
     const { cart } = useContext(dataContext);
     const [openModal, setOpenModal]= useState(false);
 return (
-    <div className= "barra" >
-        <nav className="navbar">
+    <div className= "barra-market" >
+        <nav className="navbar-market">
             <Link to={"/"}>    
                 <h1 className="navbar-logo">Taller Diseño</h1>
             </Link>
         </nav>
 
-        <div className="nav-container">
-        <button className='modalBtn' onClick={()=>setOpenModal(true)}>🛒
+        <div className="nav-container-market">
+        <button className='modalBtn-market' onClick={()=>setOpenModal(true)}>🛒
         {cart.length > 0 ? <TotalItems/> : null}
         </button>
         <CartContent open={openModal} onClose={()=> setOpenModal(false)}/>
