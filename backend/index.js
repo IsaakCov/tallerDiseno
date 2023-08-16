@@ -10,7 +10,7 @@ const Pedidos = require('./models/pedidosModel.js');
 const Productos = require('./models/productosModel.js');
 
 // Importa los controladores de rutas
-const createUsuario = require('./controllers/usuarioControllers');
+//const createUsuario = require('./controllers/usuarioControllers');
 
 // Asociaciones entre modelos
 Usuarios.hasMany(FormularioDeConsultas, { foreignKey: 'CorreoUsuario' });
