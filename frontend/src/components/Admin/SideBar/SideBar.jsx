@@ -3,20 +3,20 @@ import './sidebar.css'
 
 function SideBar() {
   return (
-    <div className="sideBar">
-        <div className="sidebarWrapper">
-          <div className="sidebarMenu">
-            <h3 className="sidebarTitle">DashBoard</h3>
-            <ul className="sidebarList">
-              <li className="sidebarListItem active">
+    <div className="sideBarAdmin">
+        <div className="sidebarWrapperAdmin">
+          <div className="sidebarMenuAdmin">
+            <h3 className="sidebarTitleAdmin">DashBoard</h3>
+            <ul className="sidebarListAdmin">
+              <li className="sidebarListItemAdmin active">
               <i className="bi bi-person"></i>
               Usuarios
               </li>
-              <li className="sidebarListItem">
+              <li className="sidebarListItemAdmin">
               <i className="bi bi-shop"></i>
               Productos
               </li>
-              <li className="sidebarListItem">
+              <li className="sidebarListItemAdmin">
               <i className="bi bi-box-seam"></i>
               Pedidos
               </li>

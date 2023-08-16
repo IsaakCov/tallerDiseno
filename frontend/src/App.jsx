@@ -9,6 +9,7 @@ import PaymentInfo from "./components/MarketPlace/Order/PaymentInfo";
 import DashboardUsers from './components/Admin/DashboardUsers';
 import EditUser from './components/Admin/Pages/User/EditUser';
 import DashboardProducts from './components/Admin/DashboardProducts';
+import DashboardOrders from './components/Admin/DashboardOrders';
 
 function App() {
   
@@ -24,7 +25,10 @@ function App() {
         <Route path="/payment-info" element={<PaymentInfo />} />
         <Route path="/AdminDashboard/Users" element={<DashboardUsers/>}/>
         <Route path="/AdminDashboard/Products" element={<DashboardProducts/>}/>
-        <Route path="/AdminDashboard/EditUser" element={<EditUser/>}/>
+        <Route path="/AdminDashboard/User/:userId" element={<EditUser/>}/>
+        <Route path="/AdminDashBoard/Products" element={<DashboardProducts/>}/>
+        <Route path="/AdminDashBoard/Orders" element={<DashboardOrders/>}/>
+        
         </Routes>
     </BrowserRouter>
     </DataProvider>

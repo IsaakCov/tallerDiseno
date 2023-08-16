@@ -1,7 +1,7 @@
-.userList{
+.userListAdmin{
     flex: 4;
 }
-.userListEdit{
+.userListEditAdmin{
     border: none;
     border-radius: 10px;
     padding: 5px 10px;

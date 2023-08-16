@@ -1,8 +1,15 @@
-import React from 'react'
-import './userList.css'
+import React, { useState } from 'react'
+import { Link } from "react-router-dom"
+import './userList.css';
 import { DataGrid } from '@mui/x-data-grid';
+import { userRows } from "../UserList/UserRows"
 
 const UserList = () => {
+    const [data, setData] = useState(userRows);
+    const handleDelete = (id) => {
+        setData(data.filter((item) => item.id == id));
+    };
+    
     const columns = [
         { field: 'id', headerName: 'ID', width: 70 },
         { field: 'userName', headerName: 'Nombre Usuario', width: 200 },
@@ -25,8 +32,11 @@ const UserList = () => {
         renderCell:(params)=>{
             return(
                 <>
-                <button className="userListEdit">Editar</button>
-                <i class="bi bi-trash3"></i>
+                <Link to={"/AdminDashboard/User/"+ params.row.id}>
+                <button className="userListEditAdmin">Editar</button>
+                </Link>
+
+                    <i class="bi bi-trash3" onClick={()=>handleDelete(params.row.id)}></i>
                 </>
             )
         }
@@ -34,82 +44,11 @@ const UserList = () => {
 
     ];
     
-    const rows = [
-        { id: 1, 
-            userName: 'Arachi',
-            direccion: 'calle falsa 123',
-            email:"example@gmail.com",
-            status: "active",
-            transaction: "$120.00"
-        },
-        { id: 2, 
-            userName: 'Diewisky', 
-            direccion: 'calle falsa 123',
-            email:"example@gmail.com",
-            status: "active",
-            transaction: "$120.00"
-        },
-        { id: 3, 
-            userName: 'Fer', 
-            direccion: 'calle falsa 123',
-            email:"example@gmail.com",
-            status: "active",
-            transaction: "$120.00"
-        },
-        { id: 4, 
-            userName: 'Isacc', 
-            direccion: 'calle falsa 123',
-            email:"example@gmail.com",
-            status: "active",
-            transaction: "$120.00"
-        },
-        { id: 5, 
-            userName: 'Pedro', 
-            direccion: 'calle falsa 123',
-            email:"example@gmail.com",
-            status: "active",
-            transaction: "$120.00"
-        },
-        { id: 6, 
-            userName: 'Arachi',
-            direccion: 'calle falsa 123',
-            email:"example@gmail.com",
-            status: "active",
-            transaction: "$120.00"
-        },
-        { id: 7, 
-            userName: 'Diewisky', 
-            direccion: 'calle falsa 123',
-            email:"example@gmail.com",
-            status: "active",
-            transaction: "$120.00"
-        },
-        { id: 8, 
-            userName: 'Fer', 
-            direccion: 'calle falsa 123',
-            email:"example@gmail.com",
-            status: "active",
-            transaction: "$120.00"
-        },
-        { id: 9, 
-            userName: 'Isacc', 
-            direccion: 'calle falsa 123',
-            email:"example@gmail.com",
-            status: "active",
-            transaction: "$120.00"
-        },
-        { id: 10, 
-            userName: 'Pedro', 
-            direccion: 'calle falsa 123',
-            email:"example@gmail.com",
-            status: "active",
-            transaction: "$120.00"
-        }
-    ];
 return (
-    <div className="userList">
+    <div className="userListAdmin">
     <DataGrid
-        rows={rows}
+        rows={userRows}
+        disableRowSelectionOnClick
         columns={columns}
         initialState={{
         pagination: {
