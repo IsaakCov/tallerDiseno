@@ -9,9 +9,6 @@ const FormularioDeConsultas = require('./models/formularioModel.js');
 const Pedidos = require('./models/pedidosModel.js');
 const Productos = require('./models/productosModel.js');
 
-// Importa los controladores de rutas
-//const createUsuario = require('./controllers/usuarioControllers');
-
 // Asociaciones entre modelos
 Usuarios.hasMany(FormularioDeConsultas, { foreignKey: 'CorreoUsuario' });
 FormularioDeConsultas.belongsTo(Usuarios, { foreignKey: 'CorreoUsuario' });

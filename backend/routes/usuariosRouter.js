@@ -6,7 +6,7 @@ const {
     getAllUsuarios,
     deleteUsuario,
     updateUsuario
-} = require('../controllers/usuarioController');
+} = require('../controllers/usuarioControllers');
 
 router.post('/createUsuario', createUsuario);
 router.get('/findUsuario/:correo', findUsuario);
