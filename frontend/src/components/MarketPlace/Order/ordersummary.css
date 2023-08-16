@@ -1,0 +1,18 @@
+.btnOrder {
+    border: none;
+    outline: 0;
+    padding: 10px;
+    background-color: #456884;
+    text-align: center;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 10px;
+    margin: 2px;
+    border-radius: 10px;
+    color:white
+}
+
+.btnOrder:hover {
+    opacity: 0.9;
+    background-color: #6087a7;
+}

@@ -1,7 +1,8 @@
-import React from "react";
+// import React from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { dataContext } from "../Context/DataContext";
+import "../Order/ordersummary.css";
 
 const PaymentInfo = () => {
   const { cart } = useContext(dataContext);
@@ -32,16 +33,17 @@ const PaymentInfo = () => {
         ))}
       </ul>
       <p className="mt-3">Total a pagar: ${total}</p>
-      
+
       <div className="container mt-5">
-        <h2>Payment Information</h2>
-        {/* Display payment details and any relevant product details */}
-        
+        <h2>Datos de transferencia</h2>
+        <div className="card">
+        </div>
+
         <div className="d-flex justify-content-between">
-          <Link to="/shipping-info" className="btn btn-secondary">
-            Back
+          <Link to="/shipping-info" className="btn btnOrder">
+            Volver
           </Link>
-          <button className="btn btn-success">Confirm and Pay</button>
+          <button className="btn btnOrder">Confirmar y pagar</button>
         </div>
       </div>
     </div>

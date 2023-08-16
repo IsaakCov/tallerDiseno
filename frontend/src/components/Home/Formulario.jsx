@@ -1,9 +1,8 @@
-import React from 'react'
+// import React from 'react'
 import '../componentsCSS/CompromisoySer.css'
 import '../componentsCSS/botones.css'
 import '../componentsCSS/hero-section.css'
 import '../componentsCSS/servicios.css'
-import '../componentsCSS/style.css'
 import '../componentsCSS/timeline.css'
 
 const Formulario = () => {
@@ -46,4 +45,4 @@ const Formulario = () => {
   )
 }
 
-export default Formulario;
+export default Formulario

@@ -1,31 +1,28 @@
 // import React from 'react'
 import '../componentsCSS/servicios.css'
-import sillacafe from '../img/sillacafe.webp'
-import sillanegra from '../img/sillanegra.webp'
-import sillonblanco from '../img/sillonblanco.webp'
+import sillacafe from '../img/sillacafe.png'
+import sillonblanco from '../img/sillonblanco.png'
+import sillonrojo from '../img/sillonrojo.png'
 const Servicios = () => {
   return (
     <section id="servicios">
-    <h1 className="text-center m-5">Nuestros Servicios</h1>
+    <h2 className="text-center m-5">Nuestros Servicios</h2>
     <div className="container">
       <div className="row g-3">
         <div className="col-12 col-md-6 col-lg-4 col-container">
           <div className="card">
             <img
-              src={sillanegra}
+              src={sillacafe}
               alt="Mueble restaurado"
               className="card-img-top"
             />
             <div className="card-body">
-               <h5 className="card-tittle">Limpieza</h5>
+               <h3 className="card-tittle">Limpieza</h3>
                 <p className="card-sub-title">
-                Silla negra
+                Recupera luminosidad
                 </p>
               <p className="card-info">
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                animi sint explicabo reprehenderit molestias. Eos ea ullam
-                natus, non dolorem inventore? Fugiat magnam repellat id
-                voluptatibus mollitia vitae minus nisi!
+              Cuando te enfrentas a manchas en tus sillas o sillones, el servicio de limpieza se erige como la opción más sensata y eficiente para devolverles su esplendor original y garantizar su mantenimiento a largo plazo.
               </p>
               <button className="card-btn">Cotizar</button>
             </div>
@@ -36,20 +33,19 @@ const Servicios = () => {
         <div className="col-12 col-md-6 col-lg-4 col-container">
           <div className="card">
             <img
-              src={sillacafe}
+              src={sillonblanco}
               alt="Mueble restaurado"
               className="card-img-top"
             />
             <div className="card-body">
-              <h2 className="card-tittle">Restauración</h2>
+              <h3 className="card-tittle">Restauración</h3>
               <p className="card-sub-title">
-                Mueble antiguo
-                <p className="card-info"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                    animi sint explicabo reprehenderit molestias. Eos ea ullam
-                    natus, non dolorem inventore? Fugiat magnam repellat id
-                    voluptatibus mollitia vitae minus nisi!</p>
-                <button className="card-btn">Cotizar</button>
+              Renueva la Elegancia
+                </p>
+              <p className="card-info">
+              Nuestro servicio de restauración está aquí para devolverles su esplendor original. Ya sea para restaurar colores desvanecidos o renovar la belleza de piezas antiguas, nuestro equipo de expertos trabaja con pasión y dedicación para revitalizar tus muebles.
               </p>
+              <button className="card-btn">Cotizar</button>
             </div>
           </div>
         </div>
@@ -57,21 +53,20 @@ const Servicios = () => {
         <div className="col-12 col:justify-content-center  col-md-6 col-lg-4 col-container">
             <div className="card">
               <img
-                src={sillonblanco}
+                src={sillonrojo}
                 alt="Mueble restaurado"
                 className="card-img-top"
               />
               <div className="card-body">
-                <h2 className="card-tittle">Tapicería</h2>
-                <p className="card-sub-title">
-                  Sillon blanco
-                  <p className="card-info"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                      animi sint explicabo reprehenderit molestias. Eos ea ullam
-                      natus, non dolorem inventore? Fugiat magnam repellat id
-                      voluptatibus mollitia vitae minus nisi!</p>
-                  <button className="card-btn">Cotizar</button>
+              <h3 className="card-tittle">Tapicería</h3>
+              <p className="card-sub-title">
+              Transforma tus favoritos
                 </p>
-              </div>
+              <p className="card-info">
+              Nuestro servicio de tapicería está aquí para revivir y transformar tus piezas favoritas. Con una combinación de habilidad artesanal y materiales de alta calidad, trabajamos con cuidado para devolver a tus muebles tapizados su belleza y comodidad.
+              </p>
+              <button className="card-btn">Cotizar</button>
+            </div>
             </div>
           </div>
       </div>

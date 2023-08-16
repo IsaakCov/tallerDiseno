@@ -1,4 +1,5 @@
-import React from 'react'
+// import React from 'react'
+import '../componentsCSS/hero-section.css'
 
 const Encabezado = () => (
     <section id="slide-section" className="container-fluid p-0">
@@ -8,7 +9,7 @@ const Encabezado = () => (
                 <div className="carousel-item active" id="slide1">
                     <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div className="p-md-3">
-                            <h5 className="section-title text-white animated slideInDown">Taller Diseño</h5>
+                            <h4 className="section-title text-white animated slideInDown">Taller Diseño</h4>
                             <h2 className="display-3 text-white m-4 animated slideInDown ">Personaliza tus muebles</h2>
                             <a href="" className="btn btn-light py-md-3 px-md-5 animated slideInRight">¡Contáctanos!</a>
                         </div>
@@ -18,7 +19,7 @@ const Encabezado = () => (
                 <div className="carousel-item" id="slide2">
                     <div className="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
                         <div className="p-md-3">
-                            <h5 className="section-title text-white animated slideInDown">Diseños Iconográficos</h5>
+                            <h4 className="section-title text-white animated slideInDown">Diseños Iconográficos</h4>
                             <h2 className="display-3 text-white m-4 animated slideInDown ">Conoce nuestros proyectos</h2>
                             <a href="#" className="btn btn-light py-md-3 px-md-5 ms-auto animated slideInRight">Ver más</a>
                         </div>

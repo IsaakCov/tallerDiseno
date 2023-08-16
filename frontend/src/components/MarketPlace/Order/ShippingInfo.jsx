@@ -1,16 +1,19 @@
-import React, { useContext } from "react";
+import { useContext, useState } from "react";
 import { dataContext } from "../Context/DataContext";
-import { Link } from "react-router-dom";
-import { useForm } from "react-hook-form"; // Asegúrate de importar el useForm adecuadamente
+import { Link} from "react-router-dom";
+import { useForm } from "react-hook-form"; 
+import '../Order/ordersummary.css'
 
 const ShippingInfo = () => {
+  const [confirmed, setConfirmed] = useState(false);
   const { cart } = useContext(dataContext);
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const total = cart.reduce((acc, el) => acc + el.price * el.quanty, 0);
 
   const onSubmit = (data) => {
-    console.log(data); // aquí puedes enviar los datos del formulario
+    console.log(data);
+    setConfirmed(true);
   };
 
   return (
@@ -93,7 +96,7 @@ const ShippingInfo = () => {
                   <option value="atacama">Atacama</option>
                   <option value="coquimbo">Coquimbo</option>
                   <option value="valparaiso">Valparaíso</option>
-                  <option value="libertador">Libertador B. O'higgins</option>
+                  <option value="libertador">Libertador B. Ohiggins</option>
                   <option value="biobio">Biobío</option>
                   <option value="araucania">La Araucanía</option>
                   <option value="lagos">Los Lagos</option>
@@ -135,22 +138,22 @@ const ShippingInfo = () => {
             </fieldset>
 
         {/* botones */}
-        <button type="submit" className="btn btn-primary">
-              Continuar
+
+              
+        <Link to="/order" className="btn btnOrder">
+        Volver
+        </Link>
+
+        {!confirmed ? (
+        <button type="submit" className="btn btnOrder">
+         Confirmar
         </button>
-        
-        <div className="d-flex justify-content-between">
-          <Link to="/order" className="btn btn-secondary">
-          1. Order Summary
-          </Link>
-          <Link to="/shipping-info" className="btn btn-secondary">
-          2. Shipping Information
-          </Link>
-          <Link to="/payment-info" className={`btn btn-secondary ${Object.keys(errors).length !== 0 ? 'disabled' : ''}`}>
-          3. Payment Information
-          </Link>
-        </div>
-      
+        ) : (
+        <Link to="/payment-info" className="btn btnOrder">
+        Continuar al pago
+        </Link>
+        )}
+
       </form>
     </div>
   );
