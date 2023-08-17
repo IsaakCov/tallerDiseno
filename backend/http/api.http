@@ -31,5 +31,7 @@ Content-Type: application/json
         "Medidas" : "abc"
 }
 
+###
 GET http://localhost:3001/api/v1/productos/getAllProductos
 Content-Type: application/json
+

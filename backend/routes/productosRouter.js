@@ -3,13 +3,13 @@ const router = express.Router();
 const {
     createProducto,
     getAllProductos,
-    // deleteProducto,
-    // updateProducto
+    deleteProducto,
+    updateProductos
 } = require('../controllers/productoControllers');
 
 router.post('/createProducto', createProducto);
 router.get('/getAllProductos', getAllProductos);
-// router.delete('/deleteProducto/:correo', deleteProducto);
-// router.put('/updateProducto/:correo', updateProducto);
+router.delete('/deleteProducto/:idProducto', deleteProducto);
+router.put('/updateProducto/:idProducto', updateProductos);
 
 module.exports = router;
