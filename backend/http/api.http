@@ -13,3 +13,23 @@ Content-Type: application/json
     "Contrasena": "nuevacontrasena",
     "Role": "USUARIO"
 }
+
+###
+#Crear nuevo producto
+###
+
+POST http://localhost:3001/api/v1/productos/createProducto
+Content-Type: application/json
+
+{
+        "Nombre": "abc",
+        "Descripcion": "abc",
+        "Precio": 1.200,
+        "Stock": 5,
+        "Imagen": "abc",
+        "Color": "abc",
+        "Medidas" : "abc"
+}
+
+GET http://localhost:3001/api/v1/productos/getAllProductos
+Content-Type: application/json

@@ -15,14 +15,14 @@ const Productos = database.define(
             unique: true,
             
         },
-        Motivo:
+        Nombre:
         {
             type: DataTypes.TEXT,
             allowNull: false,
             validate:
             {
                 notNull: {
-                    msg: 'La descripcion es obligatoria.'
+                    msg: 'El nombre es obligatoria.'
                 }
             }
         },
@@ -59,7 +59,7 @@ const Productos = database.define(
             validate:
             {
                 notNull: {
-                    msg: 'El precio es obligatorio.'
+                    msg: 'La medida es obligatorio.'
                 }
             }
         },
