@@ -1,15 +1,6 @@
-<<<<<<< HEAD:frontend/src/components/Formulario.jsx
 import React, { useState } from "react";
 import axios from "axios";
 import "./componentsCSS/style.css";
-=======
-// import React from 'react'
-import '../componentsCSS/CompromisoySer.css'
-import '../componentsCSS/botones.css'
-import '../componentsCSS/hero-section.css'
-import '../componentsCSS/servicios.css'
-import '../componentsCSS/timeline.css'
->>>>>>> Pedro:frontend/src/components/Home/Formulario.jsx
 
 const Formulario = () => {
   const [formData, setFormData] = useState({
@@ -108,4 +99,4 @@ const Formulario = () => {
   );
 };
 
-export default Formulario
+export default Formulario;
