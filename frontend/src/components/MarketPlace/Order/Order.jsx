@@ -6,7 +6,7 @@ import '../Order/ordersummary.css'
 const Order = () => {
   const { cart } = useContext(dataContext);
 
-  const total = cart.reduce((acc, el) => acc + el.price * el.quanty, 0);
+  const total = cart.reduce((acc, el) => acc + el.Precio * el.Stock, 0);
 
   return (
     <div className="container mt-5">
