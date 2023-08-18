@@ -7,7 +7,7 @@ const conn = require('./services/database');
 const Usuarios = require('./models/usuariosModel.js');
 const FormularioDeConsultas = require('./models/formularioModel.js');
 const Pedidos = require('./models/pedidosModel.js');
-const Productos = require('./models/productosModel.js');
+const Productos = require('./models/productoModel.js');
 
 // Asociaciones entre modelos
 Usuarios.hasMany(FormularioDeConsultas, { foreignKey: 'CorreoUsuario' });

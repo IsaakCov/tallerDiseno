@@ -1,0 +1,52 @@
+#product-market img {
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    margin-left: 20%;
+}
+
+#product-market
+{
+    margin-top:30px;
+    padding:20px
+}
+
+#product-market .card .container {
+    flex: 1;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+}
+
+#areaButton button {
+    border: none;
+    outline: 0;
+    padding: 10px;
+    background-color: #456884;
+    text-align: center;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    color:white
+}
+
+#product-market button:hover {
+    opacity: 0.9;
+}
+
+#product-market #areaButton
+{
+align-items: center;
+justify-content: center;}
+
+
+@media screen and (max-width: 767px) {
+    #product-market .card .container {
+    flex-direction: column;
+    }
+
+    #product-market .card .container img {
+    margin-bottom: 20px;
+    }
+}

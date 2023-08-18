@@ -1,0 +1,16 @@
+.userListAdmin{
+    flex: 4;
+}
+.userListEditAdmin{
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: #3bb077;
+    color: white;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.bi-trash3{
+    color: red;
+    cursor: pointer;
+}
