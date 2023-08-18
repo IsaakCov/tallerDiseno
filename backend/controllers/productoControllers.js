@@ -84,10 +84,7 @@ const createProducto = async (req, res) => {
             res.status(400).json({msg: 'Error al eliminar el producto', error: error.message});
         }
         }
-    
-
-
-
+        
 module.exports = {
     createProducto,
     getAllProductos,
