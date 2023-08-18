@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-import "./App.css";
-import Compromiso from "./components/Compromiso";
-import Encabezado from "./components/Encabezado";
-import Navbar from "./components/Navbar";
-import Servicios from "./components/Servicios";
-import Galeria from "./components/Galeria";
-import Mapa from "./components/Mapa";
-import Testimonios from "./components/Testimonios";
-import Timeline from "./components/Timeline";
-import Footer from "./components/Footer";
-import SocialMediaButtons from "./components/socialmediabuttons/SocialMediaButtons";
-import Formulario from "./components/Formulario";
-=======
 import Index from './components/Home/Index'
 /* import MarketPlace from './components/MarketPlace/MarketPlace' */
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -24,26 +10,9 @@ import DashboardUsers from './components/Admin/DashboardUsers';
 import EditUser from './components/Admin/Pages/User/EditUser';
 import DashboardProducts from './components/Admin/DashboardProducts';
 import DashboardOrders from './components/Admin/DashboardOrders';
->>>>>>> Pedro
 
 function App() {
   return (
-<<<<<<< HEAD
-    <div>
-      <Navbar />
-      <Encabezado />
-      <Compromiso />
-      <Servicios />
-      <Galeria />
-      <Testimonios />
-      <Mapa />
-      <Timeline />
-      <Formulario />
-      <SocialMediaButtons />
-      <Footer />
-    </div>
-  );
-=======
     <DataProvider>
     <BrowserRouter>
         <Routes>
@@ -63,7 +32,6 @@ function App() {
     </DataProvider>
 
   )
->>>>>>> Pedro
 }
 
 export default App;
