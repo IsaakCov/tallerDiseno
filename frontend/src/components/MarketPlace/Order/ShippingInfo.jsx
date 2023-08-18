@@ -9,7 +9,7 @@ const ShippingInfo = () => {
   const { cart } = useContext(dataContext);
   const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const total = cart.reduce((acc, el) => acc + el.price * el.quanty, 0);
+  const total = cart.reduce((acc, el) => acc + el.Precio * el.Stock, 0);
 
   const onSubmit = (data) => {
     console.log(data);
@@ -21,18 +21,18 @@ const ShippingInfo = () => {
       <h2>Resumen de Compra</h2>
       <ul className="list-group">
         {cart.map((product) => (
-          <li key={product.id} className="list-group-item">
+          <li key={product.idProducto} className="list-group-item">
           <div className="d-flex align-items-center">
             <img
-              src={product.img}
-              alt={product.name}
+              src={product.Imagen}
+              alt={product.Nombre}
               className="img-thumbnail mr-3"
               style={{ maxWidth: "100px" }}
             />
             <div>
-              <h4 className="px-5">{product.name}</h4>
-              <p className="px-5">Cantidad: {product.quanty}</p>
-              <p className="px-5">Precio: ${product.price}</p>
+              <h4 className="px-5">{product.Nombre}</h4>
+              <p className="px-5">Cantidad: {product.Stock}</p>
+              <p className="px-5">Precio: ${product.Precio}</p>
             </div>
           </div>
         </li>
