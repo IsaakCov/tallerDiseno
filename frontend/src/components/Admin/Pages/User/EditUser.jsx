@@ -11,7 +11,7 @@ const EditUser = () => {
   return (
     <>
     <TopBar/>
-    <div className="container">
+    <div className="container edituser">
         <SideBar/>
         <User/>
     </div> 

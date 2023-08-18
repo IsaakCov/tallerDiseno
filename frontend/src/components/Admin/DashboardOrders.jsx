@@ -9,7 +9,7 @@ const DashboardOrders = () => {
 return (
     <>
     <TopBar/>
-    <div className="container">
+    <div className="container dashboard">
         <SideBar/>
         <OrderList/>
     </div> 
