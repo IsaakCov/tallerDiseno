@@ -5,15 +5,15 @@ const CartItemCounter = ({product}) => {
     const { cart, setCart, buyProducts } = useContext(dataContext);
 
     const decrese =()=>{
-        const productrepeat = cart.find((item) => item.id === product.id);
+        const productrepeat = cart.find((item) => item.idProducto === product.idProducto);
 
-        productrepeat.quanty !== 1 &&
-        setCart(cart.map((item)=>(item.id === product.id ? {...product, quanty: productrepeat.quanty - 1} : item)));
+        productrepeat.Stock !== 1 &&
+        setCart(cart.map((item)=>(item.idProducto === product.idProducto ? {...product, Stock: productrepeat.Stock - 1} : item)));
     };
   return (
     <>
     <p className='counter-button'onClick={()=>decrese(product)}>➖</p>
-    <p>{product.quanty}</p>
+    <p>{product.Stock}</p>
     <p className='counter-button'onClick={()=>buyProducts(product)}>➕</p>
     </>
   );

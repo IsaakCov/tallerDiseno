@@ -44,7 +44,7 @@
         "name": "Banqueta",
         "price": 50000,
         "color": "Blanco",
-        "medidas":"75 cm x 45 cm x 45 alto",
+        "medidas":"75 cm x 45 cm x 45 cm",
         "img":  "./Productos/Banqueta.jpg", 
         "quanty": 1
     }

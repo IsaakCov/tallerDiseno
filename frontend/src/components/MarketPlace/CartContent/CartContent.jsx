@@ -13,7 +13,7 @@ if(!open) return null
 return(
   <div className='overlay'>
     <div className='modalContainer'>
-    <p onClick={onClose} className="closeBtn">X</p>
+    <p onClick={onClose} className="closeBtn" ><a href="#" class="pe-auto">✖️</a></p>
   {cart.length > 0?(
     <>
     <CartElements />

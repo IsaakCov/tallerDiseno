@@ -8,9 +8,9 @@ const DataProvider = ({children})=> {
 
 
     const buyProducts = (product) => {
-        const productrepeat = cart.find((item) => item.id === product.id);
+        const productrepeat = cart.find((item) => item.idProducto === product.idProducto);
         if(productrepeat){
-            setCart(cart.map((item)=>(item.id === product.id ? {...product, quanty: productrepeat.quanty + 1} : item)));
+            setCart(cart.map((item)=>(item.idProducto === product.idProducto ? {...product, Stock: productrepeat.Stock + 1} : item)));
         }else{
             setCart([...cart, product]);
         }
