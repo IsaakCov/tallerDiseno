@@ -1,19 +1,21 @@
 import { useContext } from "react";
+import PropTypes from "prop-types"; // Importa PropTypes
 import { dataContext } from "../Context/DataContext";
-import CartElements from "./CartElements"
+import CartElements from "./CartElements";
 import CartTotal from "./CartTotal";
 import { Link } from "react-router-dom";
 
+const CartContent = ({ onClose, open }) => { // Agrega 'open' a los props
+  const { cart } = useContext(dataContext);
 
-const CartContent = ({open, onClose}) => {
-  const {cart} = useContext(dataContext);
-
-if(!open) return null
+  if (!open) {
+    return null;
+  }
 
 return(
   <div className='overlay'>
     <div className='modalContainer'>
-    <p onClick={onClose} className="closeBtn" ><a href="#" class="pe-auto">✖️</a></p>
+    <p onClick={onClose} className="closeBtn" ><a href="#" className="pe-auto">✖️</a></p>
   {cart.length > 0?(
     <>
     <CartElements />
@@ -31,5 +33,10 @@ return(
 
 )
 }
+
+CartContent.propTypes = {
+  onClose: PropTypes.func.isRequired, // 'onClose' debe ser una función requerida
+  open: PropTypes.bool.isRequired, // 'open' debe ser un booleano requerido
+};
 
 export default CartContent;

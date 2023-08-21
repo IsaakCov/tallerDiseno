@@ -1,40 +1,39 @@
-import React, { useState } from 'react'
-import "./productlist.css"
+import { useState, useEffect } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
-import { productRows } from "./ProductRows"
-import { Link } from "react-router-dom"
-
+// import { Link } from 'react-router-dom';
 
 const ProductList = () => {
+  const [data, setData] = useState([]);
 
-        const [data, setData]=useState(productRows);
-        const handleDelete = (id) => {
-            setData(data.filter((item) => item.id == id));
-        };
-        
+  useEffect(() => {
+    // Obtener los datos desde la base de datos
+    fetch('http://localhost:3001/api/v1/productos/getAllProductos') // Reemplaza con la URL correcta de tu API
+      .then(response => response.json())
+      .then(data => {
+        setData(data); // Actualizar el estado con los datos obtenidos
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
 
-        const columns = [
-        { field: 'id', headerName: 'ID', width: 70 },
-        { field: 'name', headerName: 'Producto', width: 200 },
-        { field: 'medidas', headerName: 'Medidas', width: 200 },
-        { field: 'price', headerName: 'Precio', width: 200 },
-        ];
-    return (
-        <div className="productList">
-        <DataGrid
-        rows={productRows}
-        disableRowSelectionOnClick
+  const columns = [
+    { field: 'idProducto', headerName: 'ID', width: 70 },
+    { field: 'Descripcion', headerName: 'Descripcion', width: 200 },
+    { field: 'Medidas', headerName: 'Medidas', width: 200 },
+    { field: 'Precio', headerName: 'Precio', width: 200 },
+  ];
+
+  return (
+    <div style={{ height: 400, width: '100%' }}>
+      <DataGrid
+        rows={data}
         columns={columns}
-        initialState={{
-        pagination: {
-            paginationModel: { page: 0, pageSize: 10 },
-        },
-        }}
-        pageSizeOptions={[5, 10]}
+        pageSize={5}
         checkboxSelection
-    />
+      />
     </div>
-)
-}
+  );
+};
 
-export default ProductList
+export default ProductList;
