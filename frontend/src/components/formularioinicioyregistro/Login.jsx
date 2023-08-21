@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
-import axios from '../../../utils/axios'; // Importa la instancia de Axios configurada
+//import axios from '../../../utils/axios'; // Importa la instancia de Axios configurada
+import axios from 'axios';
 import { SignupShowPw, ConfirmPassword, ShowHidePw } from './SignupShowPw.jsx';
 import './login.css';
 
@@ -84,6 +85,27 @@ function Login({ open, onClose }) {
     }
   };
 
+  function handleLogin(e){
+    e.preventDefault();
+        axios.post('http://localhost:3001/api/v1/usuarios/login', {
+          Correo: email,
+          Contrasena: password,
+        }, {headers: {"Content-Type": 'Application/JSON'}}).then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+        //console.log(response);
+        //console.log('Acceso con éxito:', response.data);
+  
+        // Almacena el token JWT en el almacenamiento local
+        //localStorage.setItem('token', response.data.token);
+  
+        // Recarga la página para aplicar la sesión activa
+        //window.location.reload();
+    }
+
   if (!open) return null;
 
   return (
@@ -95,7 +117,7 @@ function Login({ open, onClose }) {
       >
         <i className="uil uil-times form_close" onClick={onClose}></i>
         <div className={`form ${isLogin ? 'login_form' : 'signup_form'} ${isActive ? "active" : ""}`}>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleLogin}>
             {isLogin ? 
             <h2>Login</h2> : <h2>Signup</h2>}
             <div className="input_box">

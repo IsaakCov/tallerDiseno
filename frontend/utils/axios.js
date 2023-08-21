@@ -1,7 +1,7 @@
-import axios from 'axios';
-import dotenv from 'dotenv';
-dotenv.config();
-const jwtSecret = process.env.REACT_APP_JWT_SECRET;
+/*import axios from 'axios';
+//import dotenv from 'dotenv';
+//dotenv.config();
+//const jwtSecret = process.env.REACT_APP_JWT_SECRET;
 
 // Crea una instancia de Axios
 const instance = axios.create({
@@ -14,7 +14,7 @@ instance.interceptors.request.use(
     //const jwtSecret = process.env.REACT_APP_JWT_SECRET;
     const token = localStorage.getItem('token'); // Obtiene el token del almacenamiento local
     if (token) {
-      config.headers['Authorization'] = `Bearer ${token}`; // Agrega el token al encabezado de autorización
+      config.headers.Authorization = `Bearer ${token}`; // Agrega el token al encabezado de autorización
     }
     return config;
   },
@@ -23,4 +23,4 @@ instance.interceptors.request.use(
   }
 );
 
-export default instance;
+export default instance;*/
