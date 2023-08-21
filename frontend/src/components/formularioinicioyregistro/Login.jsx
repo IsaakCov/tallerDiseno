@@ -1,15 +1,20 @@
-import React, { useRef, useState, useEffect } from "react";
-import axios from "axios";
-import { SignupShowPw, ConfirmPassword, ShowHidePw } from "./SignupShowPw.jsx";
-import "./login.css";
+import React, { useRef, useState, useEffect } from 'react';
+import axios from '../../../utils/axios'; // Importa la instancia de Axios configurada
+import { SignupShowPw, ConfirmPassword, ShowHidePw } from './SignupShowPw.jsx';
+import './login.css';
+
 
 function Login({ open, onClose }) {
   const loginBtnRef = useRef(null);
   const signupBtnRef = useRef(null);
   const formContainerRef = useRef(null);
   const [isActive, setIsActive] = useState(true);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [isLogin, setIsLogin] = useState(true);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [nombre, setNombre] = useState('');
+  const [apellido, setApellido] = useState('');
+  const [telefono, setTelefono] = useState('');
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -34,30 +39,48 @@ function Login({ open, onClose }) {
 
   const handleLoginClick = (e) => {
     e.preventDefault();
+    setIsLogin(true);
     setIsActive(true);
   };
 
   const handleSignupClick = (e) => {
     e.preventDefault();
+    setIsLogin(false);
     setIsActive(false);
   };
 
-  const handleLoginSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        "http://localhost:3001/api/v1/usuarios/login",
-        {
+      if (isLogin) {
+        const response = await axios.post('http://localhost:3001/api/v1/usuarios/login', {
           Correo: email,
           Contrasena: password,
-        }
-      );
-        console.log('acceso con exito');
-      console.log("Respuesta del backend:", response.data);
-      // Aquí puedes manejar la respuesta y realizar acciones según el resultado.
+        });
+  
+        console.log('Acceso con éxito:', response.data);
+  
+        // Almacena el token JWT en el almacenamiento local
+        localStorage.setItem('token', response.data.token);
+  
+        // Recarga la página para aplicar la sesión activa
+        window.location.reload();
+      } else {
+        const response = await axios.post('http://localhost:3001/api/v1/usuarios/createUsuario', {
+          Correo: email,
+          Contrasena: password,
+          Nombre: nombre,
+          Apellido: apellido,
+          Telefono: telefono,
+          Role: 'USUARIO'
+        });
+
+        console.log('Usuario registrado con éxito:', response.data);
+        // Aquí puedes manejar el registro de usuario
+      }
     } catch (error) {
-      console.error("Error en la solicitud:", error);
+      console.error('Error en la solicitud:', error);
     }
   };
 
@@ -71,9 +94,10 @@ function Login({ open, onClose }) {
         ref={formContainerRef}
       >
         <i className="uil uil-times form_close" onClick={onClose}></i>
-        <div className={`form login_form ${isActive ? "active" : ""}`}>
-          <form onSubmit={handleLoginSubmit}>
-            <h2>Login</h2>
+        <div className={`form ${isLogin ? 'login_form' : 'signup_form'} ${isActive ? "active" : ""}`}>
+          <form onSubmit={handleSubmit}>
+            {isLogin ? 
+            <h2>Login</h2> : <h2>Signup</h2>}
             <div className="input_box">
               <input
                 type="email"

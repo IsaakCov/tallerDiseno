@@ -8,6 +8,7 @@ const Usuarios = require('./models/usuariosModel.js');
 const FormularioDeConsultas = require('./models/formularioModel.js');
 const Pedidos = require('./models/pedidosModel.js');
 const Productos = require('./models/productosModel.js');
+require('dotenv').config();
 
 // Asociaciones entre modelos
 Usuarios.hasMany(FormularioDeConsultas, { foreignKey: 'CorreoUsuario' });
