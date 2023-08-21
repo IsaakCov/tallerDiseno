@@ -7,7 +7,8 @@ import { userRows } from "../UserList/UserRows"
 const UserList = () => {
     const [data, setData] = useState(userRows);
     const handleDelete = (id) => {
-        setData(data.filter((item) => item.id == id));
+        setData(data.filter((item) => item.id !== id));
+        console.log(data);
     };
     
     const columns = [
@@ -15,16 +16,6 @@ const UserList = () => {
         { field: 'userName', headerName: 'Nombre Usuario', width: 200 },
         { field: 'direccion', headerName: 'Dirección', width: 200 },
         { field: 'email', headerName: 'Correo', width: 200 },
-        {
-        field: 'status',
-        headerName: 'Status',
-        width: 120,
-        },
-        {
-        field: 'transaction',
-        headerName: 'Transacción',
-        width: 160,
-        },
         {
         field: 'action',
         headerName: 'Action',
@@ -47,7 +38,7 @@ const UserList = () => {
 return (
     <div className="userListAdmin">
     <DataGrid
-        rows={userRows}
+        rows={data}
         disableRowSelectionOnClick
         columns={columns}
         initialState={{
