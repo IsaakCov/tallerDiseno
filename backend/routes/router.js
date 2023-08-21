@@ -10,6 +10,9 @@ const productosRouter = require('./productosRouter');
 router.use("/usuarios", usuariosRouter);
 router.use("/formulario", formRouter);
 router.use('/productos', productosRouter);
+router.use("/formulario", formRouter);
+
+
 
 
 
