@@ -16,16 +16,6 @@ const UserList = () => {
         { field: 'direccion', headerName: 'Dirección', width: 200 },
         { field: 'email', headerName: 'Correo', width: 200 },
         {
-        field: 'status',
-        headerName: 'Status',
-        width: 120,
-        },
-        {
-        field: 'transaction',
-        headerName: 'Transacción',
-        width: 160,
-        },
-        {
         field: 'action',
         headerName: 'Action',
         width: 150,

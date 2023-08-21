@@ -22,15 +22,8 @@ function App() {
           <Route path="/shipping-info" element={<ShippingInfo />} />
           <Route path="/payment-info" element={<PaymentInfo />} />
           <Route path="/AdminDashboard/Users" element={<DashboardUsers />} />
-          <Route
-            path="/AdminDashboard/Products"
-            element={<DashboardProducts />}
-          />
+          <Route path="/AdminDashboard/Products" element={<DashboardProducts />}/>
           <Route path="/AdminDashboard/User/:userId" element={<EditUser />} />
-          <Route
-            path="/AdminDashBoard/Products"
-            element={<DashboardProducts />}
-          />
           <Route path="/AdminDashBoard/Orders" element={<DashboardOrders />} />
         </Routes>
       </BrowserRouter>

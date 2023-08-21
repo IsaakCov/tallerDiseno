@@ -8,6 +8,7 @@ import Testimonios from './Testimonios'
 import Timeline from './Timeline'
 import Footer from './Footer'
 import SocialMediaButtons from '../socialmediabuttons/SocialMediaButtons'
+import Formulario from './Formulario'
 
 function Index() {
 
@@ -22,6 +23,7 @@ return (
     <Testimonios/>
     <Mapa/>
     <Timeline/>
+    <Formulario/>
     <SocialMediaButtons />
     <Footer/>
 </div>
