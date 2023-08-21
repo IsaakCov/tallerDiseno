@@ -1,48 +1,84 @@
-.cartContent{
-    display:flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 30px;
+.cart__container {
+  position: absolute;
+  max-width: 500px;
+  transform: translate(-4%, -6%);
+  right: 1%;
+  z-index: 99999999 !important;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.1);
+  border: 1px solid #aaaaaa;
 }
 
-.cartContent > img{
-    height: 120px;
-    width: 100px;
-    text-align: center;
-}
-
-.cartTotal{
-    text-align: center;
-}
-
-.cart-message-center{
-    text-align: center;
-    margin-top: 40px;
-}
-
-.counter-button {
-    cursor: pointer;
-    font-weight: bold;
-}
-
+.cartContent__imagen,
+.cartContent__nombre,
+.cartContent__counter,
+.cartContent__precio,
 .cart-delete-button {
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
 }
 
-.btn-pagar-mkp{
-    border: none;
-    outline: 0;
-    padding: 10px;
-    background-color: #456884;
-    text-align: center;
-    cursor: pointer;
-    font-size: 15px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    color:white
+.closeBtn {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 12px;
+}
+.container__cartContent {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 5px;
+  border-bottom: solid 1px gray;
 }
 
-.btn-pagar-mkp:hover{
-    background-color: #627d93;
+.cartContent {
+  border-bottom: solid 1px gray;
+  padding: 10px;
+}
+
+.cartContent__imagen img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.cartContent__nombre h3 {
+  flex-grow: 1;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.cartContent__counter {
+  display: flex;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.cartContent__precio h4 {
+  /* max-width: 100%; */
+  font-size: 12px;
+  color: #333;
+  padding: 5px;
+}
+
+.cartContent__deleteBtn h5 {
+  font-size: 15px;
+  color: rgb(239, 153, 153);
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+.cart__pagar {
+  align-items: center;
+}
+
+.cart-message-center {
+  font-size: 16px;
 }
