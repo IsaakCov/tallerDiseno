@@ -10,6 +10,8 @@ import DashboardUsers from "./components/Admin/DashboardUsers";
 import EditUser from "./components/Admin/Pages/User/EditUser";
 import DashboardProducts from "./components/Admin/DashboardProducts";
 import DashboardOrders from "./components/Admin/DashboardOrders";
+import ItemViews from "./components/ShopItemsView/ItemViews";
+import Contact from "./components/Contact/Contact";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/Marketplace" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/Marketplace/items/:Nombre" element={<ItemViews />} />
           <Route path="/order" element={<Order />} />
           <Route path="/shipping-info" element={<ShippingInfo />} />
           <Route path="/payment-info" element={<PaymentInfo />} />
