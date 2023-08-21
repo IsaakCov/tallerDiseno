@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./componentsCSS/style.css";
+import "../componentsCSS/style.css";
 
 const Formulario = () => {
   const [formData, setFormData] = useState({
@@ -35,13 +35,13 @@ const Formulario = () => {
     <section>
       <div className="container mt-4 border bg-light shadow" id="cont">
         <div className="row">
-          <div className="col-md-4 bg-info p-5 text-white bg-primary order-sm-first order-last">
+          {/* <div className="col-md-4 bg-info p-5 text-white bg-primary order-sm-first order-last">
             <h2>Información de contacto y ubicación:</h2>
-            {/* ... (resto del código) ... */}
-          </div>
-          <div className="col-md-8 p-5">
+            { ... (resto del código) ... }
+          </div> */}
+          <div className="col-md-12 p-5">
             <h2 className="mb-5">¡Contáctanos!</h2>
-            <div className="container">
+            <div className="container ">
               {/* Aca borramos el obSubmit porque el Diego tiene miedo */}
               <form className="contactForm" onSubmit={handleSubmit}>
                 <div className="form-floating mb-3">
