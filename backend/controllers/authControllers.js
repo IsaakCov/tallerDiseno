@@ -10,11 +10,13 @@ const login = async (req, res) => {
   try {
     const usuario = await usuarios.findOne({ where: { Correo } });
     if (!usuario) {
+      console.log('DieguitoFeliz');
       return res.status(404).json({ msg: 'Usuario no encontrado' });
     }
     const validarContrasena = bcrypt.compareSync(Contrasena, usuario.Contrasena);
     console.log(validarContrasena);
     if (!validarContrasena) {
+      console.log('DieguitoTriste');
       return res.status(404).json({ msg: 'Contraseña incorrecta' });
       // Contraseña válida, inicia sesión exitosamente
       //Sign crea el token /payload para encriptar / Secuencia de caracteres para generar el token
