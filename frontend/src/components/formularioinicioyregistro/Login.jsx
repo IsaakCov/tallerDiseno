@@ -66,7 +66,7 @@ function Login({ open, onClose }) {
 
         // Almacena el token JWT en el almacenamiento local
         localStorage.setItem("token", response.data.token);
-
+          
         // Recarga la página para aplicar la sesión activa
         window.location.reload();
       } else {
