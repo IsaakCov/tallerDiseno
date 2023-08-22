@@ -24,6 +24,7 @@ function App() {
           <Route path="/" element={<Index />} />
           <Route path="/Marketplace" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
+          
           <Route path="/Marketplace/items/:Nombre" element={<ItemViews />} />
           <Route path="/order" element={<Order />} />
           <Route path="/shipping-info" element={<ShippingInfo />} />
@@ -39,11 +40,9 @@ function App() {
           <Route path='/user/:activepage' element={<UserProfile />}></Route>
         
 
-         
-          
-         
 
-         
+          
+
 
 
 
