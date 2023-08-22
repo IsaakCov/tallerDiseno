@@ -11,6 +11,12 @@ import EditUser from "./components/Admin/Pages/User/EditUser";
 import DashboardProducts from "./components/Admin/DashboardProducts";
 import DashboardOrders from "./components/Admin/DashboardOrders";
 
+
+
+
+
+
+
 function App() {
   return (
     <DataProvider>
@@ -21,7 +27,10 @@ function App() {
           <Route path="/order" element={<Order />} />
           <Route path="/shipping-info" element={<ShippingInfo />} />
           <Route path="/payment-info" element={<PaymentInfo />} />
+          
+          
           <Route path="/AdminDashboard/Users" element={<DashboardUsers />} />
+         
           <Route
             path="/AdminDashboard/Products"
             element={<DashboardProducts />}
@@ -32,6 +41,20 @@ function App() {
             element={<DashboardProducts />}
           />
           <Route path="/AdminDashBoard/Orders" element={<DashboardOrders />} />
+
+         
+          
+         
+
+         
+
+
+
+          
+          
+          
+          
+          
         </Routes>
       </BrowserRouter>
     </DataProvider>

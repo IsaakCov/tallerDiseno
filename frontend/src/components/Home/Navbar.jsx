@@ -62,12 +62,16 @@ const Navbar = () => {
                 <li className="nav-item mx-2">
                   <Link className="nav-link" to="/marketplace">Marketplace</Link> 
                 </li>
-
+                
+                
               </ul>
               {/* Ingresar - Registrarse */}
               <div className="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
                 <button className="button" id="form-open" onClick={() => setOpenLogin(true)}>Login</button>
                 <Login open={openLogin} onClose={() => setOpenLogin(false)} />
+                <li className="d-flex nav-item mx-2">
+                  <Link className="nav-link" to="/userhome"><i className="logoperfil bi bi-person-lines-fill"></i></Link> 
+                </li>
               </div>
             </div>
           </div>
