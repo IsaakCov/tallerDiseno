@@ -1,5 +1,5 @@
 const usuarios = require('../models/usuariosModel')
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 // Crear usuario nuevo
 const createUsuario = async(req, res) =>{
