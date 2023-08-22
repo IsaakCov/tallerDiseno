@@ -1,6 +1,6 @@
 import {atom} from 'recoil';
 
-export const orderSuccessfulProvider = atom({
+export const OrderSuccessfulProvider = atom({
     key: 'orderSuccessfulProvider',
     default: false
 });

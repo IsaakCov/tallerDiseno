@@ -71,7 +71,7 @@
     }
 }
 
-/* @media (max-width: 800px) {
+ @media (max-width: 800px) {
     .userprofile .userprofilein .left {
         width: 20%;
         border: 1px solid rgb(207, 207, 207);
@@ -84,7 +84,7 @@
         border-radius: 5px;
         min-height: 50vh;
     }
-} */
+} 
 
 @media (max-width: 500px){
     .userprofilein {

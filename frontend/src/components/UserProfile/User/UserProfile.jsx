@@ -1,14 +1,13 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-
-
-import './UserProfile.css'
 import YourOrders from '../Pages/YourOrders'
-
 import UserSidebar from '../Pages/UserSidebar'
 import AccountSettings from '../Pages/AccountSettings'
 import UserAddress from '../Pages/UserAddress'
 import Banner from '../Banner/Banner2'
+import './UserProfile.css'
+
+
 
 
 
@@ -36,6 +35,8 @@ const UserProfile = () => {
               
             </div>
          </div>
+
+         
         
         </div>
   )

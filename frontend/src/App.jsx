@@ -10,7 +10,9 @@ import DashboardUsers from "./components/Admin/DashboardUsers";
 import EditUser from "./components/Admin/Pages/User/EditUser";
 import DashboardProducts from "./components/Admin/DashboardProducts";
 import DashboardOrders from "./components/Admin/DashboardOrders";
-
+import HomeProfile from "./components/UserProfile/Home/HomeProfile";
+import UserProfile from "./components/UserProfile/User/UserProfile";
+import "./App.css"
 
 
 
@@ -41,6 +43,10 @@ function App() {
             element={<DashboardProducts />}
           />
           <Route path="/AdminDashBoard/Orders" element={<DashboardOrders />} />
+
+          <Route path="/userhome" element={<HomeProfile />} />
+          <Route path='/user/:activepage' element={<UserProfile />}></Route>
+        
 
          
           

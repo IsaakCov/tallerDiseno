@@ -1,5 +1,5 @@
 import React from 'react'
-import './AccountSettings.css'
+import "./AccountSettings.css"
 
 const AccountSettings = () => {
   return (

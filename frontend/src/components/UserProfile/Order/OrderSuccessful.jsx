@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import './OrderSuccessful.css'
 import { useRecoilState } from 'recoil'
-import { orderSuccessfulProvider } from '../Providers/OrderSuccessfulProvider'
+import { OrderSuccessfulProvider } from '../Providers/OrderSuccessfulProvider'
 
 const OrderSuccessful = ({ orderid, message, redirecto }) => {
 
-    const [ordersuccesscont, setordersuccesscont] = useRecoilState(orderSuccessfulProvider)
+    const [ordersuccesscont, setordersuccesscont] = useRecoilState(OrderSuccessfulProvider)
     const [orderdata, setorderdata] = useState({
         OrderNo: orderid,
         OrderDate: '12/12/2021',
