@@ -24,7 +24,8 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.45.4",
     "react-router-dom": "^6.15.0",
-    "recharts": "^2.7.3"
+    "recharts": "^2.7.3",
+    "recoil": "^0.7.7"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
