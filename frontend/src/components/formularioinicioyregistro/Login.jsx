@@ -1,9 +1,8 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from "react";
 //import axios from '../../../utils/axios'; // Importa la instancia de Axios configurada
-import axios from 'axios';
-import { SignupShowPw, ConfirmPassword, ShowHidePw } from './SignupShowPw.jsx';
-import './login.css';
-
+import axios from "axios";
+import { SignupShowPw, ConfirmPassword, ShowHidePw } from "./SignupShowPw.jsx";
+import "./login.css";
 
 function Login({ open, onClose }) {
   const loginBtnRef = useRef(null);
@@ -11,11 +10,11 @@ function Login({ open, onClose }) {
   const formContainerRef = useRef(null);
   const [isActive, setIsActive] = useState(true);
   const [isLogin, setIsLogin] = useState(true);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [nombre, setNombre] = useState('');
-  const [apellido, setApellido] = useState('');
-  const [telefono, setTelefono] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [nombre, setNombre] = useState("");
+  const [apellido, setApellido] = useState("");
+  const [telefono, setTelefono] = useState("");
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -55,56 +54,41 @@ function Login({ open, onClose }) {
 
     try {
       if (isLogin) {
-        const response = await axios.post('http://localhost:3001/api/v1/usuarios/login', {
-          Correo: email,
-          Contrasena: password,
-        });
-  
-        console.log('Acceso con éxito:', response.data);
-  
+        const response = await axios.post(
+          "http://localhost:3001/api/v1/usuarios/login",
+          {
+            Correo: email,
+            Contrasena: password,
+          }
+        );
+
+        console.log("Acceso con éxito:", response.data);
+
         // Almacena el token JWT en el almacenamiento local
-        localStorage.setItem('token', response.data.token);
-  
+        localStorage.setItem("token", response.data.token);
+
         // Recarga la página para aplicar la sesión activa
         window.location.reload();
       } else {
-        const response = await axios.post('http://localhost:3001/api/v1/usuarios/createUsuario', {
-          Correo: email,
-          Contrasena: password,
-          Nombre: nombre,
-          Apellido: apellido,
-          Telefono: telefono,
-          Role: 'USUARIO'
-        });
+        const response = await axios.post(
+          "http://localhost:3001/api/v1/usuarios/createUsuario",
+          {
+            Correo: email,
+            Contrasena: password,
+            Nombre: nombre,
+            Apellido: apellido,
+            Telefono: telefono,
+            Role: "USUARIO",
+          }
+        );
 
-        console.log('Usuario registrado con éxito:', response.data);
+        console.log("Usuario registrado con éxito:", response.data);
         // Aquí puedes manejar el registro de usuario
       }
     } catch (error) {
-      console.error('Error en la solicitud:', error);
+      console.error("Error en la solicitud:", error);
     }
   };
-
-  function handleLogin(e){
-    e.preventDefault();
-        axios.post('http://localhost:3001/api/v1/usuarios/login', {
-          Correo: email,
-          Contrasena: password,
-        }, {headers: {"Content-Type": 'Application/JSON'}}).then(function (response) {
-          console.log(response);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-        //console.log(response);
-        //console.log('Acceso con éxito:', response.data);
-  
-        // Almacena el token JWT en el almacenamiento local
-        //localStorage.setItem('token', response.data.token);
-  
-        // Recarga la página para aplicar la sesión activa
-        //window.location.reload();
-    }
 
   if (!open) return null;
 
@@ -116,10 +100,13 @@ function Login({ open, onClose }) {
         ref={formContainerRef}
       >
         <i className="uil uil-times form_close" onClick={onClose}></i>
-        <div className={`form ${isLogin ? 'login_form' : 'signup_form'} ${isActive ? "active" : ""}`}>
-          <form onSubmit={handleLogin}>
-            {isLogin ? 
-            <h2>Login</h2> : <h2>Signup</h2>}
+        <div
+          className={`form ${isLogin ? "login_form" : "signup_form"} ${
+            isActive ? "active" : ""
+          }`}
+        >
+          <form onSubmit={handleSubmit}>
+            {isLogin ? <h2>Login</h2> : <h2>Signup</h2>}
             <div className="input_box">
               <input
                 type="email"
@@ -130,7 +117,19 @@ function Login({ open, onClose }) {
               />
               <i className="uil uil-envelope-alt email"></i>
             </div>
-            <ShowHidePw />
+            {/* <ShowHidePw /> */}
+            <div className="input_box">
+              <input
+                //type={showPassword ? "text" : "password"}
+                type= "password"
+                placeholder="Contraseña"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                name="lcontraseña"
+                id="lcontraseña"
+              />
+              
+            </div>
             <div className="option_field">
               <span className="checkbox">
                 <input type="checkbox" id="check" />
