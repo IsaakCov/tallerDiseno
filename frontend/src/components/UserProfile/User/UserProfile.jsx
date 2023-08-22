@@ -6,6 +6,10 @@ import AccountSettings from '../Pages/AccountSettings'
 import UserAddress from '../Pages/UserAddress'
 import Banner from '../Banner/Banner2'
 import './UserProfile.css'
+import Navbar from '../../Home/Navbar'
+import Footer from '../../Home/Footer'
+import SocialMediaButtons from '../../socialmediabuttons/SocialMediaButtons'
+
 
 
 
@@ -20,6 +24,7 @@ const UserProfile = () => {
     // alert(activepage)
   return (
     <div className='user'>
+      <Navbar />
       <Banner />
         
 
@@ -35,6 +40,9 @@ const UserProfile = () => {
               
             </div>
          </div>
+         <SocialMediaButtons />
+
+         <Footer />
 
          
         

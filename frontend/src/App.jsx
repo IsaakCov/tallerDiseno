@@ -13,11 +13,8 @@ import DashboardOrders from "./components/Admin/DashboardOrders";
 import HomeProfile from "./components/UserProfile/Home/HomeProfile";
 import UserProfile from "./components/UserProfile/User/UserProfile";
 import "./App.css"
-
-
-
-
-
+import ItemViews from "./components/ShopItemsView/ItemViews";
+import Contact from "./components/Contact/Contact";
 
 function App() {
   return (
@@ -26,22 +23,16 @@ function App() {
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/Marketplace" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/Marketplace/items/:Nombre" element={<ItemViews />} />
           <Route path="/order" element={<Order />} />
           <Route path="/shipping-info" element={<ShippingInfo />} />
           <Route path="/payment-info" element={<PaymentInfo />} />
           
           
           <Route path="/AdminDashboard/Users" element={<DashboardUsers />} />
-         
-          <Route
-            path="/AdminDashboard/Products"
-            element={<DashboardProducts />}
-          />
+          <Route path="/AdminDashboard/Products" element={<DashboardProducts />}/>
           <Route path="/AdminDashboard/User/:userId" element={<EditUser />} />
-          <Route
-            path="/AdminDashBoard/Products"
-            element={<DashboardProducts />}
-          />
           <Route path="/AdminDashBoard/Orders" element={<DashboardOrders />} />
 
           <Route path="/userhome" element={<HomeProfile />} />

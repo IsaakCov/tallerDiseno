@@ -1,67 +1,53 @@
-import React, { useState } from 'react'
-import { Link } from "react-router-dom"
+import React, { useState, useEffect } from 'react';
 import './userList.css';
 import { DataGrid } from '@mui/x-data-grid';
-import { userRows } from "../UserList/UserRows"
+import axios from 'axios';
 
 const UserList = () => {
-    const [data, setData] = useState(userRows);
-    const handleDelete = (id) => {
-        setData(data.filter((item) => item.id == id));
-    };
-    
-    const columns = [
-        { field: 'id', headerName: 'ID', width: 70 },
-        { field: 'userName', headerName: 'Nombre Usuario', width: 200 },
-        { field: 'direccion', headerName: 'Dirección', width: 200 },
-        { field: 'email', headerName: 'Correo', width: 200 },
-        {
-        field: 'status',
-        headerName: 'Status',
-        width: 120,
-        },
-        {
-        field: 'transaction',
-        headerName: 'Transacción',
-        width: 160,
-        },
-        {
-        field: 'action',
-        headerName: 'Action',
-        width: 150,
-        renderCell:(params)=>{
-            return(
-                <>
-                <Link to={"/AdminDashboard/User/"+ params.row.id}>
-                <button className="userListEditAdmin">Editar</button>
-                </Link>
+const [data, setData] = useState([]);
 
-                    <i class="bi bi-trash3" onClick={()=>handleDelete(params.row.id)}></i>
-                </>
-            )
-        }
-        }
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-    ];
-    
-return (
-    <div className="userListAdmin">
-    <DataGrid
-        rows={userRows}
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('http://localhost:3001/api/v1/usuarios/getAllUsuarios');
+      if (response.data && Array.isArray(response.data.usuarios)) {
+        setData(response.data.usuarios);
+      } else {
+        console.error("La respuesta no contiene un arreglo:", response.data);
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      // Manejo del error
+    }
+  };
+
+  if (!Array.isArray(data) || data.length === 0) {
+    return <p>Loading...</p>;
+    // Otra acción que consideres apropiada mientras cargan los datos
+  }
+
+  const columns = [
+    { field: 'Nombre', headerName: 'Nombre', width: 150 },
+    { field: 'Apellido', headerName: 'Apellido', width: 150 },
+    { field: 'Correo', headerName: 'Correo', width: 200 },
+    { field: 'Telefono', headerName: 'Teléfono', width: 150 },
+  ];
+
+  return (
+    <div style={{ height: 400, width: '80%' }}>
+      <DataGrid
+        rows={data}
         disableRowSelectionOnClick
-        columns={columns}
-        initialState={{
-        pagination: {
-            paginationModel: { page: 0, pageSize: 10 },
-        },
-        }}
-        pageSizeOptions={[5, 10]}
+        getRowId={(data) => data.Correo}
         checkboxSelection
-    />
+        columns={columns}
+        pageSize={5}
+      />
     </div>
+  );
+};
 
-
-)
-}
-
-export default UserList
+export default UserList;

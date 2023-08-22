@@ -1,6 +1,7 @@
 
 
 
+import SocialMediaButtons from "../../socialmediabuttons/SocialMediaButtons";
 import UserProfile from "../User/UserProfile";
 const HomeProfile=()=>{
     return (
@@ -10,6 +11,7 @@ const HomeProfile=()=>{
         <div className='product-card-container'>
             <UserProfile />
         </div>
+        <SocialMediaButtons />
         </>
         
     )
