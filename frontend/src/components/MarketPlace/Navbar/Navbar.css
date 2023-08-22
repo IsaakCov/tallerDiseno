@@ -1,40 +1,44 @@
 .nav-container-market {
-    position: sticky;
-    z-index: 3;
-    top: 0;
+  position: sticky;
+  z-index: 3;
+  top: 0;
 }
 
 .navbar-market {
-    position: sticky;
-    display: flex;
-    justify-content: space-between;
-    height: 15vh;
-    background-color: #456884;
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  height: 15vh;
+  background-color: #456884;
 }
-.navbar-logo{
-    justify-self: start;
-    margin-left: 20px;
-    color: #fff;
-    margin-top: 4vh;
-    cursor: pointer;
-}
-
-.navbar-market a{
-    text-decoration: none;
+.navbar-logo {
+  justify-self: start;
+  margin-left: 20px;
+  color: #fff;
+  margin-top: 4vh;
+  cursor: pointer;
 }
 
-.seeCarrito{
-    font-size: 25px;
-    margin-right: 20px;
-    margin-top: 4vh;
-    cursor: pointer;
-    text-decoration: none;
+.navbar-market a {
+  text-decoration: none;
 }
 
-.modalBtn-market{
-    position: absolute;
-    left:90%;
-    transform: translate(-40%, -105%);
-    font-size: 30px;
-    background-color: transparent;
+.seeCarrito {
+  font-size: 25px;
+  margin-right: 20px;
+  margin-top: 4vh;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.modalBtn-market {
+  position: absolute;
+  left: 90%;
+  transform: translate(-40%, -170%);
+  font-size: 20px;
+  background-color: transparent;
+  -webkit-transform: translate(-40%, -170%);
+  -moz-transform: translate(-40%, -170%);
+  -ms-transform: translate(-40%, -170%);
+  -o-transform: translate(-40%, -170%);
 }
