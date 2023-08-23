@@ -89,6 +89,8 @@ const Navbar = () => {
                     Marketplace
                   </Link>
                 </li>
+                
+                
               </ul>
               {/* Ingresar - Registrarse */}
               <div className="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
@@ -100,6 +102,8 @@ const Navbar = () => {
                   Login
                 </button>
                 <Login open={openLogin} onClose={() => setOpenLogin(false)} />
+                <li className="d-flex nav-item mx-2">
+                </li>
               </div>
             </div>
           </div>
