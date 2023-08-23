@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import isotipo from "../img/isotipo.jpg";
 import Login from "../../formularioinicioyregistro/Login";
 import { useRef } from "react";
-import BotonUsuario from "../../Home/Botonusuario";
 import BotonAdmin from "../../Home/BotonAdmin";
 import BotonLogOut from "../../Home/BotonLogOut";
 
@@ -86,7 +85,6 @@ return (
                 </button>
                 <Login open={openLogin} onClose={() => setOpenLogin(false)} />
                 <li className="d-flex nav-item mx-2">
-                <BotonUsuario/>
                 <BotonAdmin/>
                 <BotonLogOut/>
                 
