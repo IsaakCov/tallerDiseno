@@ -8,6 +8,7 @@ const Usuarios = require("./models/usuariosModel.js");
 const FormularioDeConsultas = require("./models/formularioModel.js");
 const Pedidos = require("./models/pedidosModel.js");
 const Productos = require("./models/productoModel.js");
+const pedidoProductos = require('./models/pedidoProductosModel')
 require('dotenv').config();
 
 // Asociaciones entre modelos
@@ -31,6 +32,7 @@ const database = async () => {
     await Usuarios.sync();
     await Productos.sync();
     await Pedidos.sync();
+    await pedidoProductos.sync();
     await FormularioDeConsultas.sync();
   } catch (error) {
     console.log("Algo salió mal con la conexión:", error);
