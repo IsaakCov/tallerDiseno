@@ -91,9 +91,37 @@ const deletePedido = async (req, res) => {
       return res.status(500).json({ msg: 'Error en el servidor', error: error.message });
     }
   };
+  const getPedidoById = async (req, res) => {
+    try {
+      const { idPedido } = req.params; // Obtén el ID del pedido de los parámetros de la URL
+  
+      // Busca el pedido por su ID
+      const pedido = await Pedido.findByPk(idPedido);
+  
+      if (!pedido) {
+        return res.status(404).json({ msg: 'Pedido no encontrado' });
+      }
+  
+      return res.status(200).json({ pedido });
+    } catch (error) {
+      return res.status(500).json({ msg: 'Error en el servidor', error: error.message });
+    }
+  };
+  const getAllPedidos = async (req, res) => {
+    try {
+      // Busca todos los pedidos en la base de datos
+      const pedidos = await Pedido.findAll();
+  
+      return res.status(200).json({ pedidos });
+    } catch (error) {
+      return res.status(500).json({ msg: 'Error en el servidor', error: error.message });
+    }
+  };
   
 module.exports = {
   createPedido,
   deletePedido,
-  updatePedido
+  updatePedido,
+  getPedidoById,
+  getAllPedidos
 };
