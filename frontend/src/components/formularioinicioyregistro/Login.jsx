@@ -62,12 +62,13 @@ function Login({ open, onClose }) {
         );
 
         console.log('Acceso con éxito:', response.data);
-
+        
         // Almacena el token JWT en el almacenamiento local
         localStorage.setItem('token', response.data.token);
-
+        localStorage.setItem('Correo', response.data.Correo);
+        //console.log(localStorage.getItem('token')); // Devuelve el valor de la clave
         // Recarga la página para aplicar la sesión activa
-        window.location.reload();
+        //window.location.reload();
       } else {
         const response = await axios.post(
           'http://localhost:3001/api/v1/usuarios/createUsuario',
