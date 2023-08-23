@@ -23,7 +23,7 @@ const login = async (req, res) => {
     } 
     const token = await generarJWT(Correo)
       console.log(token);
-      res.status(200).json({ msg: 'Inicio de sesión exitoso', token });
+      res.status(200).json({ msg: 'Inicio de sesión exitoso', token, Correo: usuario.Correo});
   } catch (error) {
     res.status(500).json({ msg: 'Error en el servidor', error: error.message });
   }

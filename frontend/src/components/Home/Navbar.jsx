@@ -100,6 +100,7 @@ const Navbar = () => {
                   Login
                 </button>
                 <Login open={openLogin} onClose={() => setOpenLogin(false)} />
+                {if(LocalStorage.getItem())}
               </div>
             </div>
           </div>

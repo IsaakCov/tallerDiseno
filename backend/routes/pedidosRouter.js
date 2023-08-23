@@ -7,6 +7,6 @@ const { createPedido, deletePedido, updatePedido, getPedidoById, getAllPedidos }
 router.post("/createPedido", createPedido);
 router.delete("/deletePedido/:id", deletePedido);
 router.put("/updatePedido/:id", updatePedido);
-router.get("/getPeidoByID/:id", getPedidoById);
+router.get("/getPedidoByID/:id", getPedidoById);
 router.get("/getAllPedidos", getAllPedidos);
 module.exports = router;
