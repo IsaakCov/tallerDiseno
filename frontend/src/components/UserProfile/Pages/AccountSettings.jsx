@@ -4,13 +4,13 @@ import "./YourOrders.css";
 
 const AccountSettings = () => {
   return (
-    <div className='accountsettings'>
+    <div className='accountSettings'>
       <h1 className='mainhead1'>Información Personal</h1>
       
       <div className='form'>
-      <i class="userlogo bi-person-circle"></i>
+      <i className="userlogo bi-person-circle"></i>
       
-      <table className='yourorderstable'>
+      <table className='yourOrdersTable'>
         <thead>
           <tr>
             <th scope='col'>Nombre y Apellido</th>
