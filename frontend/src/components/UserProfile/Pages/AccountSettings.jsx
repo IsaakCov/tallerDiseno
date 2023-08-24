@@ -37,7 +37,7 @@ const AccountSettings = () => {
         </div>
 
         <div>
-          <span className='phoneuser'>Celular/Teléfono</span>
+          <span className='user'>Celular/Teléfono</span>
         </div>
 
       </div>
