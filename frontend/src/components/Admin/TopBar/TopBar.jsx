@@ -9,15 +9,6 @@ import BotonLogOut from "../../Home/BotonLogOut";
 
 const Navbar = () => {
 const [openLogin, setOpenLogin] = useState(false);
-const compromisoSectionRef = useRef(null);
-
-const handleCompromisoClick = () => {
-    if (compromisoSectionRef.current) {
-    compromisoSectionRef.current.scrollIntoView({
-        behavior: "smooth",
-    });
-    }
-};
 
 return (
     <div id="menu">
@@ -76,14 +67,6 @@ return (
             </ul>
               {/* Ingresar - Registrarse */}
             <div className="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-                <button
-                className="button"
-                id="form-open"
-                onClick={() => setOpenLogin(true)}
-                >
-                Login
-                </button>
-                <Login open={openLogin} onClose={() => setOpenLogin(false)} />
                 <li className="d-flex nav-item mx-2">
                 <BotonAdmin/>
                 <BotonLogOut/>
