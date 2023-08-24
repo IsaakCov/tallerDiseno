@@ -37,14 +37,12 @@ const UserAddress = () => {
                                     <span>{item.AddressLine1}</span>,
                                     <span>{item.AddressLine2}</span>,
                                     <span>{item.AddressLine3}</span>
-
-
+                                    
                                     <div className='delbtn'>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                        </svg>
-
+                                        <i className="bi bi-house-check"></i>
                                     </div>
+
+                                    
                                 </div>
                             )
                         })
@@ -52,45 +50,8 @@ const UserAddress = () => {
                 </div>
             }
 
-            {
-                !show && <div className='addnewbtn'
-
-                    onClick={() => setShow(true)}
-                >
-                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-</svg>
-
-
-                </div>
-            }
-            {
-                show &&
-
-                <div className='addnew'>
-                    <h1 className='mainhead1'>Agregar dirección</h1>
-                    <div className='form'>
-                        <div className='form-group'>
-                            <label htmlFor='addressline1'>Dirección 1</label>
-                            <input type="text" />
-                        </div>
-
-                        <div className='form-group'>
-                            <label htmlFor='addressline2'>Dirección 2</label>
-                            <input type="text" />
-                        </div>
-
-                        <div className='form-group'>
-                            <label htmlFor='addressline3'>Dirección 3</label>
-                            <input type="text" />
-                        </div>
-                    </div>
-
-                    <button className='mainbutton1'
-                        onClick={() => setShow(false)}
-                    >Guardar</button>
-                </div>
-            }
+      
+            
         </div>
     )
 }
