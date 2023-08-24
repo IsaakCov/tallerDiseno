@@ -2,6 +2,7 @@ const Pedido = require('../models/pedidosModel');
 const ProductoPedido = require('../models/pedidoProductosModel');
 const Usuario = require('../models/usuariosModel');
 const Producto = require('../models/productoModel');
+const Pedidos = require('../models/pedidosModel');
 
 const createPedido = async (req, res) => {
   try {
@@ -94,9 +95,11 @@ const deletePedido = async (req, res) => {
   const getPedidoById = async (req, res) => {
     try {
       const { idPedido } = req.params; // Obtén el ID del pedido de los parámetros de la URL
+      console.log(idPedido);
   
       // Busca el pedido por su ID
       const pedido = await Pedido.findByPk(idPedido);
+      console.log(pedido);
   
       if (!pedido) {
         return res.status(404).json({ msg: 'Pedido no encontrado' });
