@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState, useEffect } from "react";
+import axios from "axios";
 import { useRecoilState } from 'recoil';
 import { OrderSuccessfulProvider } from '../Providers/OrderSuccessfulProvider';
 import OrderSuccessful from '../Order/OrderSuccessful';
 import "./YourOrders.css";
-
 
 const YourOrders = () => {
   const [pedidos, setPedidos] = useState([]);
@@ -26,11 +25,6 @@ const YourOrders = () => {
       fetchPedidosByUser();
     }
   }, [correoUsuario]);
-
-  const showOrderDetails = (orderId) => {
-    setSelectedOrderId(orderId);
-    setOrderSuccessCont(true);
-  };
 
   // Función para obtener la clase CSS según el estado del pedido
   const getStatusClass = (status) => {
