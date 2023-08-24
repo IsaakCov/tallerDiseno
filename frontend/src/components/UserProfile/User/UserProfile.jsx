@@ -1,9 +1,8 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import YourOrders from '../Pages/YourOrders'
+
 import UserSidebar from '../Pages/UserSidebar'
 import AccountSettings from '../Pages/AccountSettings'
-import UserAddress from '../Pages/UserAddress'
 import Banner from '../Banner/Banner2'
 import './UserProfile.css'
 import Navbar from '../../Home/Navbar'
@@ -36,7 +35,7 @@ const UserProfile = () => {
               {activepage === 'accountsettings' && <AccountSettings/>}
               
               {activepage === 'yourorders' && <YourOrders/>}
-              {activepage === 'address' && <UserAddress/>}
+              {/* {activepage === 'address' && <UserAddress/>} */}
               
             </div>
          </div>

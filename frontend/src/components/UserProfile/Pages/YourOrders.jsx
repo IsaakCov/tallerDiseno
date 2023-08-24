@@ -50,14 +50,8 @@ const YourOrders = () => {
                                     {order.Estado}
                                 </td>
                                 <td data-label='Total'>${item.total}</td>
-                                <td data-label='Invoice'>
-                                    <button className='mainbutton1'
-                                        onClick={() => {
-                                            setselectedorderid(item.id)
-                                            setordersuccesscont(true)
-                                        }}
-                                    >Ver</button>
-                                </td>
+                                
+                                
                             </tr>
                         );
                     })}
