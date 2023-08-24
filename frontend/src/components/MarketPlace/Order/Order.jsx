@@ -33,8 +33,8 @@ const Order = () => {
         ))}
       </ul>
       <p className="mt-3">Total a Pagar: ${total}</p>
-      
-      
+
+
       <div className="d-flex justify-content-between mb-5">
         <Link to="/shipping-info" className="btn btnOrder">
           Continuar
@@ -46,3 +46,5 @@ const Order = () => {
 };
 
 export default Order;
+
+
