@@ -2,7 +2,6 @@ const Pedido = require('../models/pedidosModel');
 const ProductoPedido = require('../models/pedidoProductosModel');
 const Usuario = require('../models/usuariosModel');
 const Producto = require('../models/productoModel');
-const Pedidos = require('../models/pedidosModel');
 
 const createPedido = async (req, res) => {
   try {

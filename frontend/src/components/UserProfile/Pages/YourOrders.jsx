@@ -1,95 +1,83 @@
-import React, { useState } from 'react'
-import { useRecoilState } from 'recoil'
-import { OrderSuccessfulProvider } from '../Providers/OrderSuccessfulProvider'
-import OrderSuccessful from '../Order/OrderSuccessful'
-import "./YourOrders.css"
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { useRecoilState } from 'recoil';
+import { OrderSuccessfulProvider } from '../Providers/OrderSuccessfulProvider';
+import OrderSuccessful from '../Order/OrderSuccessful';
+import "./YourOrders.css";
 
 const YourOrders = () => {
+  const [pedidos, setPedidos] = useState([]);
+  const correoUsuario = localStorage.getItem("Correo");
+  const [selectedOrderId, setSelectedOrderId] = useState(0);
+  const [orderSuccessCont, setOrderSuccessCont] = useRecoilState(OrderSuccessfulProvider);
 
-    const data = [
-        {
-            id: 112345,
-            date: '12/12/2021',
-            status: 'Pendiente',
-            total: 1000
-        },
-        {
-            id: 112346,
-            date: '12/12/2021',
-            status: 'Confirmado',
-            total: 1600
-        },
-        {
-            id: 112347,
-            date: '12/12/2021',
-            status: 'Listo para enviar',
-            total: 2000
-        },
-        {
-            id: 112348,
-            date: '12/12/2021',
-            status: 'En despacho',
-            total: 100
-        },
-        {
-            id: 112345,
-            date: '12/12/2021',
-            status: 'Entregado',
-            total: 1000
-        },
-        {
-            id: 112346,
-            date: '12/12/2021',
-            status: 'Anulado',
-            total: 1600
-        }
-       
-    ]
-    const [selectedorderid, setselectedorderid] = useState(0)
-    const [ordersuccesscont, setordersuccesscont] = useRecoilState(OrderSuccessfulProvider)
-    return (
-        <div className='yourorders'>
-            <h1 className='mainhead1'>Mis pedidos</h1>
-            {
-                ordersuccesscont && <OrderSuccessful orderid={selectedorderid} message={`Order ID: ${selectedorderid}`} />
-            }
-            <table className='yourorderstable'>
-                <thead>
-                    <tr>
-                        <th scope='col'>N° Orden</th>
-                        <th scope='col'>Fecha</th>
-                        <th scope='col'>Status</th>
-                        <th scope='col'>Total</th>
-                        
-                    </tr>
-                </thead>
+  useEffect(() => {
+    const fetchPedidosByUser = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3001/api/v1/pedidos/getPedidosByUser/${correoUsuario}`);
+        setPedidos(response.data.pedidos);
+      } catch (error) {
+        console.error("Error al obtener los pedidos del usuario:", error);
+      }
+    };
 
-                <tbody>
-                    {data.map((item, index) => {
-                        return (
-                            <tr key={index}>
-                                <td data-label='OrderID'>{item.id}</td>
-                                <td data-label='OrderDate'>{item.date}</td>
-                                <td data-label='Delivery Status'>
-                                    <div>
-                                        {item.status == 'Entregado' && <span  className="entregado bi bi-check-circle-fill"></span>}
-                                        {item.status == 'Pendiente' && <span className="pendiente bi bi-bag"></span>}
-                                        {item.status == 'Anulado' && <span className="anulado bi bi-x-circle"></span>}
-                                        {item.status == 'Confirmado' && <span className="confirmado bi bi-bag-check"></span>}
-                                        {item.status == 'Listo para enviar' && <span className="enviar bi bi-box-seam"></span>}
-                                        {item.status == 'En despacho' && <span className="despacho bi bi-truck"></span>}
-                                        {item.status}
-                                    </div>
-                                </td>
-                                <td data-label='Total'>${item.total}</td>
-                                
-                            </tr>
-                        )
-                    })}
-                </tbody>
-            </table>
-        </div>
-    )
-}
+    if (correoUsuario) {
+      fetchPedidosByUser();
+    }
+  }, [correoUsuario]);
 
-export default YourOrders
+  // Función para obtener la clase CSS según el estado del pedido
+  const getStatusClass = (status) => {
+    switch (status) {
+      case 'ENTREGADO':
+        return 'entregado bi bi-check-circle-fill';
+      case 'PENDIENTE':
+        return 'pendiente bi bi-bag';
+      case 'ANULADO':
+        return 'anulado bi bi-x-circle';
+      case 'CONFIRMADO':
+        return 'confirmado bi bi-bag-check';
+      case 'LISTO PARA ENVIAR':
+        return 'enviar bi bi-box-seam';
+      case 'ENVIADO':
+        return 'despacho bi bi-truck';
+      default:
+        return '';
+    }
+  };
+
+  return (
+    <div className='yourorders'>
+      <h1 className='mainhead1'>Mis pedidos</h1>
+      {orderSuccessCont && <OrderSuccessful orderid={selectedOrderId} message={`Order ID: ${selectedOrderId}`} />}
+      <table className='yourorderstable'>
+        <thead>
+          <tr>
+            <th scope='col'>N° Orden</th>
+            <th scope='col'>Fecha</th>
+            <th scope='col'>Status</th>
+            <th scope='col'>Total</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {pedidos.map((pedido) => (
+            <tr key={pedido.idPedido} onClick={() => showOrderDetails(pedido.idPedido)}>
+              <td data-label='OrderID'>{pedido.idPedido}</td>
+              <td data-label='OrderDate'>{new Date(pedido.createdAt).toLocaleDateString()}</td>
+              <td data-label='Delivery Status'>
+                <div>
+                  <span className={getStatusClass(pedido.Estado)}></span>
+                  {pedido.Estado}
+                </div>
+              </td>
+              <td data-label='Total'>${pedido.TotalPedido}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default YourOrders;
