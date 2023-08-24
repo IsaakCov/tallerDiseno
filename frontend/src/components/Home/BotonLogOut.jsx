@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import "../componentsCSS/botones.css"
 
 function BotonLogOut() {
   const history = useNavigate();
@@ -16,8 +17,8 @@ function BotonLogOut() {
   return (
 
 
-    <div className='d-flex justify-content-center align-items-center border border-primary rounded px-4'>
-      <i className="bi bi-box-arrow-right" onClick={cerrarSesion}></i>
+    <div className='botonbtn'>
+      <i className="botonNavegador bi bi-box-arrow-right" onClick={cerrarSesion}></i>
     </div>
 
 
