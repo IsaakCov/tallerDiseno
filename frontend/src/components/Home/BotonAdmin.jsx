@@ -4,7 +4,7 @@ import "../componentsCSS/botones.css"
 
 const BotonAdmin = () => {
   return (
-    <div> className="botonbtn"
+    <div className="botonbtn"> 
     <Link className="nav-link" to="/AdminDashboard/Users"><i className="botonNavegador bi bi-star-fill"></i></Link>
     </div>
   )
