@@ -4,27 +4,31 @@ import PropTypes from "prop-types"; // Agrega esta línea
 export const dataContext = createContext();
 
 const DataProvider = ({ children }) => {
-const initialCart = JSON.parse(localStorage.getItem("cart")) || [];
-const [cart, setCart] = useState(initialCart);
+    // Al montar el componente, tratamos de cargar el carrito desde el localStorage
+    const savedCart = JSON.parse(localStorage.getItem('cart'));
+    const [cart, setCart] = useState(savedCart || []);
 
-useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-}, [cart]);
+    useEffect(() => {
+        // Guardamos el carrito en el localStorage cada vez que cambie
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }, [cart]);
 
-const buyProducts = (product) => {
-    const productRepeat = cart.find((item) => item.idProducto === product.idProducto);
-    if (productRepeat) {
-    setCart(cart.map((item) => (item.idProducto === product.idProducto ? { ...product, Stock: productRepeat.Stock + 1 } : item)));
-    } else {
-    setCart([...cart, product]);
-    }
-};
+    const buyProducts = (product) => {
+        const productrepeat = cart.find((item) => item.idProducto === product.idProducto);
+        if (productrepeat) {
+            setCart(cart.map((item) => (item.idProducto === product.idProducto ? { ...product, Stock: productrepeat.Stock + 1 } : item)));
+        } else {
+            setCart([...cart, product]);
+        }
+    };
 
-return <dataContext.Provider value={{ cart, setCart, buyProducts }}>{children}</dataContext.Provider>;
-};
-
-DataProvider.propTypes = {
-children: PropTypes.node.isRequired, 
+    return (
+        <div>
+            <dataContext.Provider value={{ cart, setCart, buyProducts }}>
+                {children}
+            </dataContext.Provider>
+        </div>
+    );
 };
 
 export default DataProvider;
