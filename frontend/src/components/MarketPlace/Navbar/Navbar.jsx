@@ -29,6 +29,8 @@ const Navbar = () => {
           </span>
         </button>
         <CartElements open={openModal} onClose={() => setOpenModal(false)} />
+        <button>AQUI IRÁ EL BOTON PARA ADMINISTRADOR</button>
+        <button>AQUI IRÁ EL BOTON PARA USUARIO NORMAL</button>
       </div>
     </div>
   );
