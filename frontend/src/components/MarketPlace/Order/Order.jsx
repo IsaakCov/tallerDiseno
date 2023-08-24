@@ -1,17 +1,32 @@
 import { useContext } from "react";
 import { dataContext } from "../Context/DataContext";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import '../Order/ordersummary.css'
 
 const Order = () => {
   const { cart } = useContext(dataContext);
+  const history = useHistory();
 
   const total = cart.reduce((acc, el) => acc + el.Precio * el.Stock, 0);
 
+  const handleContinue = () => {
+    // Obtener el correo del usuario desde localStorage
+    const userEmail = localStorage.getItem("Correo");
+
+    // Verificar si el usuario está autenticado (correo existe)
+    if (!userEmail) {
+      // El usuario no está autenticado, muestra un mensaje o realiza una acción adecuada
+      alert("Debes iniciar sesión para continuar.");
+      // Redirige al usuario a la página de inicio de sesión o donde desees
+      history.push("/login"); // Ajusta la ruta según tu configuración
+    } else {
+      // El usuario está autenticado, permite que continúe
+      history.push("/shipping-info"); // Redirige al siguiente paso
+    }
+  };
+
   return (
     <div className="container mt-5">
-
-
       <h2>Orden de Compra</h2>
       <ul className="list-group">
         {cart.map((product) => (
@@ -36,15 +51,12 @@ const Order = () => {
 
 
       <div className="d-flex justify-content-between mb-5">
-        <Link to="/shipping-info" className="btn btnOrder">
+        <button className="btn btnOrder" onClick={handleContinue}>
           Continuar
-        </Link>
+        </button>
       </div>
-
     </div>
   );
 };
 
 export default Order;
-
-
