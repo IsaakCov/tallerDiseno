@@ -3,7 +3,7 @@ const router = express.Router();
 
 const { sendForm, deleteForm } = require("../controllers/postFormControllers");
 
-router.post("/sendform", sendForm);
+router.post("/sendform/", sendForm);
 router.delete("/deleteform/:id", deleteForm);
 
 module.exports = router;

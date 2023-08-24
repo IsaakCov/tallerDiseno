@@ -12,7 +12,7 @@ export function ShowHidePw() {
 
   return (
     <div className="input_box">
-    <input type={showPassword ? 'text' : 'password'} placeholder="Contraseña" name='lcontraseña' id='lcontraseña' required />
+    <input type={showPassword ? 'text' : 'password'} placeholder="Contraseña" name='lcontraseña' id='lcontraseña' />
     <i className="uil uil-lock password"></i>
     <i className={`uil ${showPassword ? "uil-eye" : "uil-eye-slash"} pw_hide`}
       onClick={handleTogglePassword}></i>

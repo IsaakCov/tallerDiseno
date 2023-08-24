@@ -45,9 +45,7 @@ const ProductList = () => {
         <div style={{ height: 400, width: '80%' }}>
     <DataGrid 
     rows={data} 
-    disableRowSelectionOnClick
     getRowId={(data) => data.idProducto} 
-    checkboxSelection
     columns={columns} 
     pageSize={5} />
     </div> 
