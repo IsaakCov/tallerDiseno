@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../componentsCSS/CompromisoySer.css";
 import "../componentsCSS/botones.css";
@@ -15,6 +15,13 @@ import BotonLogOut from "./BotonLogOut";
 const Navbar = () => {
   const [openLogin, setOpenLogin] = useState(false);
   const compromisoSectionRef = useRef(null);
+  const [userRole, setUserRole] = useState(null); // Estado para el rol del usuario
+
+  useEffect(() => {
+    // Obtiene el rol del localStorage al montar el componente
+    const role = localStorage.getItem('userRole');
+    setUserRole(role);
+  }, []);
 
   const handleCompromisoClick = () => {
     if (compromisoSectionRef.current) {
@@ -92,26 +99,36 @@ const Navbar = () => {
                     Marketplace
                   </Link>
                 </li>
-                
-                
+
+
               </ul>
               {/* Ingresar - Registrarse */}
-              <div className="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-                <button
-                  className="button"
-                  id="form-open"
-                  onClick={() => setOpenLogin(true)}
-                >
-                  Login
-                </button>
-                <Login open={openLogin} onClose={() => setOpenLogin(false)} />
+              {!userRole && (
+                <>
+                  <button
+                    className="button"
+                    id="form-open"
+                    onClick={() => setOpenLogin(true)}
+                  >
+                    Login
+                  </button>
+                  <Login open={openLogin} onClose={() => setOpenLogin(false)} />
+                </>
+              )}
+
+              {userRole === "ADMINISTRADOR" && (
                 <li className="d-flex nav-item mx-2">
-                  <BotonUsuario/>
-                  <BotonAdmin/>
-                  <BotonLogOut/>
-                
+                  <BotonAdmin />
+                  <BotonLogOut />
                 </li>
-              </div>
+              )}
+
+              {userRole === "USUARIO" && (
+                <li className="d-flex nav-item mx-2">
+                  <BotonUsuario />
+                  <BotonLogOut />
+                </li>
+              )}
             </div>
           </div>
         </div>

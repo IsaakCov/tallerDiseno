@@ -62,12 +62,13 @@ function Login({ open, onClose }) {
         );
 
         console.log('Acceso con éxito:', response.data);
-        
-        
+
+
         // Almacena el token JWT en el almacenamiento local
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('Correo', response.data.Correo);
-        
+        localStorage.setItem('userRole', response.data.Role);
+
         //console.log(dieguito);
         // Recarga la página para aplicar la sesión activa
         window.location.reload();
@@ -82,7 +83,7 @@ function Login({ open, onClose }) {
             Telefono: telefono,
             Role: 'USUARIO',
           }
-          
+
         );
         window.location.reload();
 
@@ -124,13 +125,13 @@ function Login({ open, onClose }) {
             <div className="input_box">
               <input
                 //type={showPassword ? "text" : "password"}
-                type= "password"
+                type="password"
                 placeholder="Contraseña"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 name="lcontraseña"
-                id="lcontraseña"/>
-              </div>
+                id="lcontraseña" />
+            </div>
 
             {!isLogin && (
               <>
