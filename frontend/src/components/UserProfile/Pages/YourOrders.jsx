@@ -45,8 +45,8 @@ const YourOrders = () => {
         }
        
     ]
-    const [selectedorderid, setselectedorderid] = useState(0)
-    const [ordersuccesscont, setordersuccesscont] = useRecoilState(OrderSuccessfulProvider)
+    const [selectedorderid] = useState(0)
+    const [ordersuccesscont] = useRecoilState(OrderSuccessfulProvider)
     return (
         <div className='yourorders'>
             <h1 className='mainhead1'>Mis pedidos</h1>
