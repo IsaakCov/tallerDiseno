@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { dataContext } from "../Context/DataContext";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // Importa useHistory
 import '../Order/ordersummary.css'
 
 const Order = () => {
   const { cart } = useContext(dataContext);
-  const history = useHistory();
+  const navigate = useNavigate(); // Inicializa useHistory
 
   const total = cart.reduce((acc, el) => acc + el.Precio * el.Stock, 0);
 
@@ -18,10 +18,10 @@ const Order = () => {
       // El usuario no está autenticado, muestra un mensaje o realiza una acción adecuada
       alert("Debes iniciar sesión para continuar.");
       // Redirige al usuario a la página de inicio de sesión o donde desees
-      history.push("/login"); // Ajusta la ruta según tu configuración
+      navigate("/"); // Cambia la ruta según tu configuración
     } else {
       // El usuario está autenticado, permite que continúe
-      history.push("/shipping-info"); // Redirige al siguiente paso
+      navigate("/shipping-info"); // Redirige al siguiente paso
     }
   };
 
