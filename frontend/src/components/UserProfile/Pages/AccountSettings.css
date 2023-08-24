@@ -1,9 +1,10 @@
 .accountsettings{
-    display: flex;
+     display: flex;
     flex-direction: column;
     width: 100%;
-    align-items: center;
+    align-items: center; 
 }
+
 
 .accountsettings h1{
     padding: 10px 20px;
@@ -70,3 +71,9 @@
         margin-bottom: 5px;
     }
 } 
+
+.userlogo{
+    color:#456884;
+    font-size: 100px;
+    
+}
