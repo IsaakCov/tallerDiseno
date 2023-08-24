@@ -42,3 +42,13 @@
   margin-left: 75px;
   font-size: 30px;
 }
+
+.botonbtn , .nav-link{
+  padding: 5px;
+
+}
+
+.botonNavegador{
+  color: #456884;
+  cursor: pointer;
+}

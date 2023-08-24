@@ -6,12 +6,6 @@ import OrderSuccessful from '../Order/OrderSuccessful';
 import "./YourOrders.css";
 
 const YourOrders = () => {
-    const [orders, setOrders] = useState([]);
-    const [selectedOrderid] = useState(0);
-    const [ordersuccesscont] = useRecoilState(OrderSuccessfulProvider);
-
-    // Reemplaza 'correo@example.com' con el correo electrónico del usuario
-    const correoUsuario = 'fer@gmail.com';
 
     useEffect(() => {
         // Hacer una solicitud GET al servidor para obtener los pedidos del usuario
@@ -59,4 +53,4 @@ const YourOrders = () => {
     );
 }
 
-export default YourOrders;
+export default YourOrders
