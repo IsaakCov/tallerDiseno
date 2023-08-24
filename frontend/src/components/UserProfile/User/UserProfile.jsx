@@ -8,6 +8,7 @@ import './UserProfile.css'
 import Navbar from '../../Home/Navbar'
 import Footer from '../../Home/Footer'
 import SocialMediaButtons from '../../socialmediabuttons/SocialMediaButtons'
+import YourOrders from '../Pages/YourOrders'
 
 
 
