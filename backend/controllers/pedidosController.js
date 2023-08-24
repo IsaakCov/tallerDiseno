@@ -2,6 +2,7 @@ const Pedido = require('../models/pedidosModel');
 const ProductoPedido = require('../models/pedidoProductosModel');
 const Usuario = require('../models/usuariosModel');
 const Producto = require('../models/productoModel');
+const Pedidos = require('../models/pedidosModel');
 
 const createPedido = async (req, res) => {
   try {
@@ -94,9 +95,11 @@ const deletePedido = async (req, res) => {
   const getPedidoById = async (req, res) => {
     try {
       const { idPedido } = req.params; // Obtén el ID del pedido de los parámetros de la URL
+      console.log(idPedido);
   
       // Busca el pedido por su ID
       const pedido = await Pedido.findByPk(idPedido);
+      console.log(pedido);
   
       if (!pedido) {
         return res.status(404).json({ msg: 'Pedido no encontrado' });
@@ -118,10 +121,31 @@ const deletePedido = async (req, res) => {
     }
   };
   
+// Controlador para obtener todos los pedidos de un usuario
+const getPedidosByUser = async (req, res) => {
+  try {
+    const { CorreoUsuario } = req.params;
+
+    // Verifica si el usuario existe
+    const usuario = await Usuario.findOne({ where: { Correo: CorreoUsuario } });
+    if (!usuario) {
+      return res.status(404).json({ msg: 'Usuario no encontrado' });
+    }
+
+    // Busca todos los pedidos asociados al usuario por su dirección de correo electrónico
+    const pedidos = await Pedido.findAll({ where: { CorreoUsuario } });
+
+    res.status(200).json({ pedidos });
+  } catch (error) {
+    return res.status(500).json({ msg: 'Error en el servidor', error: error.message });
+  }
+};
+
 module.exports = {
   createPedido,
   deletePedido,
   updatePedido,
   getPedidoById,
-  getAllPedidos
+  getAllPedidos,
+  getPedidosByUser
 };

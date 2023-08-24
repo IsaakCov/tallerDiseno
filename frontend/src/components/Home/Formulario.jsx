@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../componentsCSS/style.css";
 
@@ -8,6 +8,17 @@ const Formulario = () => {
     Asunto: "",
     Comentario: "",
   });
+
+  useEffect(() => {
+    // Obtener el correo del usuario desde localStorage cuando el componente se monta
+    const emailActualUser = localStorage.getItem("Correo");
+    if (emailActualUser) {
+      setFormData((prevData) => ({
+        ...prevData,
+        CorreoUsuario: emailActualUser,
+      }));
+    }
+  }, []); // El segundo argumento del useEffect es un arreglo vacío para que se ejecute una sola vez al montar el componente
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -19,9 +30,15 @@ const Formulario = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+  
+    // Verificar si el campo CorreoUsuario está vacío
+    if (!formData.CorreoUsuario) {
+      alert("Debes estar autenticado para enviar el formulario. Por favor, ve al home y realiza tu Login.");
+      return; // No se envía el formulario
+    }
+  
     axios
-      .post("http://localhost:3001/api/v1/formulario/sendform", formData) // Cambia la URL según corresponda
+      .post("http://localhost:3001/api/v1/formulario/sendform", formData)
       .then((response) => {
         console.log(response.data);
         // Realiza cualquier acción adicional que necesites después del envío
@@ -35,14 +52,9 @@ const Formulario = () => {
     <section>
       <div className="container mt-4 border bg-light shadow" id="cont">
         <div className="row">
-          {/* <div className="col-md-4 bg-info p-5 text-white bg-primary order-sm-first order-last">
-            <h2>Información de contacto y ubicación:</h2>
-            { ... (resto del código) ... }
-          </div> */}
           <div className="col-md-12 p-5">
             <h2 className="mb-5">¡Contáctanos!</h2>
-            <div className="container ">
-              {/* Aca borramos el obSubmit porque el Diego tiene miedo */}
+            <div className="container">
               <form className="contactForm" onSubmit={handleSubmit}>
                 <div className="form-floating mb-3">
                   <input
@@ -54,6 +66,7 @@ const Formulario = () => {
                     required
                     value={formData.CorreoUsuario}
                     onChange={handleChange}
+                    disabled // Deshabilita la edición del correo
                   />
                   <label htmlFor="CorreoUsuario">Correo</label>
                 </div>

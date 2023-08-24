@@ -62,13 +62,16 @@ function Login({ open, onClose }) {
         );
 
         console.log('Acceso con éxito:', response.data);
-        
+
+
         // Almacena el token JWT en el almacenamiento local
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('Correo', response.data.Correo);
-        //console.log(localStorage.getItem('token')); // Devuelve el valor de la clave
+        localStorage.setItem('userRole', response.data.Role);
+
+        //console.log(dieguito);
         // Recarga la página para aplicar la sesión activa
-        //window.location.reload();
+        window.location.reload();
       } else {
         const response = await axios.post(
           'http://localhost:3001/api/v1/usuarios/createUsuario',
@@ -80,7 +83,7 @@ function Login({ open, onClose }) {
             Telefono: telefono,
             Role: 'USUARIO',
           }
-          
+
         );
         window.location.reload();
 
@@ -122,13 +125,13 @@ function Login({ open, onClose }) {
             <div className="input_box">
               <input
                 //type={showPassword ? "text" : "password"}
-                type= "password"
+                type="password"
                 placeholder="Contraseña"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 name="lcontraseña"
-                id="lcontraseña"/>
-              </div>
+                id="lcontraseña" />
+            </div>
 
             {!isLogin && (
               <>
