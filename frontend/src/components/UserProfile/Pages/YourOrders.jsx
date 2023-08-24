@@ -43,7 +43,7 @@ const YourOrders = () => {
             status: 'Anulado',
             total: 1600
         }
-       
+
     ]
     const [selectedorderid, setselectedorderid] = useState(0)
     const [ordersuccesscont, setordersuccesscont] = useRecoilState(OrderSuccessfulProvider)
@@ -60,7 +60,7 @@ const YourOrders = () => {
                         <th scope='col'>Fecha</th>
                         <th scope='col'>Status</th>
                         <th scope='col'>Total</th>
-                        
+
                     </tr>
                 </thead>
 
@@ -72,7 +72,7 @@ const YourOrders = () => {
                                 <td data-label='OrderDate'>{item.date}</td>
                                 <td data-label='Delivery Status'>
                                     <div>
-                                        {item.status == 'Entregado' && <span  className="entregado bi bi-check-circle-fill"></span>}
+                                        {item.status == 'Entregado' && <span className="entregado bi bi-check-circle-fill"></span>}
                                         {item.status == 'Pendiente' && <span className="pendiente bi bi-bag"></span>}
                                         {item.status == 'Anulado' && <span className="anulado bi bi-x-circle"></span>}
                                         {item.status == 'Confirmado' && <span className="confirmado bi bi-bag-check"></span>}
@@ -82,7 +82,7 @@ const YourOrders = () => {
                                     </div>
                                 </td>
                                 <td data-label='Total'>${item.total}</td>
-                                
+
                             </tr>
                         )
                     })}
