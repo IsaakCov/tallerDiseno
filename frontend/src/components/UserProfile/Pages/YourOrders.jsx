@@ -4,12 +4,7 @@ import { useRecoilState } from 'recoil';
 import { OrderSuccessfulProvider } from '../Providers/OrderSuccessfulProvider';
 import OrderSuccessful from '../Order/OrderSuccessful';
 import "./YourOrders.css";
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { useRecoilState } from 'recoil';
-import { OrderSuccessfulProvider } from '../Providers/OrderSuccessfulProvider';
-import OrderSuccessful from '../Order/OrderSuccessful';
-import "./YourOrders.css";
+
 
 const YourOrders = () => {
   const [pedidos, setPedidos] = useState([]);
@@ -91,5 +86,4 @@ const YourOrders = () => {
   );
 };
 
-export default YourOrders;
 export default YourOrders;
