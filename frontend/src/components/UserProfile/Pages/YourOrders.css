@@ -10,7 +10,7 @@
 }
 
 
-.yourorderstable {
+.yourOrdersTable {
     border: 1px solid #ccc;
     border-collapse: collapse;
     margin: 0;
@@ -20,25 +20,25 @@
 }
 
 
-.yourorderstable  thead tr {
+.yourOrdersTable  thead tr {
     background-color: var(--col1);
     color: #fff;
     border: 1px solid #ddd;
     padding: .35em;
 }
-.yourorderstable tr {
+.yourOrdersTable tr {
     background-color: #ffffff;
     border: 1px solid #ddd;
     padding: .35em;
 }
 
 
-.yourorderstable  th,
-.yourorderstable  td {
+.yourOrdersTable  th,
+.yourOrdersTable  td {
     text-align: center;
 }
 
-.yourorderstable tr th {
+.yourOrdersTable tr th {
     font-size: .85em;
     letter-spacing: .1em;
     text-transform: uppercase;
@@ -46,7 +46,7 @@
 }
 
 
-.yourorderstable tr td {
+.yourOrdersTable tr td {
     padding: 5px 20px;
     border: 1px solid rgb(207, 207, 207);
     border-radius: 5px;
@@ -54,7 +54,7 @@
 }
 
 
-.yourorderstable tr td button {
+.yourOrdersTable tr td button {
     padding: 5px 20px;
     margin: 0px;
     font-size: 16px;
@@ -62,7 +62,7 @@
 
 
 
-.yourorderstable tr td div{
+.yourOrdersTable tr td div{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -97,7 +97,7 @@
 
 @media screen and (max-width: 1200px) {
     
-    .yourorderstable thead {
+    .yourOrdersTable thead {
         border: none;
         clip: rect(0 0 0 0);
         height: 1px;
@@ -107,13 +107,13 @@
         position: absolute;
         width: 1px;
     }
-    .yourorderstable tr {
+    .yourOrdersTable tr {
         display: block;
         margin-bottom: .625em;
         border: none;
     }
 
-    .yourorderstable tr td {
+    .yourOrdersTable tr td {
         border: none;
         border-radius: 0px;
         display: block;
@@ -123,7 +123,7 @@
         justify-content: space-between;
     }
 
-    .yourorderstable td::before{
+    .yourOrdersTable td::before{
         content:attr(data-label);
     }
 }

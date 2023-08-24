@@ -50,7 +50,7 @@ const YourOrders = () => {
     <div className='yourorders'>
       <h1 className='mainhead1'>Mis pedidos</h1>
       {orderSuccessCont && <OrderSuccessful orderid={selectedOrderId} message={`Order ID: ${selectedOrderId}`} />}
-      <table className='yourorderstable'>
+      <table className='yourOrdersTable'>
         <thead>
           <tr>
             <th scope='col'>N° Orden</th>
