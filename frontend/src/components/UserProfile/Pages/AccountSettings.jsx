@@ -2,35 +2,59 @@ import React from 'react'
 import "./AccountSettings.css"
 
 const AccountSettings = () => {
+  
   return (
     <div className='accountsettings'>
       <h1 className='mainhead1'>Información Personal</h1>
+     
+      
 
       <div className='form'>
         <div className='form-group'>
-          <label htmlFor='name'>Nombre </label>
-          <input type='text' name='name' id='name' />
+        <i className="logousuario  bi-person-circle"></i>
+
+          
         </div>
 
-        <div className='form-group'>
-          <label htmlFor='phone'>Celular/Teléfono </label>
-          <input type='text' name='phone' id='phone'
+        <table className='yourorderstable'>
+                <thead>
+                    <tr>
+                        <th scope='col'>Nombre y Apellido</th>
+                        <th scope='col'>Correo</th>
+                        <th scope='col'>Celular/Teléfono</th>
+                        
+                        
+                    </tr>
+                </thead>
+        </table>
 
-          />
+        <div>
+          <span className='nameuser'>Nombre y Apellido </span>
         </div>
 
-        <div className='form-group'>
-          <label htmlFor='email'>Correo </label>
-          <input type='email' name='email' id='email'
-
-          />
+        <div>
+          <span className='mailuser'>Correo</span>
         </div>
 
-      
+        <div>
+          <span className='user'>Celular/Teléfono</span>
+        </div>
+
       </div>
 
-     
+
+
+
+          
+          
+
+          
+        
+
     </div>
+
+     
+    
   )
 }
 

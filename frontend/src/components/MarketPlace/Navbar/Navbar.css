@@ -8,15 +8,18 @@
   position: sticky;
   display: flex;
   justify-content: space-between;
-  height: 15vh;
+  height: 10vh;
   background-color: #456884;
 }
 .navbar-logo {
   justify-self: start;
   margin-left: 20px;
   color: #fff;
-  margin-top: 4vh;
+  margin-top: 3vh;
   cursor: pointer;
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar-market a {
