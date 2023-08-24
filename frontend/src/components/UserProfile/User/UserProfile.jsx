@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import YourOrders from '../Pages/YourOrders'
+
 import UserSidebar from '../Pages/UserSidebar'
 import AccountSettings from '../Pages/AccountSettings'
 import Banner from '../Banner/Banner2'
@@ -8,6 +8,7 @@ import './UserProfile.css'
 import Navbar from '../../Home/Navbar'
 import Footer from '../../Home/Footer'
 import SocialMediaButtons from '../../socialmediabuttons/SocialMediaButtons'
+import YourOrders from '../Pages/YourOrders'
 
 
 

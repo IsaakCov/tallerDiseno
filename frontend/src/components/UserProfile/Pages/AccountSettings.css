@@ -1,16 +1,17 @@
-.accountsettings{
-    display: flex;
+.accountSettings{
+     display: flex;
     flex-direction: column;
     width: 100%;
-    align-items: center;
+    align-items: center; 
 }
 
-.accountsettings h1{
+
+.accountSettings h1{
     padding: 10px 20px;
 }
 
 
-.accountsettings .form{
+.accountSettings .form{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -19,27 +20,27 @@
     padding: 10px 20px;
 }
 
-.accountsettings .form .form-group{
+.accountSettings .form .form-group{
     display: flex;
     flex-direction: column;
     width: 100%;
     margin: 10px;
 }
 
-.accountsettings .form .form-group label{
+.accountSettings .form .form-group label{
     font-size: 1.2rem;
     font-weight: 300;
     margin-bottom: 5px;
 }
 
-.accountsettings .form .form-group input{
+.accountSettings .form .form-group input{
     padding: 10px 20px;
     border: 1px solid rgb(207, 207, 207);
     border-radius: 5px;
     outline: none;
 } 
 
-.accountsettings .form .form-group input:focus{
+.accountSettings .form .form-group input:focus{
     border: 1px solid var(--col1);
 }
 
@@ -54,7 +55,7 @@
 
 
 @media (max-width: 800px){
-    .accountsettings .form{
+    .accountSettings .form{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -63,18 +64,24 @@
         padding: 10px 20px;
     }
 
-    .accountsettings .form .form-group{
+    .accountSettings .form .form-group{
         display: flex;
         flex-direction: column;
         width: 97%;
         margin: 10px;
     }
-    .accountsettings h1{
+    .accountSettings h1{
         font-size: 20px;
     }
-    .accountsettings .form .form-group label{
+    .accountSettings .form .form-group label{
         font-size: 16px;
         font-weight: 300;
         margin-bottom: 5px;
     }
 } 
+
+.userlogo{
+    color:#456884;
+    font-size: 100px;
+    
+}
