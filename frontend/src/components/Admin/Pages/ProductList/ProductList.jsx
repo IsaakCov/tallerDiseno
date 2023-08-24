@@ -1,39 +1,55 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect} from 'react'
+import "./productlist.css"
 import { DataGrid } from '@mui/x-data-grid';
-// import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const ProductList = () => {
-  const [data, setData] = useState([]);
 
-  useEffect(() => {
-    // Obtener los datos desde la base de datos
-    fetch('http://localhost:3001/api/v1/productos/getAllProductos') // Reemplaza con la URL correcta de tu API
-      .then(response => response.json())
-      .then(data => {
-        setData(data); // Actualizar el estado con los datos obtenidos
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
+        const [data, setData]=useState([]);
+        
+        useEffect(() => {
+            fetchData();
+        }, []);
+    
+        const fetchData = async () => {
+            try {
+                const response = await axios.get("http://localhost:3001/api/v1/productos/getAllProductos");
+                
+                if (Array.isArray(response.data.productos)) {
+                    setData(response.data.productos);
+                } else {
+                    console.error("La respuesta no contiene un arreglo:", response.data.productos);
+                }
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                // Manejo del error
+            }
+        };
+    
+        if (!Array.isArray(data) || data.length === 0) {
+            console.log(data);
+            return <p>Loading...</p>;
+             // Otra acción que consideres apropiada mientras cargan los datos
+        }
 
-  const columns = [
-    { field: 'idProducto', headerName: 'ID', width: 70 },
-    { field: 'Descripcion', headerName: 'Descripcion', width: 200 },
-    { field: 'Medidas', headerName: 'Medidas', width: 200 },
-    { field: 'Precio', headerName: 'Precio', width: 200 },
-  ];
 
-  return (
-    <div style={{ height: 400, width: '100%' }}>
-      <DataGrid
-        rows={data}
-        columns={columns}
-        pageSize={5}
-        checkboxSelection
-      />
-    </div>
-  );
-};
+        const columns = [
+        { field: 'idProducto', headerName: 'ID', width: 300 },
+        { field: 'Nombre', headerName: 'Producto', width: 200 },
+        { field: 'Medidas', headerName: 'Medidas', width: 150 },
+        { field: 'Color', headerName: 'Color', width: 70 },
+        { field: 'Precio', headerName: 'Precio', width: 70 }
+        ];
+
+    return (
+        <div style={{ height: 400, width: '80%' }}>
+    <DataGrid 
+    rows={data} 
+    getRowId={(data) => data.idProducto} 
+    columns={columns} 
+    pageSize={5} />
+    </div> 
+    )
+}
 
 export default ProductList;

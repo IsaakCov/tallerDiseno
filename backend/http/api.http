@@ -6,11 +6,11 @@ POST http://localhost:3001/api/v1/usuarios/createUsuario
 Content-Type: application/json
 
 {
-    "Correo": "nuevo_usuario@example.com",
+    "Correo": "123@123.com",
     "Nombre": "Nuevo",
     "Apellido": "Usuario",
     "Telefono": "1234567890",
-    "Contrasena": "nuevacontrasena",
+    "Contrasena": "123",
     "Role": "USUARIO"
 }
 
