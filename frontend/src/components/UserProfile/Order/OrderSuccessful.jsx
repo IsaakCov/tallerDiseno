@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import './OrderSuccessful.css'
 import { useRecoilState } from 'recoil'
 import { OrderSuccessfulProvider } from '../Providers/OrderSuccessfulProvider'

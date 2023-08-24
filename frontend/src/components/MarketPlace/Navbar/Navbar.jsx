@@ -18,19 +18,17 @@ const Navbar = () => {
 
       <div className="nav-container-market">
         <button
-          class="modalBtn-market btn btn-outline-dark"
+          className="modalBtn-market btn btn-outline-dark"
           type="submit"
           onClick={() => setOpenModal(true)}
         >
-          <i class="bi-cart-fill me-1"></i>
+          <i className="bi-cart-fill me-1"></i>
 
-          <span class="badge bg-dark text-white ms-1 rounded-pill">
+          <span className="badge bg-dark text-white ms-1 rounded-pill">
             {cart.length > 0 ? <TotalItems /> : null}
           </span>
         </button>
         <CartElements open={openModal} onClose={() => setOpenModal(false)} />
-        <button>AQUI IRÁ EL BOTON PARA ADMINISTRADOR</button>
-        <button>AQUI IRÁ EL BOTON PARA USUARIO NORMAL</button>
       </div>
     </div>
   );
