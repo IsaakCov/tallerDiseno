@@ -2,6 +2,8 @@ import Navbar from "../Navbar/Navbar";
 import Banner from "../Banner/Banner";
 import Products from "../Products/Products";
 import SocialMediaButtons from "../../socialmediabuttons/SocialMediaButtons";
+import Footer from "../../Home/Footer";
+
 const MarketPlace = () => {
   return (
     <>
@@ -11,6 +13,7 @@ const MarketPlace = () => {
         <Products />
       </div>
       <SocialMediaButtons />
+      <Footer />
     </>
   );
 };

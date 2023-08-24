@@ -8,6 +8,9 @@ import "../componentsCSS/timeline.css";
 import isotipo from "../img/isotipo.jpg";
 import Login from "../formularioinicioyregistro/Login";
 import { useRef } from "react";
+import BotonUsuario from "./Botonusuario";
+import BotonAdmin from "./BotonAdmin";
+import BotonLogOut from "./BotonLogOut";
 
 const Navbar = () => {
   const [openLogin, setOpenLogin] = useState(false);
@@ -103,6 +106,10 @@ const Navbar = () => {
                 </button>
                 <Login open={openLogin} onClose={() => setOpenLogin(false)} />
                 <li className="d-flex nav-item mx-2">
+                  <BotonUsuario/>
+                  <BotonAdmin/>
+                  <BotonLogOut/>
+                
                 </li>
               </div>
             </div>
