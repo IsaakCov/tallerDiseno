@@ -60,7 +60,7 @@ const YourOrders = () => {
                         <th scope='col'>Fecha</th>
                         <th scope='col'>Status</th>
                         <th scope='col'>Total</th>
-                        <th scope='col'>Orden de compra</th>
+                        
                     </tr>
                 </thead>
 
@@ -82,14 +82,7 @@ const YourOrders = () => {
                                     </div>
                                 </td>
                                 <td data-label='Total'>${item.total}</td>
-                                <td data-label='Invoice'>
-                                    <button className='mainbutton1'
-                                        onClick={() => {
-                                            setselectedorderid(item.id)
-                                            setordersuccesscont(true)
-                                        }}
-                                    >Ver</button>
-                                </td>
+                                
                             </tr>
                         )
                     })}
