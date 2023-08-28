@@ -46,6 +46,12 @@ const YourOrders = () => {
     }
   };
 
+  // Función para mostrar los detalles del pedido cuando se hace clic en una fila
+  const showOrderDetails = (orderId) => {
+    setSelectedOrderId(orderId);
+    setOrderSuccessCont(true);
+  };
+
   return (
     <div className='yourorders'>
       <h1 className='mainhead1'>Mis pedidos</h1>

@@ -37,22 +37,28 @@ const createUsuario = async(req, res) =>{
 }
 
 // Consultar un usuario por su email
-const findUsuario = async(req, res) =>{
+const findUsuario = async (req, res) => {
     // Definimos que vamos a recibir, como request, un Correo
     const { Correo } = req.params;
-
+  
     try {
-        // Ocupando el metodo findOne de sequelize, buscamos por todos los usuarios 
-        //el primer correo que cumpla con las caracteristicas de nuestra request
-        const usuario = usuarios.findOne({where: {Correo: Correo}})
-        if(!usuario){
-            return res.status(404).json({ msg: 'Usuario no encontrado' });
-        }
-        res.status(200).json({ usuario: usuario });
+      if (!Correo) {
+        return res.status(400).json({ msg: 'Correo no proporcionado' });
+      }
+  
+      // Ocupando el método findOne de sequelize, buscamos por todos los usuarios 
+      // el primer correo que cumpla con las características de nuestra request
+      const usuario = await usuarios.findOne({ where: { Correo: Correo } });
+  
+      if (!usuario) {
+        return res.status(404).json({ msg: 'Usuario no encontrado' });
+      }
+  
+      res.status(200).json({ usuario: usuario });
     } catch (error) {
-        res.status(400).json({ msg: 'Error al buscar usuario', error: error.message });
+      res.status(400).json({ msg: 'Error al buscar usuario', error: error.message });
     }
-}
+  };
 
 // Obtener todos los usuarios
 const getAllUsuarios = async (req, res) => {
