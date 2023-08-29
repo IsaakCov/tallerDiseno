@@ -10,20 +10,20 @@ function SideBar() {
             <h3 className="sidebarTitleAdmin">DashBoard</h3>
             <ul className="sidebarListAdmin">
               <li className="sidebarListItemAdmin">
-              <Link to ="/AdminDashboard/Users">
+              <Link to ="/AdminDashboard/Users" className='whiteText'>
               <i className="bi bi-person"></i>
               Usuarios
               </Link>
               </li>
               
               <li className="sidebarListItemAdmin">
-              <Link to="/AdminDashBoard/Products">
+              <Link to="/AdminDashBoard/Products" className='whiteText'>
               <i className="bi bi-shop"></i>
               Productos
               </Link>
               </li>
               <li className="sidebarListItemAdmin">
-              <Link to="/AdminDashBoard/Orders">
+              <Link to="/AdminDashBoard/Orders" className='whiteText'>
               <i className="bi bi-box-seam"></i>
               Pedidos
               </Link>

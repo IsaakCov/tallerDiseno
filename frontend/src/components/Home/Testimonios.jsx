@@ -20,6 +20,13 @@ const Testimonios = () => {
         <p className="lead my-3 text-muted">
             La colaboración con Michelle se basa en su compromiso ejemplar y en su habilidad para enfrentar desafíos con innovación y experiencia. En la industria publicitaria, destacan por crear mobiliario distintivo y moderno que cumple con altos estándares.
         </p>
+            <div className="rating fs-5 estrellas">
+            <span className="star">&#9733;</span>
+            <span className="star">&#9733;</span>
+            <span className="star">&#9733;</span>
+            <span className="star">&#9733;</span>
+            <span className="star">&#9733;</span>
+            </div>
         <p className="font-italic font-weight-normal mb-0"> Mara Grinbergs </p>
     </div>
 </div>

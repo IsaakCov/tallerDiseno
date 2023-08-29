@@ -37,7 +37,7 @@ const Navbar = () => {
         <div className="container">
           {/* Logo */}
           <Link className="navbar-brand fs-4" to="/">
-            <img src={isotipo} alt="Logotipo" width="60%" />
+            <img src={isotipo} alt="Logotipo" width="70%" />
           </Link>
           {/* Toggle btn */}
           <button
@@ -131,6 +131,7 @@ const Navbar = () => {
               )}
             </div>
           </div>
+          
         </div>
       </nav>
     </div>

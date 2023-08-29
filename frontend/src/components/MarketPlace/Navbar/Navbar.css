@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+
 .nav-container-market {
   position: sticky;
   z-index: 3;
@@ -8,8 +10,8 @@
   position: sticky;
   display: flex;
   justify-content: space-between;
-  height: 10vh;
-  background-color: #456884;
+  height: 6vh;
+  background-color: white;
 }
 .navbar-logo {
   justify-self: start;
@@ -24,10 +26,10 @@
 
 .navbar-market a {
   text-decoration: none;
+  font-size: 23px;
 }
 
 .seeCarrito {
-  font-size: 25px;
   margin-right: 20px;
   margin-top: 4vh;
   cursor: pointer;
@@ -36,8 +38,7 @@
 
 .modalBtn-market {
   position: absolute;
-  left: 90%;
-  transform: translate(-40%, -170%);
+  transform: translate(-170%, -170%);
   font-size: 20px;
   background-color: transparent;
   -webkit-transform: translate(-40%, -170%);
@@ -45,3 +46,9 @@
   -ms-transform: translate(-40%, -170%);
   -o-transform: translate(-40%, -170%);
 }
+
+#menu-marketplace
+{
+  z-index: 3;
+}
+
