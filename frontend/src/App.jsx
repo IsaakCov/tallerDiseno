@@ -15,6 +15,7 @@ import UserProfile from "./components/UserProfile/User/UserProfile";
 import "./App.css"
 import ItemViews from "./components/ShopItemsView/ItemViews";
 import Contact from "./components/Contact/Contact";
+import OrderSummary from "./components/OrderSummary/OrderSummary";
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
           <Route path="/order" element={<Order />} />
           <Route path="/shipping-info" element={<ShippingInfo />} />
           <Route path="/payment-info" element={<PaymentInfo />} />
+          <Route path="/ordersummary" element={<OrderSummary />}/>
+          
           
           
           <Route path="/AdminDashboard/Users" element={<DashboardUsers />} />
