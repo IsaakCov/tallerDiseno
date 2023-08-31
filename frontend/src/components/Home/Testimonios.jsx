@@ -5,8 +5,8 @@ const Testimonios = () => {
       <div className="row d-flex justify-content-center mt-5">
         <div className="col-md-10 col-xl-8 text-center">
           <h2 className="text-center m-5">Testimonios</h2>
-          <h5 className="mb-4 pb-2 mb-md-5 pb-md-0">
-          Testimonios que resaltan nuestro arte en la restauración y diseño de muebles
+          <h5 className="mb-4 pb-2 mb-md-5 pb-md-0 mx-4">
+          Testimonios que resaltan nuestro arte en la restauración y el diseño de muebles
           </h5>
         </div>
       </div>
@@ -17,8 +17,8 @@ const Testimonios = () => {
             <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(22).webp"
                 className="rounded-circle shadow-1-strong" width="100" height="100" />
         </div>
-        <p className="lead my-3 text-muted">
-            La colaboración con Michelle se basa en su compromiso ejemplar y en su habilidad para enfrentar desafíos con innovación y experiencia. En la industria publicitaria, destacan por crear mobiliario distintivo y moderno que cumple con altos estándares.
+        <p className="lead my-3 mx-5 text-muted">
+            La colaboración con Michelle se basa en su compromiso ejemplar y en su habilidad para enfrentar desafíos con innovación , gran experiencia y trayectoria. <br></br> En la industria publicitaria, destacan por crear mobiliario distintivo y moderno que cumple con altos estándares.
         </p>
             <div className="rating fs-5 estrellas">
             <span className="star">&#9733;</span>

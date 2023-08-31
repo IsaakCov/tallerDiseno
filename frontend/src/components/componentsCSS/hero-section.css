@@ -95,8 +95,17 @@
 .carousel-item h4
 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 30px;
+    font-size: 170%;
 }
+
+/* Estilos para pantallas pequeñas como dispositivos móviles */
+@media (max-width: 768px) {
+    .carousel-caption h2 {
+        font-size: 40px; 
+        margin: 10px 0; 
+    }
+}
+
 
 .logoperfil{
     color:#456884;

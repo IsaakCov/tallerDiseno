@@ -21,17 +21,18 @@ const Encabezado = () => (
                     </div>
                 </div>
                 {/* <!-- Slide 2 a la derecha --> */}
-                <div className="carousel-item" id="slide2">
-                    <div className="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
-                        <div className="p-md-3">
-                            <h4 className="section-title text-white animated slideInDown">Diseños Iconográficos</h4>
-                            <h2 className="display-3 text-white m-4 animated slideInDown ">Conoce nuestros proyectos</h2>
+        <div className="carousel-item" id="slide2">
+            <div className="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
+                <div className="p-md-2">
+                    <h4 className="section-title text-white animated slideInDown">Diseños Iconográficos</h4>
+                        <h2 className="display-3 text-white m-4 animated slideInDown">Conoce nuestros proyectos</h2>
                             <Link to="/Marketplace" className="btn btn-light py-md-3 px-md-5 animated slideInRight fs-5">
                             Ver más
                             </Link>
-                        </div>
-                    </div>
                 </div>
+            </div>
+        </div>
+
             </div>
             {/* <!-- Botones de control --> */}
             <button className="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
