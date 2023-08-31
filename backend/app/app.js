@@ -33,4 +33,4 @@ transporter.verify((error) => {
   }
 });
 
-module.exports = app;
+module.exports = {app, transporter};
