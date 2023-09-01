@@ -2,7 +2,7 @@ const Pedido = require('../models/pedidosModel');
 const ProductoPedido = require('../models/pedidoProductosModel');
 const Usuario = require('../models/usuariosModel');
 const Producto = require('../models/productoModel');
-const {transporter} = require('../app/app');
+//const {transporter} = require('../app/app');
 
 const createPedido = async (req, res) => {
   try {
@@ -49,7 +49,7 @@ const createPedido = async (req, res) => {
     await pedido.update({ TotalPedido: totalPedido });
 
     // Envía el correo de confirmación usando el transporter
-    const mailOptions = {
+    /*const mailOptions = {
       from: transporter.options.auth.user, // Usa el remitente del transporter
       to: 'Correo personal de Michelle', // Ingresar el correo de Michelle y, quizas, el del cliente
       subject: 'Nuevo pedido ingresado',
@@ -57,6 +57,7 @@ const createPedido = async (req, res) => {
     };
 
     await transporter.sendMail(mailOptions);
+    */
 
     return res.status(201).json({ msg: 'Pedido creado con éxito', pedido });
   } catch (error) {
@@ -150,6 +151,31 @@ const getPedidosByUser = async (req, res) => {
     return res.status(500).json({ msg: 'Error en el servidor', error: error.message });
   }
 };
+const getLastPedidoByUser = async (req, res) => {
+  try {
+    const { CorreoUsuario } = req.params;
+
+    // Verifica si el usuario existe
+    const usuario = await Usuario.findOne({ where: { Correo: CorreoUsuario } });
+    if (!usuario) {
+      return res.status(404).json({ msg: 'Usuario no encontrado' });
+    }
+
+    // Busca el último pedido asociado al usuario por su dirección de correo electrónico
+    const lastPedido = await Pedido.findOne({
+      where: { CorreoUsuario },
+      order: [['createdAt', 'DESC']], // Ordena por fecha de creación en orden descendente
+    });
+
+    if (!lastPedido) {
+      return res.status(404).json({ msg: 'Usuario no tiene pedidos' });
+    }
+
+    res.status(200).json({ lastPedido });
+  } catch (error) {
+    return res.status(500).json({ msg: 'Error en el servidor', error: error.message });
+  }
+};
 
 module.exports = {
   createPedido,
@@ -157,5 +183,6 @@ module.exports = {
   updatePedido,
   getPedidoById,
   getAllPedidos,
-  getPedidosByUser
+  getPedidosByUser,
+  getLastPedidoByUser
 };

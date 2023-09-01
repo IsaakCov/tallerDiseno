@@ -3,7 +3,7 @@ const app = express();
 const cors = require('cors');
 const morgan = require('morgan');
 const router = require('../routes/router');
-const nodemailer = require('nodemailer');
+//const nodemailer = require('nodemailer');
 // Solucionamos el intercambio de recursos cruzado de origen cruzado (CORS) con el front
 app.use(cors());
 // Middleware para analizar el cuerpo de las solicitudes
@@ -16,7 +16,7 @@ app.use(morgan('dev'));
 app.use('/api/v1', router);
 
 // Configura el transporter con tus credenciales SMTP
-const transporter = nodemailer.createTransport({
+/*const transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
       user: process.env.SMTP_USER,
@@ -31,6 +31,6 @@ transporter.verify((error) => {
   } else {
     console.log('Conexión SMTP exitosa');
   }
-});
+});*/
 
-module.exports = {app, transporter};
+module.exports = app;

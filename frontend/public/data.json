@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Sofá",
-        "price":29000,
+        "price":290000,
         "color":"Gris",
         "medidas":"170 cm x 80 cm",
         "img":  "./Productos/SofaGris.jpg", 

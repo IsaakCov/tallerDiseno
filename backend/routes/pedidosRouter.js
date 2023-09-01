@@ -7,7 +7,8 @@ const {
     updatePedido, 
     getPedidoById, 
     getAllPedidos, 
-    getPedidosByUser 
+    getPedidosByUser,
+    getLastPedidoByUser 
 } = require("../controllers/pedidosController");
 
 
@@ -16,5 +17,6 @@ router.delete("/deletePedido/:idPedido", deletePedido);
 router.put("/updatePedido/:idPedido", updatePedido);
 router.get("/getPedidoById/:idPedido", getPedidoById);
 router.get("/getAllPedidos", getAllPedidos);
-router.get("/getPedidosByUser/:CorreoUsuario", getPedidosByUser)
+router.get("/getPedidosByUser/:CorreoUsuario", getPedidosByUser);
+router.get("/getLastPedidoByUser/:CorreoUsuario",getLastPedidoByUser);
 module.exports = router;
