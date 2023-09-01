@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react';
 import './userList.css';
 import { DataGrid } from '@mui/x-data-grid';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 
 const UserList = () => {
-const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
+  const [data, setData] = useState([]); 
+  const navigate = useNavigate();
+  const userRole = localStorage.getItem('Role');
+  
+  
   const fetchData = async () => {
     try {
       const response = await axios.get('http://localhost:3001/api/v1/usuarios/getAllUsuarios');
@@ -23,6 +24,17 @@ const [data, setData] = useState([]);
       // Manejo del error
     }
   };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  // Verifica si el rol no es "ADMINISTRADOR" y redirige si es necesario
+  if (userRole !== 'ADMINISTRADOR') {
+    alert('Tu mamita Seba');
+    navigate('/');
+    return null; // O cualquier otra acción que desees realizar si no es un administrador
+  }
 
   if (!Array.isArray(data) || data.length === 0) {
     return <p>Loading...</p>;
