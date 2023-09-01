@@ -21,7 +21,7 @@ Pedidos.belongsTo(Usuarios, { foreignKey: "CorreoUsuario" });
 Pedidos.belongsToMany(Productos, { through: "PedidoProductos" });
 Productos.belongsToMany(Pedidos, { through: "PedidoProductos" });
 
-const port = process.env.port || 3001;
+const port = process.env.DB_PORT;
 
 // Conexión a la base de datos y sincronización de modelos
 const database = async () => {
