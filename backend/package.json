@@ -21,6 +21,7 @@
     "morgan": "^1.10.0",
     "mysql2": "^3.5.2",
     "nodemailer": "^6.9.4",
+    "pg": "^8.11.3",
     "sequelize": "^6.32.1"
   },
   "devDependencies": {
