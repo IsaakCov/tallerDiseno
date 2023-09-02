@@ -82,9 +82,10 @@ const CreateProduct = () => {
       <div className='d-flex justify-content-center align-content-center mt-5 '>
         <form onSubmit={handleSubmit} className='d-flex flex-column gap-2 w-'>
           <h2>Crear Producto</h2>
-          <label htmlFor="nombre">URL</label>
+          <label htmlFor="imgproducto">URL</label>
           <input
             type="text"
+            name='imgproducto'
             value={imagenProducto}
             onChange={(e) => setImagenProducto(e.target.value)}
             placeholder="URL de la imagen"
