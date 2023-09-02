@@ -1,6 +1,6 @@
-require('dotenv').config();
-const {Sequelize} = require('sequelize');
-const credentials = require('../config/const');
+require("dotenv").config();
+const { Sequelize } = require("sequelize");
+const credentials = require("../config/const");
 
 if(process.env.DB_HOST == 'localhost'){
     const conn = new Sequelize(credentials.dbName, credentials.dbUser, credentials.dbPass,{
