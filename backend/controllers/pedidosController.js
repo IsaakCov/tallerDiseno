@@ -264,7 +264,9 @@ const getLastPedidoByUser = async (req, res) => {
 
     res.status(200).json({ lastPedido });
   } catch (error) {
-    return res.status(500).json({ msg: 'Error en el servidor', error: error.message });
+    return res
+      .status(500)
+      .json({ msg: "Error en el servidor", error: error.message });
   }
 };
 
