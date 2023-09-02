@@ -37,7 +37,7 @@ const ShippingInfo = () => {
           TotalPedido: TotalPedido
         }
       );
-      navigate("/payment-info");
+      navigate("/ordersummary");
       console.log('Pedido correcto')
     } catch (error) {
       console.log(error)
