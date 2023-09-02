@@ -3,6 +3,8 @@ import './user.css'
 import Avatar from '../../img/Avatar.png'
 import { Link } from "react-router-dom"
 
+
+
 const User = () => {
   return (
     <div className="userViewAdmin">

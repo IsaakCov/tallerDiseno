@@ -6,7 +6,7 @@ const createProducto = async (req, res) => {
     const { Nombre, Descripcion, Precio, Stock, Imagen, Color, Medidas } = req.body;
 
     //Hacemos una validacion de la obtencion de datos para la API
-    if (!Nombre || !Descripcion || !Precio || !Stock || !Imagen || !Color || !Medidas) {
+    if (!Nombre || !Descripcion || !Precio || /* !Stock || */ !Imagen || !Color || !Medidas) {
         return res.status(400).json({ msg: 'Falto ingresar informacion' })
     }
     try {
