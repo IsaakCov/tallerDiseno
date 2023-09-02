@@ -1,7 +1,7 @@
-const Pedido = require('../models/pedidosModel');
-const ProductoPedido = require('../models/pedidoProductosModel');
-const Usuario = require('../models/usuariosModel');
-const Producto = require('../models/productoModel');
+const Pedido = require("../models/pedidosModel");
+const ProductoPedido = require("../models/pedidoProductosModel");
+const Usuario = require("../models/usuariosModel");
+const Producto = require("../models/productoModel");
 
 const createPedido = async (req, res) => {
   try {
@@ -53,9 +53,6 @@ const createPedido = async (req, res) => {
     // Actualiza el total del pedido en el registro de Pedido
     await pedido.update({ TotalPedido: totalPedido });
 
-<<<<<<< HEAD
-    return res.status(201).json({ msg: "Pedido creado con éxito", pedido });
-=======
     // Envía el correo de confirmación usando el transporter
     /*const mailOptions = {
       from: transporter.options.auth.user, // Usa el remitente del transporter
@@ -66,8 +63,7 @@ const createPedido = async (req, res) => {
 
     await transporter.sendMail(mailOptions);*/
 
-    return res.status(201).json({ msg: 'Pedido creado con éxito', pedido });
->>>>>>> c3f9e31b414f9a2720cf368742e5ed0f7650a6c8
+    return res.status(201).json({ msg: "Pedido creado con éxito", pedido });
   } catch (error) {
     return res
       .status(500)
