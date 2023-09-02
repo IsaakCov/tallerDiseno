@@ -12,6 +12,7 @@ if(process.env.DB_HOST == 'localhost'){
     module.exports = conn;}
 else{
     const conn = new Sequelize(`${process.env.DB_URL}`,{
+        dialect: 'postgres',
         ssl: true,
         dialectOptions:{
             require: true,
