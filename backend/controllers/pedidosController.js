@@ -2,6 +2,7 @@ const Pedido = require("../models/pedidosModel");
 const ProductoPedido = require("../models/pedidoProductosModel");
 const Usuario = require("../models/usuariosModel");
 const Producto = require("../models/productoModel");
+//const {transporter} = require('../app/app');
 
 const createPedido = async (req, res) => {
   try {
@@ -52,6 +53,16 @@ const createPedido = async (req, res) => {
 
     // Actualiza el total del pedido en el registro de Pedido
     await pedido.update({ TotalPedido: totalPedido });
+
+    // Envía el correo de confirmación usando el transporter
+    /*const mailOptions = {
+      from: transporter.options.auth.user, // Usa el remitente del transporter
+      to: 'Correo personal de Michelle', // Ingresar el correo de Michelle y, quizas, el del cliente
+      subject: 'Nuevo pedido ingresado',
+      text: `¡El nuevo pedido con ID ${pedido.id}, de parte de ${CorreoUsuario} ha sido creado exitosamente en Taller Diseño! Total: $${totalPedido}`,
+    };
+
+    await transporter.sendMail(mailOptions);*/
 
     return res.status(201).json({ msg: "Pedido creado con éxito", pedido });
   } catch (error) {
