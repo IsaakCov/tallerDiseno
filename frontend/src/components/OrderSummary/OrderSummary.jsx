@@ -9,6 +9,7 @@ import {
   MDBRow
 } from "mdb-react-ui-kit";
 import "./OrderSummary2.css";
+const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
 
 export default function OrderDetails2() {
   const { cart } = useContext(dataContext);
@@ -22,7 +23,7 @@ export default function OrderDetails2() {
   useEffect(() => {
     const fetchLastPedido = async () => {
       try {
-        const response = await fetch(`http://localhost:3001/api/v1/pedidos/getLastPedidoByUser/${correoUsuario}`);
+        const response = await fetch(`${backendUrl}/api/v1/pedidos/getLastPedidoByUser/${correoUsuario}`);
         const data = await response.json();
         console.log(data);
         setLastPedido(data.lastPedido);

@@ -6,7 +6,7 @@ const CreateProduct = () => {
   const [nombreProducto, setNombreProducto] = useState('');
   const [descripcionProducto, setDescripcionProducto] = useState('');
   const [precioProducto, setPrecioProducto] = useState(0);
-  const [stockProducto, setStockProducto] = useState(0);
+  const [stockProducto, setStockProducto] = useState(1);
   const [colorProducto, setColorProducto] = useState('');
   const [medidasProducto, setMedidasProducto] = useState('');
   const [successMessage, setSuccessMessage] = useState('');

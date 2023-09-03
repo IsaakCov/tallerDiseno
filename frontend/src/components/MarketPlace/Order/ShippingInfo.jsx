@@ -3,6 +3,7 @@ import { dataContext } from "../Context/DataContext";
 import { Link, useNavigate } from "react-router-dom";
 import '../Order/ordersummary.css'
 import axios from "axios";
+const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
 
 const ShippingInfo = () => {
   const { cart } = useContext(dataContext);
@@ -26,7 +27,7 @@ const ShippingInfo = () => {
     try {
       const response = await axios.post(
 
-        'http://localhost:3001/api/v1/pedidos/postPedidos',
+        `${backendUrl}/api/v1/pedidos/postPedidos`,
         {
           CorreoUsuario: CorreoUsuario,
           DireccionEnvio: DireccionEnvio,
