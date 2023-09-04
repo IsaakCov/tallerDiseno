@@ -12,12 +12,13 @@ const Navbar = () => {
 
   return (
     <div id='menu-marketplace' className="barra-market navbar navbar-expand-lg navbar-light">
-      <nav className="navbar-market container">
+      <nav className="navbar-market container d-flex">
         <Link to={"/"} className="navbar-brand fs-4">
           <img src={isotipo} alt="Logotipo" width="70%" />
         </Link>
 
         {/* Toggle btn */}
+        <div>
         <button
           className="navbar-toggler shadow-none border-0"
           type="button"
@@ -28,6 +29,8 @@ const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+        </div>
+        
         {/* SideBar */}
         <div
           className="sidebar offcanvas offcanvas-start"
@@ -69,8 +72,12 @@ const Navbar = () => {
               </li>
             </ul>
 
-            {/* carrito compra */}
-            <div
+          </div>
+          
+        </div>
+
+        {/* carrito compra */}
+        <div
               className={"d-flex justify-content-center nav-container-market"}
             >
               <button
@@ -87,10 +94,8 @@ const Navbar = () => {
                 open={openModal}
                 onClose={() => setOpenModal(false)}
               />
-            </div>
-
-          </div>
         </div>
+
       </nav>
     </div>
   );
