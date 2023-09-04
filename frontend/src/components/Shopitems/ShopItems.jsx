@@ -61,8 +61,8 @@ const ShopItems = () => {
               />
             </div>
             <div className="col-md-6">
-              <div className="small mb-1">SKU: BST-498</div>
-              <h1 className="display-5 fw-bolder">{product.Nombre}</h1>
+              {/* <div className="small mb-1">SKU: BST-498</div> */}
+              <h1 className="display-5 fw-bolder align-text-start">{product.Nombre}</h1>
               <div className="fs-5 mb-5">
                 <span>${product.Precio}</span>
               </div>

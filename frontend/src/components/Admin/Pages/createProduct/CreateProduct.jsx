@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './createproduct.css'
 
 const CreateProduct = () => {
   const [imagenProducto, setImagenProducto] = useState('');
@@ -71,7 +72,7 @@ const CreateProduct = () => {
 
 
   return (
-    <div>
+    <div className='divtotal'>
 
       {/* Alertas */}
       <div className='d-flex justify-content-center'>
@@ -80,7 +81,7 @@ const CreateProduct = () => {
       </div>
 
 
-      <div className='d-flex justify-content-center align-content-center mt-5 '>
+      <div className='createproduct d-flex justify-content-center align-content-center mt-5 ml-5'>
         <form onSubmit={handleSubmit} className='d-flex flex-column gap-2 w-'>
           <h2>Crear Producto</h2>
           <label htmlFor="imgproducto">URL</label>
