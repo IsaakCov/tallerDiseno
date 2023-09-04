@@ -1,6 +1,6 @@
-import React from 'react'
-import './sidebar.css'
-import { Link } from "react-router-dom"
+// import React from 'react';
+import './sidebar.css';
+import { Link } from "react-router-dom";
 
 function SideBar() {
   return (
@@ -10,26 +10,27 @@ function SideBar() {
           <h3 className="sidebarTitleAdmin">DashBoard</h3>
           <ul className="sidebarListAdmin">
             <li className="sidebarListItemAdmin">
-              <Link to="/AdminDashboard/Users">
+              <Link to="/AdminDashboard/Users" className='whiteText'>
                 <i className="bi bi-person"></i>
                 Usuarios
               </Link>
             </li>
-
+            
             <li className="sidebarListItemAdmin">
-              <Link to="/AdminDashBoard/Products">
+              <Link to="/AdminDashBoard/Products" className='whiteText'>
                 <i className="bi bi-shop"></i>
                 Productos
               </Link>
             </li>
+            
             <li className="sidebarListItemAdmin">
-              <Link to="/AdminDashBoard/Orders">
+              <Link to="/AdminDashBoard/Orders" className='whiteText'>
                 <i className="bi bi-box-seam"></i>
                 Pedidos
               </Link>
             </li>
 
-            <li className="sidebarListItemAdmin ">
+            <li className="sidebarListItemAdmin">
               <Link to="/AdminDashBoard/crearproducto">
                 <i className="bi bi-box-seam"></i>
                 Crear Productos
@@ -37,10 +38,9 @@ function SideBar() {
             </li>
           </ul>
         </div>
-
       </div>
     </div>
-  )
+  );
 }
 
-export default SideBar
+export default SideBar;

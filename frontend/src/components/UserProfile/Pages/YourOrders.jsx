@@ -9,8 +9,8 @@ const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
 const YourOrders = () => {
   const [pedidos, setPedidos] = useState([]);
   const correoUsuario = localStorage.getItem("Correo");
-  const [selectedOrderId, setSelectedOrderId] = useState(0);
-  const [orderSuccessCont, setOrderSuccessCont] = useRecoilState(OrderSuccessfulProvider);
+  const [selectedOrderId] = useState(0);
+  const [orderSuccessCont] = useRecoilState(OrderSuccessfulProvider);
 
   useEffect(() => {
     const fetchPedidosByUser = async () => {
@@ -87,4 +87,4 @@ const YourOrders = () => {
   );
 };
 
-export default YourOrders;
+export default YourOrders

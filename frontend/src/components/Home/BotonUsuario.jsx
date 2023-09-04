@@ -1,10 +1,10 @@
-import React from 'react'
+// import React from 'react'
 import { Link } from 'react-router-dom'
 import "../componentsCSS/botones.css"
 
 const BotonUsuario = () => {
   return (
-    <Link className="nav-link" to="/userhome"><i className="logoperfil bi bi-person-check"></i></Link>
+    <Link className="nav-link" to="/userhome"><i className="logoperfil bi bi-person-check fs-4"></i></Link>
   )
 }
 

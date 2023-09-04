@@ -32,6 +32,13 @@ Content-Type: application/json
 }
 
 ###
+#Obtener todos los productos
+###
 GET http://localhost:3001/api/v1/productos/getAllProductos
 Content-Type: application/json
 
+###
+#Obtener un pedido con un id
+###
+GET http://localhost:3001/api/v1/pedidos/getPedidoByID/:id
+Content-Type: application/json

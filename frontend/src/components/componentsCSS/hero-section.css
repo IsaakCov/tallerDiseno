@@ -16,7 +16,7 @@
 {
     background-color: white;
     margin-bottom: 10px;
-    height: 60px;
+    height: 6vh;
 }
 
 
@@ -28,6 +28,12 @@
 
 #nav-principal
 {background-color: white;}
+
+#nav-principal li{
+    font-size: 23px;
+}
+
+/* fin nav */
 
 /* header */
 
@@ -83,7 +89,23 @@
 {
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
+    font-size: 400%;
 }
+
+.carousel-item h4
+{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 170%;
+}
+
+/* Estilos para pantallas pequeñas como dispositivos móviles */
+@media (max-width: 768px) {
+    .carousel-caption h2 {
+        font-size: 40px; 
+        margin: 10px 0; 
+    }
+}
+
 
 .logoperfil{
     color:#456884;
