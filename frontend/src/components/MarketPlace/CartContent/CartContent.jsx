@@ -4,6 +4,7 @@ import CartElements from "./CartElements";
 import CartTotal from "./CartTotal";
 import { Link } from "react-router-dom";
 
+
 const CartContent = ({ open, onClose }) => {
   const { cart } = useContext(dataContext);
 

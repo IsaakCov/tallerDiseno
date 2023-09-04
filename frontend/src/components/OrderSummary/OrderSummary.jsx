@@ -1,12 +1,16 @@
-import React from "react";
 import { useContext, useState, useEffect } from "react";
 import { dataContext } from "../MarketPlace/Context/DataContext";
+import numero1 from "../img/numero1.png";
+import numero2 from "../img/numero2.png";
+import numero3 from "../img/numero3.png";
+import numero4 from "../img/numero4.png";
+import "../OrderSummary/timeline2.css";
 import {
   MDBCard,
   MDBCardBody,
   MDBCol,
   MDBContainer,
-  MDBRow
+  MDBRow,
 } from "mdb-react-ui-kit";
 import "./OrderSummary2.css";
 const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
@@ -23,7 +27,9 @@ export default function OrderDetails2() {
   useEffect(() => {
     const fetchLastPedido = async () => {
       try {
-        const response = await fetch(`${backendUrl}/api/v1/pedidos/getLastPedidoByUser/${correoUsuario}`);
+        const response = await fetch(
+          `${backendUrl}/api/v1/pedidos/getLastPedidoByUser/${correoUsuario}`
+        );
         const data = await response.json();
         console.log(data);
         setLastPedido(data.lastPedido);
@@ -33,8 +39,8 @@ export default function OrderDetails2() {
           const fecha = new Date(data.lastPedido.createdAt);
 
           // Obtener la parte de la fecha en formato 'yyyy-mm-dd'
-          const fechaFormateada = fecha.toISOString().split('T')[0];
-          
+          const fechaFormateada = fecha.toISOString().split("T")[0];
+
           // Asignar la fecha formateada
           setFechaPedido(fechaFormateada);
 
@@ -49,7 +55,10 @@ export default function OrderDetails2() {
 
   return (
     <>
-      <section className="h-100 h-custom" style={{ backgroundColor: "#456884" }}>
+      <section
+        className="h-100 h-custom"
+        style={{ backgroundColor: "#456884" }}
+      >
         <MDBContainer className="py-5 h-100">
           <MDBRow className="justify-content-center align-items-left h-100">
             <MDBCol lg="8" xl="6">
@@ -67,7 +76,10 @@ export default function OrderDetails2() {
 
                     <MDBCol className="mb-3">
                       <p className="small text-muted mb-1">Dirección</p>
-                      <p>{lastPedido?.DireccionEnvio} {lastPedido?.Depto} {lastPedido?.Comuna} {lastPedido?.Region}</p>
+                      <p>
+                        {lastPedido?.DireccionEnvio} {lastPedido?.Depto}{" "}
+                        {lastPedido?.Comuna} {lastPedido?.Region}
+                      </p>
                     </MDBCol>
                   </MDBRow>
 
@@ -84,28 +96,33 @@ export default function OrderDetails2() {
                   </MDBRow>
 
                   <div
-                    className="mx-n5 px-5 py-4" style={{ backgroundColor: "#f2f2f2" }}
+                    className="mx-n5 px-5 py-4"
+                    style={{ backgroundColor: "#f2f2f2" }}
                   >
                     <p
-                      className="lead fw-bold mb-4 pb-2" style={{ color: "#456884" }}
+                      className="lead fw-bold mb-4 pb-2"
+                      style={{ color: "#456884" }}
                     >
                       Productos
                     </p>
                     <MDBRow>
                       <ul className="list-group">
                         {cart.map((product) => (
-                          <li key={product.idProducto} className="list-group-item">
-                            <div className="d-flex align-items-center">
+                          <li
+                            key={product.idProducto}
+                            className="list-group-item"
+                          >
+                            <div className="d-flex flex-column flex-md-row align-items-center">
                               <img
                                 src={product.Imagen}
                                 alt={product.Nombre}
-                                className="img-thumbnail mr-3"
-                                style={{ maxWidth: "100px" }}
+                                className="img-thumbnail mr-3 mr-md-5"
+                                style={{ maxWidth: "100px", marginRight: "10px"  }}
                               />
-                              <div>
-                                <h4 className="px-5">{product.Nombre}</h4>
-                                <p className="px-5">Cantidad: {product.Stock}</p>
-                                <p className="px-5">Precio: ${product.Precio}</p>
+                              <div className="ml-3">
+                                <h4 className= "mt-1">{product.Nombre}</h4>
+                                <p className= "mt-1">Cantidad: {product.Stock}</p>
+                                <p className= "mt-1">Precio: ${product.Precio}</p>
                               </div>
                             </div>
                           </li>
@@ -115,7 +132,7 @@ export default function OrderDetails2() {
                   </div>
 
                   <p
-                    className="lead fw-bold mb-4 pb-2"
+                    className="lead fw-bold mb-4 pb-2 mt-4"
                     style={{ color: "#456884" }}
                   >
                     Total a pagar
@@ -138,11 +155,65 @@ export default function OrderDetails2() {
                     </MDBCol>
                   </MDBRow>
 
-                  <p className="mt-4 pt-2 mb-0">
-                    ¡Muchas gracias por tu compra! {" "}
+                  <p className=" pt-2 mb-0">
+                    ¡Muchas gracias por tu compra! A continuación, te indicamos los pasos a seguir.
                   </p>
                 </MDBCardBody>
               </MDBCard>
+            </MDBCol>
+
+            <MDBCol lg="4" xl="6">
+              <div className="container mt-5">
+                <div className="row">
+                  <div className="col align-items-center">
+                    <div className="timeline2">
+                      <div className="container-timeline2">
+                        <img src={numero1} alt="img1" />
+                        <div className="text-box-container2">
+                          <h3>Presiona el siguiente enlace que te redirigirá a WhatsApp</h3>
+                          {/* <small>Contacto</small> */}
+                          <a href="https://www.whatsapp.com/catalog/56930268586/?app_absent=0"><i className="bi bi-whatsapp"></i>¡Presiona aquí!</a>
+                          <span className="container-arrow2"></span>
+                        </div>
+                      </div>
+
+                      <div className="container-timeline2">
+                        <img src={numero2} alt="img1" />
+                        <div className="text-box-container2">
+                          <h3>Indica el número de pedido o el correo </h3>
+                          {/* <small>Información y Cotización</small>
+                  <p>Esta etapa es esencial para conocer tus requerimientos y entregar un valor aproximado del proyecto.</p> */}
+                          <span className="container-arrow2"></span>
+                        </div>
+                      </div>
+
+                      <div className="container-timeline2">
+                        <img src={numero3} alt="img1" />
+                        <div className="text-box-container2">
+                          <h3>Coordina el envío del producto</h3>
+                          {/* <small>Boceto</small>
+                  <p>Empezaremos con la creación de los bocetos, proponiendo diseños, colores, materiales, etc.</p> */}
+                          <span className="container-arrow2"></span>
+                        </div>
+                      </div>
+
+                      <div className="container-timeline2">
+                        <img src={numero4} alt="img1" />
+                        <div className="text-box-container2">
+                          <h3>
+                            Te indicaremos los datos de transferencia más el
+                            monto total{" "}
+                          </h3>
+                          {/* <small>Producción</small>
+                  <p>En esta etapa se comienza a materializar el proyecto.</p> */}
+                          <span className="container-arrow2"></span>
+                        </div>
+                        {/* ... Tu contenido del timeline ... */}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </MDBCol>
           </MDBRow>
         </MDBContainer>

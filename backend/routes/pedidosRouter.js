@@ -17,7 +17,7 @@ router.post("/postPedidos", postPedidos);
 
 router.delete("/deletePedido/:idPedido", deletePedido);
 router.put("/updatePedido/:idPedido", updatePedido);
-router.get("/getPedidoById/:idPedido", getPedidoById);
+router.get("/getPedidoByID/:idPedido", getPedidoById);
 router.get("/getAllPedidos", getAllPedidos);
 router.get("/getPedidosByUser/:CorreoUsuario", getPedidosByUser);
 router.get("/getLastPedidoByUser/:CorreoUsuario",getLastPedidoByUser);

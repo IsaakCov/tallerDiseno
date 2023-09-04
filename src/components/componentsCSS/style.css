@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+
+.container {
+  border-radius: 50px;
+}
+
+p {
+  font-size: 18px;
+}
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+.bg-primary {
+  background-color: #456884 !important;
+}
+.contactForm .form-control {
+  height: 60px;
+  background: #fff;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 25px;
+  border-radius: 20px;
+  box-shadow: none !important;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.btn-primary {
+  background-color: #456884;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.bi {
+  font-size: 40px;
+}
+footer {
+  margin-top: 100px;
+  background-color: #456884;
+  color: white;
+  padding: 50px;
+}
+li {
+  list-style: none;
+  font-size: 20px;
+}
+
+.btnfooter {
+  border-style: none;
+  font-size: 18px;
+}
+.modal-body {
+  color: black;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* STYLE GALERIA */
+
+img {
+  max-width: 100%;
+}
+.gallery {
+  background-color: white;
+  padding: 85px 0;
+}
+.gallery img {
+  background-color: rgb(64, 102, 145);
+  padding: 15px;
+  width: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+#gallery-modal .modal-img {
+  width: 100%;
+}
+h1 {
+  text-align: center;
+}
+
+/* FIN STYLE GALERIA */
+
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  height: 410px;
+  width: 550px;
+}
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
