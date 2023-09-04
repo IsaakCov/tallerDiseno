@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import Formulario from "../Home/Formulario";
 import Timeline from "../Home/Timeline";
 import Mapa from "../Home/Mapa";
 import Navbar from "../MarketPlace/Navbar/Navbar";
 import Footer from "../Home/Footer";
+import { useLocation } from 'react-router-dom';
 
 function Contact() {
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
+  const location = useLocation();
+
+  // Detecta si es la carga inicial de la página
+  if (isInitialLoad) {
+    setIsInitialLoad(false);
+    return null; // No renderiza nada en la carga inicial
+  }
+  
   return (
+    
     <section className="out">
       <nav>
         <Navbar />

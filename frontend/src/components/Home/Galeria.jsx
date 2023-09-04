@@ -22,13 +22,13 @@ const Galeria = () => {
                <img src={Gallery_3} className="gallery-item" alt="gallery"/>
             </div>
             <div className="col">
+               <img src={Gallery_2} className="gallery-item" alt="gallery"/>
+            </div>
+            <div className="col">
                <img src={Gallery_4} className="gallery-item" alt="gallery"/>
             </div>
             <div className="col">
                <img src={Gallery_1} className="gallery-item" alt="gallery"/>
-            </div>
-            <div className="col">
-               <img src={Gallery_2} className="gallery-item" alt="gallery"/>
             </div>
          </div>
       </div>

@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+
+/* nav */
+
+.sidebar {background-color:rgb(116, 152, 184)}
+
+.btn-cotiza
+{
+    background-color: rgb(65, 105, 145);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+
+#nav-principal
+{
+    background-color: white;
+    margin-bottom: 10px;
+    height: 50px;
+}
+
+
+.btn.btn-primary,
+.btn.btn-secondary
+{
+    color: white;
+}
+
+#nav-principal
+{background-color: white;}
+
+/* header */
+
+.carousel-caption
+{
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index:1;
+    background-color: rgba(37, 68, 94, 0.6);
+}
+
+.carousel-control-prev,
+.carousel-control-next
+{
+    width:10%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon
+{
+    width:3rem;
+    height:3rem;
+}
+
+
+.btn-light{
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 0.5s;
+    font-size: 2vh;
+}
+
+.carousel-item
+{
+    min-height: 80vh;
+}
+
+#slide1
+{
+    background-image: url(../img/heroslide.png);
+    background-size:cover;
+}
+
+#slide2
+{
+    background-image: url(../img/heroslide2.png);
+    background-size:cover;
+}
+
+.carousel-item h2
+{
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
