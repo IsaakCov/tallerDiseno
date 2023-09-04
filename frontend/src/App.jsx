@@ -17,6 +17,7 @@ import ItemViews from "./components/ShopItemsView/ItemViews";
 import Contact from "./components/Contact/Contact";
 import OrderSummary from "./components/OrderSummary/OrderSummary";
 import CreateDeleteProduct from "./components/Admin/Pages/createProduct/index";
+import './main.css';
 
 function App() {
   return (

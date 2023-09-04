@@ -6,15 +6,15 @@ import UserList from './Pages/UserList/UserList';
 
 
 const Dashboard = () => {
-return (
-    <>
-    <TopBar/>
-    <div className="container dashboard">
-        <SideBar/>
-        <UserList/>
-    </div> 
-    </> 
-)
+    return (
+        <>
+            <TopBar />
+            <div className="container dashboard">
+                <SideBar />
+                <UserList />
+            </div>
+        </>
+    )
 }
 
 export default Dashboard
