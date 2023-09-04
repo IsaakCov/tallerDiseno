@@ -19,10 +19,8 @@
 .sidebarTitleAdmin {
   font-size: 13px;
   color: lightblue;
-.sidebarTitleAdmin{
-    font-size: 21px;
-    color: rgb(255, 255, 255);
 }
+
 .sidebarListAdmin {
   list-style: none;
   padding: 5px;
