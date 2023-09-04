@@ -4,6 +4,7 @@ import { useRecoilState } from 'recoil';
 import { OrderSuccessfulProvider } from '../Providers/OrderSuccessfulProvider';
 import OrderSuccessful from '../Order/OrderSuccessful';
 import "./YourOrders.css";
+const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
 
 const YourOrders = () => {
   const [pedidos, setPedidos] = useState([]);
@@ -14,7 +15,7 @@ const YourOrders = () => {
   useEffect(() => {
     const fetchPedidosByUser = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/api/v1/pedidos/getPedidosByUser/${correoUsuario}`);
+        const response = await axios.get(`${backendUrl}/api/v1/pedidos/getPedidosByUser/${correoUsuario}`);
         setPedidos(response.data.pedidos);
       } catch (error) {
         console.error("Error al obtener los pedidos del usuario:", error);

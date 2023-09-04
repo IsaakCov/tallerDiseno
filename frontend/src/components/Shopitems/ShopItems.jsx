@@ -3,6 +3,7 @@ import { dataContext } from "../MarketPlace/Context/DataContext";
 import { useParams } from "react-router-dom";
 import RelatedProduct from "./RelatedProduct";
 import axios from "axios";
+const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
 
 const ShopItems = () => {
   const [data, setData] = useState([]);
@@ -16,7 +17,7 @@ const ShopItems = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3001/api/v1/productos/getAllProductos"
+        `${backendUrl}/api/v1/productos/getAllProductos`
       );
       console.log(response); //JSON.parse(response));
 

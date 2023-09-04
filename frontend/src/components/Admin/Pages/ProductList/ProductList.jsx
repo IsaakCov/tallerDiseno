@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react'
 import "./productlist.css"
 import { DataGrid } from '@mui/x-data-grid';
 import axios from 'axios';
+const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
 
 const ProductList = () => {
 
@@ -13,7 +14,7 @@ const ProductList = () => {
     
         const fetchData = async () => {
             try {
-                const response = await axios.get("http://localhost:3001/api/v1/productos/getAllProductos");
+                const response = await axios.get(`${backendUrl}/api/v1/productos/getAllProductos`);
                 
                 if (Array.isArray(response.data.productos)) {
                     setData(response.data.productos);

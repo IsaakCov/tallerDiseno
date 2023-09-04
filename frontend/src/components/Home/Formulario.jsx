@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../componentsCSS/style.css";
-
+const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
 const Formulario = () => {
   const [formData, setFormData] = useState({
     CorreoUsuario: "",
@@ -38,7 +38,7 @@ const Formulario = () => {
     }
   
     axios
-      .post("http://localhost:3001/api/v1/formulario/sendform", formData)
+      .post(`${backendUrl}/api/v1/formulario/sendform`, formData)
       .then((response) => {
         console.log(response.data);
         // Realiza cualquier acción adicional que necesites después del envío
@@ -56,7 +56,7 @@ const Formulario = () => {
             <h2 className="mb-5">¡Contáctanos!</h2>
             <div className="container">
               <form className="contactForm" onSubmit={handleSubmit}>
-                <div className="form-floating mb-3">
+                <div className="form-floating mb-3 d-none">
                   <input
                     type="text"
                     className="form-control"
