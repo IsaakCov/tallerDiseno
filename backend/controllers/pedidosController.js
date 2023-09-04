@@ -1,7 +1,8 @@
-const Pedido = require("../models/pedidosModel");
-const ProductoPedido = require("../models/pedidoProductosModel");
-const Usuario = require("../models/usuariosModel");
-const Producto = require("../models/productoModel");
+const Pedido = require('../models/pedidosModel');
+const ProductoPedido = require('../models/pedidoProductosModel');
+const Usuario = require('../models/usuariosModel');
+const Producto = require('../models/productoModel');
+//const {transporter} = require('../app/app');
 
 const createPedido = async (req, res) => {
   try {
@@ -61,7 +62,8 @@ const createPedido = async (req, res) => {
       text: `¡El nuevo pedido con ID ${pedido.id}, de parte de ${CorreoUsuario} ha sido creado exitosamente en Taller Diseño! Total: $${totalPedido}`,
     };
 
-    await transporter.sendMail(mailOptions);*/
+    await transporter.sendMail(mailOptions);
+    */
 
     return res.status(201).json({ msg: "Pedido creado con éxito", pedido });
   } catch (error) {
@@ -240,6 +242,33 @@ const postPedidos = async (req, res) => {
     console.log("error", error);
   }
 };
+const getLastPedidoByUser = async (req, res) => {
+  try {
+    const { CorreoUsuario } = req.params;
+
+    // Verifica si el usuario existe
+    const usuario = await Usuario.findOne({ where: { Correo: CorreoUsuario } });
+    if (!usuario) {
+      return res.status(404).json({ msg: 'Usuario no encontrado' });
+    }
+
+    // Busca el último pedido asociado al usuario por su dirección de correo electrónico
+    const lastPedido = await Pedido.findOne({
+      where: { CorreoUsuario },
+      order: [['createdAt', 'DESC']], // Ordena por fecha de creación en orden descendente
+    });
+
+    if (!lastPedido) {
+      return res.status(404).json({ msg: 'Usuario no tiene pedidos' });
+    }
+
+    res.status(200).json({ lastPedido });
+  } catch (error) {
+    return res
+      .status(500)
+      .json({ msg: "Error en el servidor", error: error.message });
+  }
+};
 
 module.exports = {
   createPedido,
@@ -247,6 +276,7 @@ module.exports = {
   updatePedido,
   getPedidoById,
   getAllPedidos,
-  postPedidos,
   getPedidosByUser,
+  getLastPedidoByUser,
+  postPedidos,
 };

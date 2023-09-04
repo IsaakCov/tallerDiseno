@@ -6,18 +6,19 @@ const CreateProduct = () => {
   const [nombreProducto, setNombreProducto] = useState('');
   const [descripcionProducto, setDescripcionProducto] = useState('');
   const [precioProducto, setPrecioProducto] = useState(0);
-  const [stockProducto, setStockProducto] = useState(0);
+  const [stockProducto, setStockProducto] = useState(1);
   const [colorProducto, setColorProducto] = useState('');
   const [medidasProducto, setMedidasProducto] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
       const response = await axios.post(
-        'http://localhost:3001/api/v1/productos/createProducto',
+        `${backendUrl}/api/v1/productos/createProducto`,
         {
           Nombre: nombreProducto,
           Descripcion: descripcionProducto,

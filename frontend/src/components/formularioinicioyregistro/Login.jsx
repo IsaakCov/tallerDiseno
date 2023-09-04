@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import axios from 'axios';
 import { SignupShowPw, ConfirmPassword, ShowHidePw } from './SignupShowPw.jsx';
 import './login.css';
+const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
 
 function Login({ open, onClose }) {
   const loginBtnRef = useRef(null);
@@ -54,7 +55,7 @@ function Login({ open, onClose }) {
     try {
       if (isLogin) {
         const response = await axios.post(
-          'http://localhost:3001/api/v1/usuarios/login',
+          `${backendUrl}/api/v1/usuarios/login`,
           {
             Correo: email,
             Contrasena: password,
@@ -74,7 +75,7 @@ function Login({ open, onClose }) {
         window.location.reload();
       } else {
         const response = await axios.post(
-          'http://localhost:3001/api/v1/usuarios/createUsuario',
+          `${backendUrl}/api/v1/usuarios/createUsuario`,
           {
             Correo: email,
             Contrasena: password,

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './orderlist.css';
 import { DataGrid } from '@mui/x-data-grid';
 import axios from 'axios';
+const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
 
 const OrderList = () => {
 const [data, setData] = useState([]);
@@ -12,7 +13,7 @@ useEffect(() => {
 
 const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/api/v1/pedidos/getAllPedidos");
+      const response = await axios.get(`${backendUrl}/api/v1/pedidos/getAllPedidos`);
   
       if (Array.isArray(response.data.pedidos)) {
         const modifiedData = response.data.pedidos.map((pedido) => {
