@@ -175,10 +175,10 @@ function Login({ open, onClose }) {
               </>
             )}
             <div className="option_field">
-              <span className="checkbox">
+               <span className="checkbox">
                 <input type="checkbox" id="check" />
                 <label htmlFor="check">Recordar Contraseña</label>
-              </span>
+              </span> 
               <a href="#" className="forgot_pw">
                 Recuperar Contraseña
               </a>
