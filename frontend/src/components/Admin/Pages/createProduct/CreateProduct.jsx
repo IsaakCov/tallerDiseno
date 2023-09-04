@@ -7,7 +7,7 @@ const CreateProduct = () => {
   const [nombreProducto, setNombreProducto] = useState('');
   const [descripcionProducto, setDescripcionProducto] = useState('');
   const [precioProducto, setPrecioProducto] = useState(0);
-  const [stockProducto, setStockProducto] = useState(1);
+  const stockProducto = 1;
   const [colorProducto, setColorProducto] = useState('');
   const [medidasProducto, setMedidasProducto] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
@@ -24,7 +24,7 @@ const CreateProduct = () => {
           Nombre: nombreProducto,
           Descripcion: descripcionProducto,
           Precio: precioProducto,
-          /*       Stock: stockProducto, */
+          Stock: stockProducto,
           Imagen: imagenProducto,
           Color: colorProducto,
           Medidas: medidasProducto,
@@ -54,7 +54,7 @@ const CreateProduct = () => {
 
     try {
       const response = await axios.delete(
-        `http://localhost:3001/api/v1/productos/deleteProducto/${idProducto}`
+        `${backendUrl}/api/v1/productos/deleteProducto/${idProducto}`
       );
       setSuccessMessage("Producto eliminado con éxito");
       console.log("Producto eliminado con éxito", response.data);
@@ -123,7 +123,7 @@ const CreateProduct = () => {
             type="number"
             name='stock'
             value={stockProducto}
-            onChange={(e) => setStockProducto(parseInt(e.target.value))} // Corregido
+            /* onChange={(e) => setStockProducto(parseInt(e.target.value))} // Corregido */
             placeholder="Stock del producto"
             disabled
           />

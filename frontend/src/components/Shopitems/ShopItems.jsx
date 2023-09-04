@@ -3,6 +3,7 @@ import { dataContext } from "../MarketPlace/Context/DataContext";
 import { useParams } from "react-router-dom";
 import RelatedProduct from "./RelatedProduct";
 import axios from "axios";
+import './shopitem.css'
 const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
 
 const ShopItems = () => {
@@ -68,20 +69,20 @@ const ShopItems = () => {
               </div>
               <p className="lead">{product.Descripcion}</p>
               <div className="d-flex">
-                <input
+                {/* <input
                   className="form-control text-center me-3"
                   id="inputQuantity"
                   type="num"
                   defaultValue="1"
                   style={{ maxWidth: "3rem" }}
-                />
+                /> */}
                 <button
                   onClick={() => buyProducts(product)}
                   className="btn btn-outline-dark flex-shrink-0"
                   type="button"
                 >
                   <i className="bi-cart-fill me-1"></i>
-                  Add to cart
+                  Añadir
                 </button>
               </div>
             </div>

@@ -5,10 +5,11 @@ import './index.css'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { RecoilRoot } from 'recoil';
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <RecoilRoot>
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
   </RecoilRoot>,
 )
