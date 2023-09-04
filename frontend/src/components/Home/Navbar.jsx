@@ -8,7 +8,7 @@ import "../componentsCSS/timeline.css";
 import isotipo from "../img/isotipo.jpg";
 import Login from "../formularioinicioyregistro/Login";
 import { useRef } from "react";
-import BotonUsuario from "./Botonusuario";
+import BotonUsuario from "./BotonUsuario";
 import BotonAdmin from "./BotonAdmin";
 import BotonLogOut from "./BotonLogOut";
 

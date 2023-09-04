@@ -3,6 +3,7 @@ import { dataContext } from "../Context/DataContext";
 import { Link } from "react-router-dom";
 import "../Products/Products.css";
 import axios from "axios";
+const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
 
 const Products = () => {
   const [data, setData] = useState([]);
@@ -15,7 +16,7 @@ const Products = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3001/api/v1/productos/getAllProductos"
+        `${backendUrl}/api/v1/productos/getAllProductos`
       );
 
       if (Array.isArray(response.data.productos)) {

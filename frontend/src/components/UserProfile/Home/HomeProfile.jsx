@@ -1,6 +1,3 @@
-
-
-
 import SocialMediaButtons from "../../socialmediabuttons/SocialMediaButtons";
 import UserProfile from "../User/UserProfile";
 const HomeProfile=()=>{
