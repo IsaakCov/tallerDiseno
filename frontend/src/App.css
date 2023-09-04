@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
 
+
+
 :root {
     --col1: #456884;
     --col2: gray;
@@ -84,4 +86,7 @@
       font-size: 20px;
     }
   }
-  
+
+  body{
+    overflow-y: auto;
+  }
