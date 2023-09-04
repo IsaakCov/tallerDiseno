@@ -9,7 +9,7 @@
   height: 500px;
   border-radius: 20px;
   overflow: hidden;
-  border: 8px solid  #456884;
+  border: 8px solid #456884;
   position: relative;
 }
 
@@ -81,6 +81,6 @@
   justify-content: center;
 }
 
-#servicios h2{
+#servicios h2 {
   font-weight: bold;
 }

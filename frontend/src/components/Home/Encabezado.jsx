@@ -1,6 +1,6 @@
 // import React from 'react'
 import '../componentsCSS/hero-section.css'
-
+import { Link } from 'react-router-dom'
 const Encabezado = () => (
     <section id="slide-section" className="container-fluid p-0">
         <div className="carousel slide" id="header-carousel">
@@ -11,7 +11,10 @@ const Encabezado = () => (
                         <div className="p-md-3">
                             <h4 className="section-title text-white animated slideInDown">Taller Diseño</h4>
                             <h2 className="display-3 text-white m-4 animated slideInDown ">Personaliza tus muebles</h2>
-                            <a href="" className="btn btn-light py-md-3 px-md-5 animated slideInRight">¡Contáctanos!</a>
+                            <Link to = {"/contact"}>
+                            <a className="btn btn-light py-md-3 px-md-5 animated slideInRight">¡Contáctanos!</a>
+                            </Link>
+                            
                         </div>
                     </div>
                 </div>
@@ -21,7 +24,10 @@ const Encabezado = () => (
                         <div className="p-md-3">
                             <h4 className="section-title text-white animated slideInDown">Diseños Iconográficos</h4>
                             <h2 className="display-3 text-white m-4 animated slideInDown ">Conoce nuestros proyectos</h2>
-                            <a href="#" className="btn btn-light py-md-3 px-md-5 ms-auto animated slideInRight">Ver más</a>
+                            
+                            <Link to = {"/Marketplace"}>
+                                <a className="btn btn-light py-md-3 px-md-5 ms-auto animated slideInRight">Ver más</a>
+                            </Link>
                         </div>
                     </div>
                 </div>

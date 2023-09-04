@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './createproduct.css'
 
 const CreateProduct = () => {
   const [imagenProducto, setImagenProducto] = useState('');
   const [nombreProducto, setNombreProducto] = useState('');
   const [descripcionProducto, setDescripcionProducto] = useState('');
   const [precioProducto, setPrecioProducto] = useState(0);
-  const [stockProducto, setStockProducto] = useState(1);
+  const stockProducto = 1;
   const [colorProducto, setColorProducto] = useState('');
   const [medidasProducto, setMedidasProducto] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
@@ -23,7 +24,7 @@ const CreateProduct = () => {
           Nombre: nombreProducto,
           Descripcion: descripcionProducto,
           Precio: precioProducto,
-          /*       Stock: stockProducto, */
+          Stock: stockProducto,
           Imagen: imagenProducto,
           Color: colorProducto,
           Medidas: medidasProducto,
@@ -53,7 +54,7 @@ const CreateProduct = () => {
 
     try {
       const response = await axios.delete(
-        `http://localhost:3001/api/v1/productos/deleteProducto/${idProducto}`
+        `${backendUrl}/api/v1/productos/deleteProducto/${idProducto}`
       );
       setSuccessMessage("Producto eliminado con éxito");
       console.log("Producto eliminado con éxito", response.data);
@@ -71,7 +72,7 @@ const CreateProduct = () => {
 
 
   return (
-    <div>
+    <div className='divtotal'>
 
       {/* Alertas */}
       <div className='d-flex justify-content-center'>
@@ -80,7 +81,7 @@ const CreateProduct = () => {
       </div>
 
 
-      <div className='d-flex justify-content-center align-content-center mt-5 '>
+      <div className='createproduct d-flex justify-content-center align-content-center mt-5 ml-5'>
         <form onSubmit={handleSubmit} className='d-flex flex-column gap-2 w-'>
           <h2>Crear Producto</h2>
           <label htmlFor="imgproducto">URL</label>
@@ -122,7 +123,7 @@ const CreateProduct = () => {
             type="number"
             name='stock'
             value={stockProducto}
-            onChange={(e) => setStockProducto(parseInt(e.target.value))} // Corregido
+            /* onChange={(e) => setStockProducto(parseInt(e.target.value))} // Corregido */
             placeholder="Stock del producto"
             disabled
           />

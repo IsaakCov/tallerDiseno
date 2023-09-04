@@ -5,19 +5,19 @@ import axios from 'axios';
 const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
 
 const OrderList = () => {
-const [data, setData] = useState([]);
+  const [data, setData] = useState([]);
 
-useEffect(() => {
+  useEffect(() => {
     fetchData();
-}, []);
+  }, []);
 
-const fetchData = async () => {
+  const fetchData = async () => {
     try {
       const response = await axios.get(`${backendUrl}/api/v1/pedidos/getAllPedidos`);
-  
+
       if (Array.isArray(response.data.pedidos)) {
         const modifiedData = response.data.pedidos.map((pedido) => {
-          const direccionEnvio = JSON.parse(pedido.DireccionEnvio);
+          const direccionEnvio = `${pedido.DireccionEnvio}, ${pedido.DireccionEnvio}, ${pedido.DireccionEnvio}, ${pedido.DireccionEnvio}`;
           return {
             ...pedido,
             DireccionEnvio: direccionEnvio.Calle,
