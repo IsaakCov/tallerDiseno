@@ -1,13 +1,13 @@
-import { useContext, useState } from "react";
-import { dataContext } from "../Context/DataContext";
+/* import { useContext, useState } from "react";
+import { dataContext } from "../Context/DataContext"; */
 import { Link } from "react-router-dom";
-import TotalItems from "../CartContent/TotalItems";
+/* import TotalItems from "../CartContent/TotalItems"; */
 import "./Navbar.css";
-import CartElements from "../CartContent/CartElements";
+/* import CartElements from "../CartContent/CartElements"; */
 
 const Navbar = () => {
-  const { cart } = useContext(dataContext);
-  const [openModal, setOpenModal] = useState(false);
+  /*  const { cart } = useContext(dataContext);
+   const [openModal, setOpenModal] = useState(false); */
   return (
     <div className="barra-market ">
       <nav className="navbar-market">
@@ -16,7 +16,7 @@ const Navbar = () => {
         </Link>
       </nav>
 
-      <div className="nav-container-market">
+      {/* <div className="nav-container-market">
         <button
           class="modalBtn-market btn btn-outline-dark"
           type="submit"
@@ -29,7 +29,7 @@ const Navbar = () => {
           </span>
         </button>
         <CartElements open={openModal} onClose={() => setOpenModal(false)} />
-      </div>
+      </div> */}
     </div>
   );
 };

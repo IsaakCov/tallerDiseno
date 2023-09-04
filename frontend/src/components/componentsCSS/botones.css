@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
 
 .icon-bar {
   position: fixed;
@@ -10,7 +10,8 @@
   z-index: 2;
 }
 
-.icon-bar a {
+.icon-bar a,
+.button__cart {
   display: block;
   text-align: center;
   padding: 15px;
@@ -43,12 +44,12 @@
   font-size: 30px;
 }
 
-.botonbtn , .nav-link{
+.botonbtn,
+.nav-link {
   padding: 5px;
-
 }
 
-.botonNavegador{
+.botonNavegador {
   color: #456884;
   cursor: pointer;
 }
