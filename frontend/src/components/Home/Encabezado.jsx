@@ -33,8 +33,7 @@ const Encabezado = () => (
                 </div>
             </div>
         </div>
-
-            </div>
+        <div>
             {/* <!-- Botones de control --> */}
             <button className="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
                 <span className="carousel-control-prev-icon"></span>
