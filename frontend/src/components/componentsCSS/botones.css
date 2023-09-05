@@ -10,16 +10,28 @@
   z-index: 2;
 }
 
+.button__cart {
+  position: fixed;
+  top: 94%;
+  right: 1%;
+  transform: translateY(-50%);
+  z-index: 2;
+  border: none;
+}
+
 .icon-bar a,
 .button__cart {
   display: block;
   text-align: center;
-  padding: 15px;
+  padding: 5px;
   transition: all 0.3s ease;
-  font-size: 25px;
+  font-size: 20px;
   color: black;
   margin: 5px;
   background-color: #fff;
+}
+.button__cart {
+  font-size: 17px;
 }
 
 .instagram:hover {
@@ -52,4 +64,5 @@
 .botonNavegador {
   color: #456884;
   cursor: pointer;
+  line-height: 1.8;
 }

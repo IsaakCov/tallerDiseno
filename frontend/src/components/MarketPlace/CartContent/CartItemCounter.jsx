@@ -26,7 +26,7 @@ const CartItemCounter = ({ product }) => {
       >
         -
       </button>
-      <p className="pt-1 m-1">{product.Stock}</p>
+      <p className="pt-1 m-1 fs-6">{product.Stock}</p>
       <button
         className="counter-button p-2 border-0 bg-white"
         onClick={() => buyProducts(product)}

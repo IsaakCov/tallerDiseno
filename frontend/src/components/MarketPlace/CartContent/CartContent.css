@@ -1,14 +1,18 @@
 .cart__container {
-  position: absolute;
-  max-width: 500px;
-  transform: translate(-4%, -6%);
-  right: 1%;
+  position: fixed;
+  max-width: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
   z-index: 99999999 !important;
   background: #ffffff;
-  padding: 25px;
-  border-radius: 12px;
+  padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.1);
   border: 1px solid #aaaaaa;
+  -webkit-transform: translate(-50%, -50%) scale(1.2);
+  -moz-transform: translate(-50%, -50%) scale(1.2);
+  -ms-transform: translate(-50%, -50%) scale(1.2);
+  -o-transform: translate(-50%, -50%) scale(1.2);
 }
 
 .cartContent__imagen,
@@ -33,7 +37,7 @@
   justify-content: space-around;
   align-items: center;
   flex-wrap: nowrap;
-  padding: 5px;
+  padding: 1px;
   border-bottom: solid 1px gray;
 }
 
@@ -46,7 +50,7 @@
   width: 50px;
   height: 50px;
   object-fit: cover;
-  margin-right: 10px;
+  padding-right: 15px;
 }
 
 .cartContent__nombre h3 {

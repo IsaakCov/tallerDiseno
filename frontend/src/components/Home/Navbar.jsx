@@ -32,7 +32,7 @@ const Navbar = () => {
   };
 
   return (
-    <div id="menu">
+    <div id="menu" className="p-3">
       <nav id="nav-principal" className="navbar navbar-expand-lg navbar-light">
         <div className="container">
           {/* Logo */}
@@ -131,7 +131,7 @@ const Navbar = () => {
               )}
             </div>
           </div>
-          
+
         </div>
       </nav>
     </div>
