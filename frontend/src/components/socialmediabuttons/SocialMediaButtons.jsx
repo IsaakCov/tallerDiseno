@@ -18,7 +18,7 @@ function SocialMediaButtons() {
           type="submit"
           onClick={() => setOpenModal(true)}
         >
-          <i className="bi-cart-fill"></i>
+          <i className="cart bi-cart-fill"></i>
           <span className="badge bg-dark text-white ms-1 rounded-pill">
             {cart.length > 0 ? <TotalItems /> : null}
           </span>
