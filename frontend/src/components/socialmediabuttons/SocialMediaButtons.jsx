@@ -18,7 +18,7 @@ function SocialMediaButtons() {
           type="submit"
           onClick={() => setOpenModal(true)}
         >
-          <i className="bi-cart-fill me-1"></i>
+          <i className="bi-cart-fill"></i>
           <span className="badge bg-dark text-white ms-1 rounded-pill">
             {cart.length > 0 ? <TotalItems /> : null}
           </span>
@@ -31,7 +31,13 @@ function SocialMediaButtons() {
 
       <div className="icon-bar" id="icon-links">
 
-
+        <a
+          href="https://www.instagram.com/taller_design_chile/"
+          target="_blank"
+          className="instagram"
+        >
+          <i className="fa fa-instagram" aria-hidden="true"></i>
+        </a>
 
         <a className="email" href="mailto:tallerdiseno.1978@gmail.com">
           <i className="fa fa-envelope" aria-hidden="true"></i>
@@ -42,7 +48,8 @@ function SocialMediaButtons() {
         <a
           href="https://www.instagram.com/taller_design_chile/"
           target="_blank"
-          className="instagram"
+          className="instagram opacity-0"
+          disabled
         >
           <i className="fa fa-instagram" aria-hidden="true"></i>
         </a>

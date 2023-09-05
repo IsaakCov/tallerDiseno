@@ -2,7 +2,7 @@
 
 .icon-bar {
   position: fixed;
-  top: 80%;
+  top: 60%;
   right: 1%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -12,7 +12,8 @@
 
 .button__cart {
   position: fixed;
-  top: 94%;
+  margin-top: 100px;
+  top: 75.5%;
   right: 1%;
   transform: translateY(-50%);
   z-index: 2;
@@ -23,15 +24,18 @@
 .button__cart {
   display: block;
   text-align: center;
-  padding: 5px;
+  padding: 10px;
   transition: all 0.3s ease;
-  font-size: 20px;
+  font-size: 25px;
   color: black;
   margin: 5px;
   background-color: #fff;
 }
 .button__cart {
-  font-size: 17px;
+  font-size: 25px;
+  background-color: #fff;
+  padding: 11px 10px;
+  /* padding-top: 23px; */
 }
 
 .instagram:hover {
