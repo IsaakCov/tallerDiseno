@@ -42,7 +42,7 @@ function SocialMediaButtons() {
         <a className="email" href="mailto:tallerdiseno.1978@gmail.com">
           <i className="fa fa-envelope" aria-hidden="true"></i>
         </a>
-        <a href="https://wa.me/c/56930268586" className="whatsapp">
+        <a href="https://web.whatsapp.com/send/?phone=56930268586&text=Hola+somos+Taller+Dise%C3%B1o+%0ACuentanos+como+podemos+ayudarte" className="whatsapp">
           <i className="fa fa-whatsapp" aria-hidden="true"></i>
         </a>
         <a

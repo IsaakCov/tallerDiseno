@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
 import axios from 'axios';
-import { SignupShowPw, ConfirmPassword, ShowHidePw } from './SignupShowPw.jsx';
 import './login.css';
 const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
 
@@ -34,6 +33,10 @@ function Login({ open, onClose }) {
   useEffect(() => {
     if (open) {
       setIsActive(open);
+      setIsLogin(true);  // Asegurarse de que el formulario de inicio de sesión esté activo cuando se abre el popup
+    } else {
+      setIsActive(true); // Restablecer a sus valores iniciales cuando el popup se cierra
+      setIsLogin(true);  // Restablecer a sus valores iniciales cuando el popup se cierra
     }
   }, [open]);
 
@@ -135,7 +138,7 @@ function Login({ open, onClose }) {
             </div>
 
             {!isLogin && (
-              <>
+              <div /* className={`form ${isLogin ? 'login_form' : 'signup_form'} ${isActive ? 'active' : ''}`} */>
                 <div className="input_box">
                   <input
                     type="text"
@@ -172,9 +175,9 @@ function Login({ open, onClose }) {
                   />
                   <i className="uil uil-phone phone"></i>
                 </div>
-              </>
+              </div>
             )}
-            <div className="option_field">
+            {/*  <div className="option_field">
                <span className="checkbox">
                 <input type="checkbox" id="check" />
                 <label htmlFor="check">Recordar Contraseña</label>
@@ -182,7 +185,7 @@ function Login({ open, onClose }) {
               <a href="#" className="forgot_pw">
                 Recuperar Contraseña
               </a>
-            </div>
+            </div> */}
             <button className="button" type="submit">
               Ingresar
             </button>
@@ -190,14 +193,14 @@ function Login({ open, onClose }) {
               {isLogin ? (
                 <>
                   ¿No tienes cuenta?{" "}
-                  <a href="#" ref={signupBtnRef} onClick={handleSignupClick} id="signup">
+                  <a href="#" ref={signupBtnRef} onClick={handleSignupClick} id="signup" className='links__form'>
                     Registrarse
                   </a>
                 </>
               ) : (
                 <>
                   ¿Ya tienes cuenta?{" "}
-                  <a href="#" id="login" ref={loginBtnRef} onClick={handleLoginClick}>
+                  <a href="#" id="login" ref={loginBtnRef} onClick={handleLoginClick} className='links__form'>
                     Ingresar
                   </a>
                 </>

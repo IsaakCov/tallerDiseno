@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import "../componentsCSS/style.css";
 const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
@@ -8,6 +9,8 @@ const Formulario = () => {
     Asunto: "",
     Comentario: "",
   });
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Obtener el correo del usuario desde localStorage cuando el componente se monta
@@ -30,18 +33,32 @@ const Formulario = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-  
+
     // Verificar si el campo CorreoUsuario está vacío
     if (!formData.CorreoUsuario) {
       alert("Debes estar autenticado para enviar el formulario. Por favor, ve al home y realiza tu Login.");
       return; // No se envía el formulario
     }
-  
+
     axios
       .post(`${backendUrl}/api/v1/formulario/sendform`, formData)
       .then((response) => {
         console.log(response.data);
-        // Realiza cualquier acción adicional que necesites después del envío
+        setFormData({
+          CorreoUsuario: "",
+          Asunto: "",
+          Comentario: "",
+        });
+
+        setTimeout(() => {
+          alert('Formulario enviado con éxito, muchas gracias por contactarnos. Será redireccionado a la página principal.');
+        }, 100);
+
+
+        setTimeout(() => {
+          navigate('/')
+        }, 1000);
+
       })
       .catch((error) => {
         console.error(error);
@@ -52,7 +69,7 @@ const Formulario = () => {
     <section>
       <div className="container mt-4 border bg-light shadow" id="cont">
         <div className="row">
-          <div className="col-md-12 p-5">
+          <div className="col-md-12  py-5">
             <h2 className="mb-5">¡Contáctanos!</h2>
             <div className="container">
               <form className="contactForm" onSubmit={handleSubmit}>
@@ -99,7 +116,7 @@ const Formulario = () => {
                 <input
                   name="btn"
                   id="btn"
-                  className="btn-lg btn-primary"
+                  className="btn__form btn-lg btn-primary "
                   type="submit"
                   value="Enviar"
                 />

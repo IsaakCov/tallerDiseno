@@ -46,7 +46,7 @@ const ShopItems = () => {
     }
   }, [product]);
 
-  if (!product) return "Item not found";
+  if (!product) return "";
   const otherItems = data.filter((item) => item.Nombre !== Nombre);
 
   return (

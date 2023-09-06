@@ -137,3 +137,7 @@ a {
   text-align: center;
   margin-top: 15px;
 }
+
+.links__form {
+  font-size: 12px;
+}

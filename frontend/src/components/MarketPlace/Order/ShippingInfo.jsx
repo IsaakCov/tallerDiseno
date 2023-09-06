@@ -78,14 +78,16 @@ const ShippingInfo = () => {
             <label className="form-label text-start">Correo Usuario</label>
             <input type="text" className="form-control"
               value={CorreoUsuario}
-              onChange={(e) => setCorreoUsuario(e.target.value)} />
+              onChange={(e) => setCorreoUsuario(e.target.value)}
+              required />
           </div>
 
           <div className="mb-3 d-none">
             <label className="form-label text-start">Total a pagar</label>
             <input type="text" className="form-control"
               value={TotalPedido}
-              onChange={(e) => setTotalPedido(e.target.value)} />
+              onChange={(e) => setTotalPedido(e.target.value)}
+              required />
 
           </div>
 
@@ -169,12 +171,11 @@ const ShippingInfo = () => {
 
 
         <button
-          type="button"
+          type="submit"
           className="btn btnOrder"
-          onClick={(e) => {
-            e.preventDefault(); // Evita la navegación predeterminada
-            handleSubmit(e); // Realiza la solicitud POST
-          }}
+        /* onClick={(e) => {
+          handleSubmit(e); // Realiza la solicitud POST
+        }} */
         >
           Continuar al pago
         </button>

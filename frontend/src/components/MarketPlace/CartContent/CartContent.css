@@ -86,3 +86,9 @@
 .cart-message-center {
   font-size: 16px;
 }
+
+.btn-pagar-mkp {
+  background: #456884 !important ;
+  font-size: 9px;
+  border: 0;
+}

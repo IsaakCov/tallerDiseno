@@ -55,10 +55,7 @@ export default function OrderDetails2() {
 
   return (
     <>
-      <section
-        className="h-100 h-custom"
-        style={{ backgroundColor: "#456884" }}
-      >
+      <section className="resume__container">
         <MDBContainer className="py-5 h-100">
           <MDBRow className="justify-content-center align-items-left h-100">
             <MDBCol lg="8" xl="6">
@@ -117,12 +114,12 @@ export default function OrderDetails2() {
                                 src={product.Imagen}
                                 alt={product.Nombre}
                                 className="img-thumbnail mr-3 mr-md-5"
-                                style={{ maxWidth: "100px", marginRight: "10px"  }}
+                                style={{ maxWidth: "100px", marginRight: "10px" }}
                               />
                               <div className="ml-3">
-                                <h4 className= "mt-1">{product.Nombre}</h4>
-                                <p className= "mt-1">Cantidad: {product.Stock}</p>
-                                <p className= "mt-1">Precio: ${product.Precio}</p>
+                                <h4 className="mt-1">{product.Nombre}</h4>
+                                <p className="mt-1">Cantidad: {product.Stock}</p>
+                                <p className="mt-1">Precio: ${product.Precio}</p>
                               </div>
                             </div>
                           </li>
@@ -171,8 +168,11 @@ export default function OrderDetails2() {
                         <img src={numero1} alt="img1" />
                         <div className="text-box-container2">
                           <h3>Presiona el siguiente enlace que te redirigirá a WhatsApp</h3>
-                          {/* <small>Contacto</small> */}
-                          <a href="https://www.whatsapp.com/catalog/56930268586/?app_absent=0"><i className="bi bi-whatsapp"></i>¡Presiona aquí!</a>
+
+                          <a href="https://web.whatsapp.com/send/?phone=56930268586&text=Hola+somos+Taller+Dise%C3%B1o+%0ACuentanos+como+podemos+ayudarte" target="_blank" className="whatsapp" style={{ color: 'black' }}>
+                            <i className="fa fa-whatsapp" aria-hidden="true"></i>
+                          </a>
+
                           <span className="container-arrow2"></span>
                         </div>
                       </div>
@@ -182,7 +182,7 @@ export default function OrderDetails2() {
                         <div className="text-box-container2">
                           <h3>Indica el número de pedido o el correo </h3>
                           {/* <small>Información y Cotización</small>
-                  <p>Esta etapa es esencial para conocer tus requerimientos y entregar un valor aproximado del proyecto.</p> */}
+                          <p>Esta etapa es esencial para conocer tus requerimientos y entregar un valor aproximado del proyecto.</p> */}
                           <span className="container-arrow2"></span>
                         </div>
                       </div>
@@ -192,7 +192,7 @@ export default function OrderDetails2() {
                         <div className="text-box-container2">
                           <h3>Coordina el envío del producto</h3>
                           {/* <small>Boceto</small>
-                  <p>Empezaremos con la creación de los bocetos, proponiendo diseños, colores, materiales, etc.</p> */}
+                          <p>Empezaremos con la creación de los bocetos, proponiendo diseños, colores, materiales, etc.</p> */}
                           <span className="container-arrow2"></span>
                         </div>
                       </div>
@@ -205,7 +205,7 @@ export default function OrderDetails2() {
                             monto total{" "}
                           </h3>
                           {/* <small>Producción</small>
-                  <p>En esta etapa se comienza a materializar el proyecto.</p> */}
+                          <p>En esta etapa se comienza a materializar el proyecto.</p> */}
                           <span className="container-arrow2"></span>
                         </div>
                         {/* ... Tu contenido del timeline ... */}

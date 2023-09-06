@@ -15,9 +15,9 @@ function Contact() {
     setIsInitialLoad(false);
     return null; // No renderiza nada en la carga inicial
   }
-  
+
   return (
-    
+
     <section className="out">
       <nav>
         <Navbar />

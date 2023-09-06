@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
 
 .nav-container-market {
   position: sticky;
@@ -24,7 +24,7 @@
   align-items: center;
 }
 
-.navbar-market a {
+.navbar-market .nav-link {
   text-decoration: none;
   font-size: 23px;
 }
@@ -47,8 +47,6 @@
   -o-transform: translate(-40%, -170%);
 }
 
-#menu-marketplace
-{
+#menu-marketplace {
   z-index: 3;
 }
-

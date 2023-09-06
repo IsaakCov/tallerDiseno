@@ -71,7 +71,7 @@ const CartElements = ({ open, onClose }) => {
                 <div className="cart__pagar d-flex justify-content-between mt-3 ">
                   <CartTotal />
                   <Link to="/order">
-                    <button className="btn btn-primary btn-pagar-mkp ">
+                    <button className="btn-pagar-mkp fs-6 p-2 text-white rounded-1 ">
                       Pagar
                     </button>
                   </Link>

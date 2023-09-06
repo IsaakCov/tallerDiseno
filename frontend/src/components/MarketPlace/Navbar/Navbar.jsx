@@ -86,7 +86,7 @@ const Navbar = () => {
             {!userRole && (
               <>
                 <button
-                  className="button"
+                  className="button button__market"
                   id="form-open"
                   onClick={() => setOpenLogin(true)}
                 >
