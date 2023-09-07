@@ -70,7 +70,7 @@ const Formulario = () => {
       <div className="container mt-4 border bg-light shadow" id="cont">
         <div className="row">
           <div className="col-md-12  py-5">
-            <h2 className="mb-5">¡Contáctanos!</h2>
+            <h2 className="mb-5 text-center">¡Contáctanos!</h2>
             <div className="container">
               <form className="contactForm" onSubmit={handleSubmit}>
                 <div className="form-floating mb-3 d-none">
