@@ -96,6 +96,7 @@ function Login({ open, onClose }) {
       }
     } catch (error) {
       console.error('Error en la solicitud:', error);
+      alert('El usuario o la contraseña son incorrectos.')
     }
   };
 
